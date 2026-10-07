@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Database Systems Notes | StudyHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================
+           DATABASE COURSE HERO
+        ====================================== */
+
+        .course-hero {
+            position: relative;
+            min-height: 450px;
+            overflow: hidden;
+            background: #001f4d;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .database-hero .course-hero-image {
+            background-image: url("database.jpg");
+        }
+
+        .course-hero-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                to right,
+                rgba(0, 31, 77, 0) 0%,
+                rgba(0, 31, 77, 0.05) 30%,
+                rgba(0, 31, 77, 0.35) 50%,
+                rgba(0, 31, 77, 0.85) 75%,
+                #001f4d 100%
+            );
+        }
+
+        .course-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 55%;
+            margin-left: 48%;
+            padding: 70px 40px;
+            color: white;
+        }
+
+        .course-hero-content img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content .course-code {
+            display: inline-block;
+            background: #ffc107;
+            color: #001f4d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 10px 0 15px;
+        }
+
+        .course-hero-content p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0;
+        }
+
+
+        /* =====================================
+           DATABASE NOTES
+        ====================================== */
+
+        .database-notes-section {
+            padding: 60px 8%;
+            background: #f5f8fc;
+        }
+
+        .database-notes-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .database-note {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #087fe8;
+        }
+
+        .database-note h2 {
+            color: #001f4d;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .database-note h3 {
+            color: #087fe8;
+            margin-top: 20px;
+        }
+
+        .database-note p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .database-note ul,
+        .database-note ol {
+            line-height: 1.9;
+            color: #444;
+            padding-left: 25px;
+        }
+
+        .database-note li {
+            margin-bottom: 7px;
+        }
+
+        .database-note strong {
+            color: #001f4d;
+        }
+
+
+        /* TABLES */
+
+        .db-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .db-table th,
+        .db-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .db-table th {
+            background: #001f4d;
+            color: white;
+        }
+
+        .db-table tr:nth-child(even) {
+            background: #f5f8fc;
+        }
+
+
+        /* CODE */
+
+        .code-box {
+            background: #111827;
+            color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .code-box pre {
+            margin: 0;
+            font-family: Consolas, "Courier New", monospace;
+            line-height: 1.7;
+        }
+
+
+        /* IMPORTANT */
+
+        .important-box {
+            background: #fff8df;
+            border-left: 5px solid #ffc107;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .important-box strong {
+            color: #8a6500;
+        }
+
+
+        /* EXAMPLE */
+
+        .example-box {
+            background: #eef7ff;
+            border-left: 5px solid #087fe8;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .example-box strong {
+            color: #087fe8;
+        }
+
+
+        /* DEFINITION */
+
+        .definition {
+            background: #f5f8fc;
+            padding: 15px;
+            border-radius: 7px;
+            margin: 15px 0;
+        }
+
+
+        /* REVISION */
+
+        .revision-section {
+            background: #001f4d;
+            color: white;
+            padding: 50px 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .revision-section h2 {
+            color: #ffc107;
+            margin-top: 0;
+        }
+
+        .revision-section ol {
+            line-height: 2;
+        }
+
+
+        /* BACK BUTTON */
+
+        .back-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #087fe8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #001f4d;
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 700px) {
+
+            .course-hero {
+                min-height: 550px;
+                align-items: flex-end;
+            }
+
+            .course-hero-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .course-hero-image::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 31, 77, 0.05) 0%,
+                    rgba(0, 31, 77, 0.35) 40%,
+                    rgba(0, 31, 77, 0.9) 75%,
+                    #001f4d 100%
+                );
+            }
+
+            .course-hero-content {
+                width: 100%;
+                margin-left: 0;
+                padding: 250px 25px 40px;
+                box-sizing: border-box;
+            }
+
+            .course-hero-content h1 {
+                font-size: 30px;
+            }
+
+            .course-hero-content p {
+                font-size: 15px;
+            }
+
+            .database-notes-section {
+                padding: 40px 5%;
+            }
+
+            .database-note {
+                padding: 22px;
+            }
+
+            .database-note h2 {
+                font-size: 21px;
+            }
+
+            .db-table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================
+     NAVIGATION
+====================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="logo-text">
+
+            <h2>
+                Study<span>Hub</span>
+            </h2>
+
+            <small>
+                Learn. Grow. Succeed.
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="subjects.html">
+            Subjects
+        </a>
+
+        <a href="notes.html" class="active">
+            Notes
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login">
+            Login
+        </a>
+
+        <a href="register.html" class="register">
+            Register
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================
+     COURSE HERO
+====================================== -->
+
+<section class="course-hero database-hero">
+
+    <div class="course-hero-image"></div>
+
+
+    <div class="course-hero-content">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+
+        <div class="course-code">
+            BBCT 1101
+        </div>
+
+
+        <h1>
+            Database Systems
+        </h1>
+
+
+        <p>
+            Complete study notes covering database concepts,
+            database management systems, data models, relational
+            databases, SQL, normalization, transactions,
+            security and database administration.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     DATABASE NOTES
+====================================== -->
+
+<section class="database-notes-section">
+
+<div class="database-notes-container">
+
+
+<!-- 1 -->
+
+<div class="database-note">
+
+<h2>1. Introduction to Database Systems</h2>
+
+<p>
+A database is an organized collection of related data that
+can be stored, managed and retrieved efficiently.
+</p>
+
+<div class="definition">
+
+<strong>Database:</strong>
+
+An organized collection of related data stored in a way that
+allows users and applications to access and manage it.
+
+</div>
+
+<p>
+A database system consists of the database itself, the
+Database Management System (DBMS), users, applications and
+procedures.
+</p>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="database-note">
+
+<h2>2. Data and Information</h2>
+
+<h3>Data</h3>
+
+<p>
+Data consists of raw facts and figures that have not yet been
+processed.
+</p>
+
+<p>
+Examples include names, numbers, dates and examination marks.
+</p>
+
+<h3>Information</h3>
+
+<p>
+Information is processed and organized data that has meaning
+and can be used for decision-making.
+</p>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+Student marks such as 70, 65 and 80 are data.
+The calculated average mark is information.
+
+</div>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="database-note">
+
+<h2>3. Database Management System (DBMS)</h2>
+
+<p>
+A Database Management System is software used to create,
+store, organize, retrieve and manage data in databases.
+</p>
+
+<h3>Examples of DBMS</h3>
+
+<ul>
+<li>MySQL</li>
+<li>Microsoft SQL Server</li>
+<li>Oracle Database</li>
+<li>PostgreSQL</li>
+<li>Microsoft Access</li>
+<li>SQLite</li>
+</ul>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="database-note">
+
+<h2>4. Functions of a DBMS</h2>
+
+<ul>
+
+<li>Data storage</li>
+
+<li>Data retrieval</li>
+
+<li>Data modification</li>
+
+<li>Data security</li>
+
+<li>Backup and recovery</li>
+
+<li>Transaction management</li>
+
+<li>Concurrency control</li>
+
+<li>Data integrity management</li>
+
+<li>User access control</li>
+
+</ul>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="database-note">
+
+<h2>5. Advantages of Database Systems</h2>
+
+<ul>
+
+<li>Reduces unnecessary duplication of data.</li>
+
+<li>Improves data sharing.</li>
+
+<li>Improves data security.</li>
+
+<li>Provides backup and recovery.</li>
+
+<li>Improves data consistency.</li>
+
+<li>Allows multiple users to access data.</li>
+
+<li>Makes information retrieval easier.</li>
+
+</ul>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="database-note">
+
+<h2>6. Disadvantages of Database Systems</h2>
+
+<ul>
+
+<li>Database systems can be expensive to establish.</li>
+
+<li>They require skilled personnel.</li>
+
+<li>Hardware and software maintenance may be costly.</li>
+
+<li>System failure can affect many users.</li>
+
+<li>Security must be carefully managed.</li>
+
+</ul>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="database-note">
+
+<h2>7. Database Users</h2>
+
+<h3>Database Administrator</h3>
+
+<p>
+Responsible for managing, securing, backing up and maintaining
+the database system.
+</p>
+
+<h3>Database Designer</h3>
+
+<p>
+Designs the structure and relationships of the database.
+</p>
+
+<h3>Application Programmer</h3>
+
+<p>
+Develops programs that interact with databases.
+</p>
+
+<h3>End Users</h3>
+
+<p>
+People who use applications to access and work with database
+information.
+</p>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="database-note">
+
+<h2>8. Database Models</h2>
+
+<p>
+A database model describes how data is organized and related.
+</p>
+
+<h3>Common Models</h3>
+
+<ul>
+<li>Hierarchical model</li>
+<li>Network model</li>
+<li>Relational model</li>
+<li>Object-oriented model</li>
+<li>NoSQL models</li>
+</ul>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="database-note">
+
+<h2>9. Relational Database Model</h2>
+
+<p>
+The relational model organizes data into tables consisting
+of rows and columns.
+</p>
+
+<p>
+Each table normally represents an entity or subject, while
+each row represents an individual record.
+</p>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+A Students table can contain student ID, name, course and
+age.
+
+</div>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="database-note">
+
+<h2>10. Tables, Records and Fields</h2>
+
+<h3>Table</h3>
+
+<p>
+A table stores related information in rows and columns.
+</p>
+
+<h3>Record</h3>
+
+<p>
+A record is a complete set of related information about one
+item or person.
+</p>
+
+<h3>Field</h3>
+
+<p>
+A field is a single category of information stored in a table.
+</p>
+
+<table class="db-table">
+
+<tr>
+<th>Student_ID</th>
+<th>Name</th>
+<th>Course</th>
+</tr>
+
+<tr>
+<td>001</td>
+<td>John</td>
+<td>Computing</td>
+</tr>
+
+<tr>
+<td>002</td>
+<td>Mary</td>
+<td>Database</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="database-note">
+
+<h2>11. Entities and Attributes</h2>
+
+<h3>Entity</h3>
+
+<p>
+An entity is a real-world object or concept about which
+information is stored.
+</p>
+
+<p>
+Examples include Student, Teacher, Course and Department.
+</p>
+
+<h3>Attribute</h3>
+
+<p>
+An attribute describes a property of an entity.
+</p>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+For a Student entity, attributes may include Student_ID,
+Name, Age and Course.
+
+</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="database-note">
+
+<h2>12. Primary Key</h2>
+
+<p>
+A primary key is a field or combination of fields that uniquely
+identifies each record in a table.
+</p>
+
+<h3>Characteristics</h3>
+
+<ul>
+<li>Values should be unique.</li>
+<li>It should identify one record.</li>
+<li>It should not normally contain NULL values.</li>
+</ul>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+Student_ID can be used as the primary key in a Students table.
+
+</div>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="database-note">
+
+<h2>13. Foreign Key</h2>
+
+<p>
+A foreign key is a field in one table that refers to a primary
+key in another table.
+</p>
+
+<p>
+Foreign keys are used to establish relationships between tables.
+</p>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+A Course_ID in a Student table may reference Course_ID in
+a Courses table.
+
+</div>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="database-note">
+
+<h2>14. Candidate and Composite Keys</h2>
+
+<h3>Candidate Key</h3>
+
+<p>
+A candidate key is an attribute or set of attributes that can
+uniquely identify a record and could potentially be selected
+as the primary key.
+</p>
+
+<h3>Composite Key</h3>
+
+<p>
+A composite key consists of two or more fields used together
+to uniquely identify a record.
+</p>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="database-note">
+
+<h2>15. Relationships Between Tables</h2>
+
+<p>
+Relationships describe how entities are associated with one
+another.
+</p>
+
+<h3>Main Types</h3>
+
+<ul>
+<li>One-to-One</li>
+<li>One-to-Many</li>
+<li>Many-to-Many</li>
+</ul>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="database-note">
+
+<h2>16. One-to-One Relationship</h2>
+
+<p>
+In a one-to-one relationship, one record in one table is
+associated with one record in another table.
+</p>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+One person may have one passport record, while each passport
+belongs to one person.
+
+</div>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="database-note">
+
+<h2>17. One-to-Many Relationship</h2>
+
+<p>
+In a one-to-many relationship, one record in one table can be
+related to many records in another table.
+</p>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+One department can have many students.
+
+</div>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="database-note">
+
+<h2>18. Many-to-Many Relationship</h2>
+
+<p>
+In a many-to-many relationship, many records in one table can
+be related to many records in another table.
+</p>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+A student can take many courses, and a course can have many
+students.
+
+</div>
+
+<p>
+Many-to-many relationships are commonly implemented using
+an intermediate or junction table.
+</p>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="database-note">
+
+<h2>19. Entity Relationship Diagram (ERD)</h2>
+
+<p>
+An Entity Relationship Diagram is a visual representation of
+entities, attributes and relationships in a database.
+</p>
+
+<h3>Common ERD Components</h3>
+
+<ul>
+<li>Entities</li>
+<li>Attributes</li>
+<li>Relationships</li>
+<li>Primary keys</li>
+<li>Foreign keys</li>
+</ul>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="database-note">
+
+<h2>20. Database Normalization</h2>
+
+<p>
+Normalization is the process of organizing database tables
+to reduce unnecessary duplication and improve data integrity.
+</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li>Reduce data redundancy.</li>
+<li>Prevent update problems.</li>
+<li>Improve consistency.</li>
+<li>Improve database structure.</li>
+</ul>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="database-note">
+
+<h2>21. First Normal Form (1NF)</h2>
+
+<p>
+A table is in First Normal Form when each field contains
+atomic values and repeating groups are removed.
+</p>
+
+<div class="important-box">
+
+<strong>Key idea:</strong>
+
+One cell should normally contain one value rather than a list
+of multiple values.
+
+</div>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="database-note">
+
+<h2>22. Second Normal Form (2NF)</h2>
+
+<p>
+A table is in Second Normal Form when it is in 1NF and
+non-key attributes depend on the whole primary key.
+</p>
+
+<p>
+This is particularly important when a table has a composite
+primary key.
+</p>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="database-note">
+
+<h2>23. Third Normal Form (3NF)</h2>
+
+<p>
+A table is in Third Normal Form when it is in 2NF and
+non-key attributes do not depend on other non-key attributes.
+</p>
+
+<div class="important-box">
+
+<strong>Simple idea:</strong>
+
+Non-key information should depend on the key, the whole key,
+and nothing but the key.
+
+</div>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="database-note">
+
+<h2>24. Database Redundancy</h2>
+
+<p>
+Data redundancy occurs when the same information is stored
+unnecessarily in multiple places.
+</p>
+
+<h3>Problems Caused by Redundancy</h3>
+
+<ul>
+<li>Wasted storage.</li>
+<li>Inconsistent information.</li>
+<li>More difficult updates.</li>
+<li>Increased possibility of errors.</li>
+</ul>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="database-note">
+
+<h2>25. SQL</h2>
+
+<p>
+SQL stands for <strong>Structured Query Language</strong>.
+It is widely used to create, manage and retrieve data from
+relational databases.
+</p>
+
+<h3>Main SQL Categories</h3>
+
+<ul>
+<li>DDL – Data Definition Language</li>
+<li>DML – Data Manipulation Language</li>
+<li>DQL – Data Query Language</li>
+<li>DCL – Data Control Language</li>
+<li>TCL – Transaction Control Language</li>
+</ul>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="database-note">
+
+<h2>26. Creating a Database</h2>
+
+<div class="code-box">
+
+<pre>
+CREATE DATABASE StudyHub;
+</pre>
+
+</div>
+
+<p>
+The CREATE DATABASE statement creates a new database.
+</p>
+
+</div>
+
+
+<!-- 27 -->
+
+<div class="database-note">
+
+<h2>27. Creating a Table</h2>
+
+<div class="code-box">
+
+<pre>
+CREATE TABLE Students
+(
+    Student_ID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT,
+    Course VARCHAR(100)
+);
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 28 -->
+
+<div class="database-note">
+
+<h2>28. Inserting Data</h2>
+
+<div class="code-box">
+
+<pre>
+INSERT INTO Students
+(Student_ID, Name, Age, Course)
+
+VALUES
+(1, 'John', 20, 'Computing');
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 29 -->
+
+<div class="database-note">
+
+<h2>29. Selecting Data</h2>
+
+<div class="code-box">
+
+<pre>
+SELECT * FROM Students;
+</pre>
+
+</div>
+
+<p>
+The SELECT statement is used to retrieve data from a table.
+</p>
+
+<h3>Select Specific Columns</h3>
+
+<div class="code-box">
+
+<pre>
+SELECT Name, Course
+FROM Students;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 30 -->
+
+<div class="database-note">
+
+<h2>30. WHERE Clause</h2>
+
+<p>
+The WHERE clause is used to filter records according to
+a condition.
+</p>
+
+<div class="code-box">
+
+<pre>
+SELECT *
+FROM Students
+WHERE Age &gt; 18;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 31 -->
+
+<div class="database-note">
+
+<h2>31. UPDATE Statement</h2>
+
+<p>
+UPDATE is used to modify existing records.
+</p>
+
+<div class="code-box">
+
+<pre>
+UPDATE Students
+
+SET Age = 21
+
+WHERE Student_ID = 1;
+</pre>
+
+</div>
+
+<div class="important-box">
+
+<strong>Important:</strong>
+
+Always use an appropriate WHERE condition when updating
+specific records.
+
+</div>
+
+</div>
+
+
+<!-- 32 -->
+
+<div class="database-note">
+
+<h2>32. DELETE Statement</h2>
+
+<p>
+DELETE is used to remove records from a table.
+</p>
+
+<div class="code-box">
+
+<pre>
+DELETE FROM Students
+WHERE Student_ID = 1;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 33 -->
+
+<div class="database-note">
+
+<h2>33. SQL Sorting</h2>
+
+<p>
+The ORDER BY clause sorts query results.
+</p>
+
+<div class="code-box">
+
+<pre>
+SELECT *
+FROM Students
+ORDER BY Name ASC;
+</pre>
+
+</div>
+
+<p>
+ASC sorts in ascending order while DESC sorts in descending
+order.
+</p>
+
+</div>
+
+
+<!-- 34 -->
+
+<div class="database-note">
+
+<h2>34. Aggregate Functions</h2>
+
+<p>
+Aggregate functions perform calculations on groups of values.
+</p>
+
+<ul>
+<li>COUNT()</li>
+<li>SUM()</li>
+<li>AVG()</li>
+<li>MAX()</li>
+<li>MIN()</li>
+</ul>
+
+<div class="code-box">
+
+<pre>
+SELECT AVG(Age)
+FROM Students;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 35 -->
+
+<div class="database-note">
+
+<h2>35. GROUP BY and HAVING</h2>
+
+<p>
+GROUP BY groups records that have the same values in specified
+columns.
+</p>
+
+<div class="code-box">
+
+<pre>
+SELECT Course, COUNT(*)
+FROM Students
+GROUP BY Course;
+</pre>
+
+</div>
+
+<p>
+HAVING can be used to filter grouped results.
+</p>
+
+</div>
+
+
+<!-- 36 -->
+
+<div class="database-note">
+
+<h2>36. SQL Joins</h2>
+
+<p>
+Joins are used to combine information from multiple tables.
+</p>
+
+<h3>Common Joins</h3>
+
+<ul>
+<li>INNER JOIN</li>
+<li>LEFT JOIN</li>
+<li>RIGHT JOIN</li>
+<li>FULL OUTER JOIN</li>
+</ul>
+
+</div>
+
+
+<!-- 37 -->
+
+<div class="database-note">
+
+<h2>37. INNER JOIN</h2>
+
+<p>
+An INNER JOIN returns records that have matching values in
+both tables.
+</p>
+
+<div class="code-box">
+
+<pre>
+SELECT Students.Name, Courses.Course_Name
+
+FROM Students
+
+INNER JOIN Courses
+
+ON Students.Course_ID =
+   Courses.Course_ID;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 38 -->
+
+<div class="database-note">
+
+<h2>38. Database Constraints</h2>
+
+<p>
+Constraints are rules applied to database columns to maintain
+data accuracy and integrity.
+</p>
+
+<h3>Common Constraints</h3>
+
+<ul>
+<li>PRIMARY KEY</li>
+<li>FOREIGN KEY</li>
+<li>NOT NULL</li>
+<li>UNIQUE</li>
+<li>CHECK</li>
+<li>DEFAULT</li>
+</ul>
+
+</div>
+
+
+<!-- 39 -->
+
+<div class="database-note">
+
+<h2>39. Data Integrity</h2>
+
+<p>
+Data integrity means maintaining the accuracy, consistency
+and reliability of data.
+</p>
+
+<h3>Types</h3>
+
+<ul>
+<li>Entity integrity</li>
+<li>Referential integrity</li>
+<li>Domain integrity</li>
+<li>User-defined integrity</li>
+</ul>
+
+</div>
+
+
+<!-- 40 -->
+
+<div class="database-note">
+
+<h2>40. Transactions</h2>
+
+<p>
+A transaction is a logical unit of database operations that
+should be completed successfully as a whole.
+</p>
+
+<h3>ACID Properties</h3>
+
+<ul>
+
+<li>
+<strong>Atomicity:</strong>
+A transaction is treated as one complete unit.
+</li>
+
+<li>
+<strong>Consistency:</strong>
+The database remains valid before and after the transaction.
+</li>
+
+<li>
+<strong>Isolation:</strong>
+Concurrent transactions should not improperly interfere
+with one another.
+</li>
+
+<li>
+<strong>Durability:</strong>
+Committed changes remain stored even after failures.
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- 41 -->
+
+<div class="database-note">
+
+<h2>41. Database Security</h2>
+
+<p>
+Database security protects stored information from
+unauthorized access, modification, destruction or disclosure.
+</p>
+
+<h3>Security Measures</h3>
+
+<ul>
+<li>User authentication</li>
+<li>Authorization</li>
+<li>Strong passwords</li>
+<li>Encryption</li>
+<li>Access control</li>
+<li>Regular backups</li>
+<li>Monitoring and auditing</li>
+</ul>
+
+</div>
+
+
+<!-- 42 -->
+
+<div class="database-note">
+
+<h2>42. Database Backup and Recovery</h2>
+
+<p>
+A database backup is a copy of database information that can
+be used to restore data after loss or damage.
+</p>
+
+<h3>Possible Causes of Data Loss</h3>
+
+<ul>
+<li>Hardware failure</li>
+<li>Software failure</li>
+<li>Human error</li>
+<li>Malware</li>
+<li>Accidental deletion</li>
+<li>Natural disasters</li>
+</ul>
+
+</div>
+
+
+<!-- 43 -->
+
+<div class="database-note">
+
+<h2>43. Database Administration</h2>
+
+<p>
+Database administration involves managing the performance,
+security, availability and reliability of a database system.
+</p>
+
+<h3>Responsibilities of a DBA</h3>
+
+<ul>
+<li>Database installation</li>
+<li>User management</li>
+<li>Security management</li>
+<li>Backup and recovery</li>
+<li>Performance monitoring</li>
+<li>Database maintenance</li>
+</ul>
+
+</div>
+
+
+<!-- 44 -->
+
+<div class="database-note">
+
+<h2>44. Database Views</h2>
+
+<p>
+A view is a virtual table based on the result of a query.
+It can be used to simplify access to information or restrict
+what certain users can see.
+</p>
+
+<div class="code-box">
+
+<pre>
+CREATE VIEW StudentView AS
+
+SELECT Name, Course
+
+FROM Students;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 45 -->
+
+<div class="database-note">
+
+<h2>45. Indexes</h2>
+
+<p>
+An index is a database structure that can improve the speed
+of data retrieval.
+</p>
+
+<p>
+Indexes can improve query performance, but they may require
+additional storage and can increase the cost of some data
+modification operations.
+</p>
+
+</div>
+
+
+<!-- 46 -->
+
+<div class="database-note">
+
+<h2>46. Database Applications</h2>
+
+<p>
+Database systems are used in many organizations and industries.
+</p>
+
+<ul>
+<li>Banks</li>
+<li>Hospitals</li>
+<li>Schools and universities</li>
+<li>Government institutions</li>
+<li>Businesses</li>
+<li>Airlines</li>
+<li>Online shopping platforms</li>
+<li>Libraries</li>
+</ul>
+
+</div>
+
+
+<!-- 47 -->
+
+<div class="database-note">
+
+<h2>47. Database Design Process</h2>
+
+<ol>
+
+<li>Identify system requirements.</li>
+
+<li>Identify entities.</li>
+
+<li>Identify attributes.</li>
+
+<li>Identify relationships.</li>
+
+<li>Develop an ER diagram.</li>
+
+<li>Convert the design into tables.</li>
+
+<li>Identify primary and foreign keys.</li>
+
+<li>Normalize the tables.</li>
+
+<li>Implement the database.</li>
+
+<li>Test and maintain the system.</li>
+
+</ol>
+
+</div>
+
+
+<!-- 48 -->
+
+<div class="database-note">
+
+<h2>48. Practical Database Example</h2>
+
+<p>
+Consider a simple student management system.
+</p>
+
+<h3>Students Table</h3>
+
+<table class="db-table">
+
+<tr>
+<th>Student_ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Course_ID</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>John</td>
+<td>20</td>
+<td>C01</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Mary</td>
+<td>21</td>
+<td>C02</td>
+</tr>
+
+</table>
+
+
+<h3>Courses Table</h3>
+
+<table class="db-table">
+
+<tr>
+<th>Course_ID</th>
+<th>Course_Name</th>
+</tr>
+
+<tr>
+<td>C01</td>
+<td>Computer Science</td>
+</tr>
+
+<tr>
+<td>C02</td>
+<td>Database Systems</td>
+</tr>
+
+</table>
+
+<p>
+The Course_ID in the Students table can act as a foreign key
+that references the Course_ID in the Courses table.
+</p>
+
+</div>
+
+
+<!-- 49 -->
+
+<div class="database-note">
+
+<h2>49. Common Database Problems</h2>
+
+<ul>
+
+<li>Duplicate records</li>
+
+<li>Incorrect data</li>
+
+<li>Unauthorized access</li>
+
+<li>Data loss</li>
+
+<li>Poor database design</li>
+
+<li>Slow queries</li>
+
+<li>Weak passwords</li>
+
+<li>Failure to perform backups</li>
+
+</ul>
+
+<h3>Solutions</h3>
+
+<ul>
+
+<li>Use normalization.</li>
+
+<li>Apply constraints.</li>
+
+<li>Use appropriate indexes.</li>
+
+<li>Implement security controls.</li>
+
+<li>Perform regular backups.</li>
+
+<li>Monitor database performance.</li>
+
+</ul>
+
+</div>
+
+
+<!-- 50 -->
+
+<div class="database-note">
+
+<h2>50. Important Database Terms</h2>
+
+<ul>
+
+<li>
+<strong>Database:</strong>
+Organized collection of related data.
+</li>
+
+<li>
+<strong>DBMS:</strong>
+Software used to manage databases.
+</li>
+
+<li>
+<strong>Table:</strong>
+Structure containing rows and columns.
+</li>
+
+<li>
+<strong>Record:</strong>
+A row containing related information.
+</li>
+
+<li>
+<strong>Field:</strong>
+A column representing a data attribute.
+</li>
+
+<li>
+<strong>Primary Key:</strong>
+Uniquely identifies a record.
+</li>
+
+<li>
+<strong>Foreign Key:</strong>
+Links related tables.
+</li>
+
+<li>
+<strong>SQL:</strong>
+Language used to work with relational databases.
+</li>
+
+<li>
+<strong>Normalization:</strong>
+Process of organizing data to reduce redundancy.
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- =====================================
+     REVISION
+====================================== -->
+
+<div class="revision-section">
+
+<h2>Database Systems Revision Questions</h2>
+
+<ol>
+
+<li>Define a database.</li>
+
+<li>What is a Database Management System?</li>
+
+<li>Differentiate between data and information.</li>
+
+<li>State five functions of a DBMS.</li>
+
+<li>State five advantages of database systems.</li>
+
+<li>Who is a Database Administrator?</li>
+
+<li>What is a database model?</li>
+
+<li>Explain the relational database model.</li>
+
+<li>What is a table?</li>
+
+<li>Differentiate between a record and a field.</li>
+
+<li>What is an entity?</li>
+
+<li>What is an attribute?</li>
+
+<li>Define a primary key.</li>
+
+<li>Define a foreign key.</li>
+
+<li>Differentiate between candidate and composite keys.</li>
+
+<li>Explain one-to-one, one-to-many and many-to-many relationships.</li>
+
+<li>What is an ER diagram?</li>
+
+<li>What is database normalization?</li>
+
+<li>Explain 1NF, 2NF and 3NF.</li>
+
+<li>What is data redundancy?</li>
+
+<li>What does SQL stand for?</li>
+
+<li>State the main categories of SQL.</li>
+
+<li>Write an SQL statement for creating a table.</li>
+
+<li>Write an SQL statement for inserting a record.</li>
+
+<li>Write an SQL statement for retrieving records.</li>
+
+<li>What is the purpose of the WHERE clause?</li>
+
+<li>Differentiate between DELETE and UPDATE.</li>
+
+<li>What are SQL joins?</li>
+
+<li>Explain database constraints.</li>
+
+<li>What is data integrity?</li>
+
+<li>Explain the ACID properties.</li>
+
+<li>What is database security?</li>
+
+<li>Why is database backup important?</li>
+
+<li>State five responsibilities of a DBA.</li>
+
+<li>What is a database view?</li>
+
+<li>What is an index?</li>
+
+<li>List five areas where database systems are used.</li>
+
+<li>Explain the major steps in database design.</li>
+
+<li>Design a simple database for a student management system.</li>
+
+</ol>
+
+</div>
+
+
+<!-- BACK BUTTON -->
+
+<div class="back-button-container">
+
+<a href="notes.html" class="back-button">
+    ← Back to Course Notes
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+====================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <h2>
+            Study<span>Hub</span>
+        </h2>
+
+        <p>
+            Learn. Grow. Succeed.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+
+        <a href="subjects.html">Subjects</a>
+
+        <a href="notes.html">Notes</a>
+
+        <a href="upload.html">Upload</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h3>Courses</h3>
+
+        <a href="database-notes.html">
+            Database Systems
+        </a>
+
+        <a href="web-notes.html">
+            Web Design &amp; Development
+        </a>
+
+        <a href="software-ethics-notes.html">
+            Software Engineering Ethics
+        </a>
+
+        <a href="c-notes.html">
+            Programming Using C
+        </a>
+
+        <a href="computer-notes.html">
+            Fundamentals of Computers
+        </a>
+
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <p>
+        © 2026 StudyHub. All Rights Reserved.
+    </p>
+
+</div>
+
+
+</body>
+</html>

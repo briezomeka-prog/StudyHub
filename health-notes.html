@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GECH 1101 - Health Principles | StudyHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           HEALTH PRINCIPLES NOTES
+           ========================================= */
+
+        .course-hero {
+            position: relative;
+            min-height: 450px;
+            overflow: hidden;
+            background: #001f4d;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .health-hero .course-hero-image {
+            background-image: url("health.jpg");
+        }
+
+        .course-hero-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                to right,
+                rgba(0, 31, 77, 0) 0%,
+                rgba(0, 31, 77, 0.05) 30%,
+                rgba(0, 31, 77, 0.35) 50%,
+                rgba(0, 31, 77, 0.85) 75%,
+                #001f4d 100%
+            );
+        }
+
+        .course-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 55%;
+            margin-left: 48%;
+            padding: 70px 40px;
+            color: white;
+        }
+
+        .course-hero-content img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content .course-code {
+            display: inline-block;
+            background: #ffc107;
+            color: #001f4d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 10px 0 15px;
+        }
+
+        .course-hero-content p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0;
+        }
+
+        /* =========================================
+           NOTES AREA
+           ========================================= */
+
+        .health-notes {
+            background: #f5f8fc;
+            padding: 70px 7%;
+        }
+
+        .health-introduction,
+        .health-topic {
+            max-width: 1000px;
+            margin: 0 auto 30px;
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .health-introduction {
+            margin-bottom: 45px;
+        }
+
+        .health-introduction h2,
+        .health-topic h2 {
+            color: #001f4d;
+            margin-top: 0;
+        }
+
+        .health-topic {
+            border-left: 5px solid #ffc107;
+        }
+
+        .health-topic h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .health-topic h3 {
+            color: #087fe8;
+            margin-top: 25px;
+        }
+
+        .health-introduction p,
+        .health-topic p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .health-topic ul,
+        .health-topic ol {
+            color: #444;
+            line-height: 1.8;
+            padding-left: 25px;
+        }
+
+        .health-topic li {
+            margin-bottom: 8px;
+        }
+
+        .health-example {
+            background: #f5f8fc;
+            border-left: 4px solid #087fe8;
+            padding: 18px 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            line-height: 1.7;
+        }
+
+        .health-warning {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 18px 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            line-height: 1.7;
+        }
+
+        .health-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .health-table th,
+        .health-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .health-table th {
+            background: #001f4d;
+            color: white;
+        }
+
+        .health-table tr:nth-child(even) {
+            background: #f5f8fc;
+        }
+
+        .revision-box {
+            max-width: 1000px;
+            margin: 50px auto 30px;
+            background: #001f4d;
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .revision-box h2,
+        .revision-box h3 {
+            color: #ffc107;
+        }
+
+        .revision-box h2 {
+            margin-top: 0;
+        }
+
+        .revision-box li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .back-notes {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        .back-notes a {
+            display: inline-block;
+            background: #087fe8;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-notes a:hover {
+            background: #001f4d;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 700px) {
+
+            .course-hero {
+                min-height: 550px;
+                align-items: flex-end;
+            }
+
+            .course-hero-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .course-hero-image::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 31, 77, 0.05) 0%,
+                    rgba(0, 31, 77, 0.35) 40%,
+                    rgba(0, 31, 77, 0.9) 75%,
+                    #001f4d 100%
+                );
+            }
+
+            .course-hero-content {
+                width: 100%;
+                margin-left: 0;
+                padding: 250px 25px 40px;
+                box-sizing: border-box;
+            }
+
+            .course-hero-content h1 {
+                font-size: 30px;
+            }
+
+            .course-hero-content p {
+                font-size: 15px;
+            }
+
+            .health-notes {
+                padding: 45px 5%;
+            }
+
+            .health-topic,
+            .health-introduction {
+                padding: 23px;
+            }
+
+            .health-topic h2 {
+                font-size: 21px;
+            }
+
+            .health-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================
+     NAVIGATION
+     ========================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="logo-text">
+            <h2>Study<span>Hub</span></h2>
+            <small>Learn. Grow. Succeed.</small>
+        </div>
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="notes.html" class="active">Notes</a>
+        <a href="upload.html">Upload</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login">Login</a>
+        <a href="register.html" class="register">Register</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================
+     COURSE HERO
+     ========================================= -->
+
+<section class="course-hero health-hero">
+
+    <div class="course-hero-image"></div>
+
+    <div class="course-hero-content">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="course-code">
+            GECH 1101
+        </div>
+
+        <h1>
+            Health Principles
+        </h1>
+
+        <p>
+            Expanded study notes covering the meaning of health,
+            dimensions of health, nutrition, hygiene, physical activity,
+            mental health, disease prevention, sanitation, first aid,
+            substance abuse and healthy living.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     HEALTH NOTES
+     ========================================= -->
+
+<section class="health-notes">
+
+
+<!-- INTRODUCTION -->
+
+<div class="health-introduction">
+
+    <h2>Introduction to Health Principles</h2>
+
+    <p>
+        Health is one of the most important requirements for a productive
+        and meaningful life. A healthy person is better able to learn,
+        work, participate in family and community activities and achieve
+        personal goals.
+    </p>
+
+    <p>
+        Health is not simply the absence of disease. It involves physical,
+        mental, emotional, social and other aspects of well-being. A person
+        may not have a diagnosed illness but may still have poor health
+        because of inadequate nutrition, stress, lack of sleep, unhealthy
+        relationships or an unsafe environment.
+    </p>
+
+    <p>
+        Health Principles therefore studies the knowledge, behaviours and
+        practices that help individuals and communities maintain good health,
+        prevent disease and improve their quality of life.
+    </p>
+
+</div>
+
+
+<!-- 1 -->
+
+<div class="health-topic">
+
+    <h2>1. Meaning of Health</h2>
+
+    <p>
+        Health is a state of well-being that includes physical, mental,
+        emotional and social aspects of life. It is broader than simply
+        being free from disease.
+    </p>
+
+    <p>
+        Health can change throughout a person's life. Factors such as age,
+        environment, nutrition, lifestyle, income, education, relationships
+        and access to healthcare can influence health.
+    </p>
+
+    <div class="health-example">
+        <strong>Example:</strong>
+        A student who eats well, gets enough sleep, exercises regularly,
+        manages stress and maintains positive relationships is supporting
+        several dimensions of health at the same time.
+    </div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="health-topic">
+
+    <h2>2. Dimensions of Health</h2>
+
+    <p>
+        Health has several interconnected dimensions. A person's condition
+        in one dimension can affect other dimensions.
+    </p>
+
+    <table class="health-table">
+
+        <tr>
+            <th>Dimension</th>
+            <th>Explanation</th>
+        </tr>
+
+        <tr>
+            <td>Physical health</td>
+            <td>
+                Relates to the functioning and condition of the body,
+                including nutrition, exercise, rest and disease prevention.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Mental health</td>
+            <td>
+                Relates to thinking, learning, decision-making and coping
+                with the normal challenges of life.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Emotional health</td>
+            <td>
+                Involves recognizing, expressing and managing emotions in
+                healthy ways.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Social health</td>
+            <td>
+                Relates to relationships, communication and interaction
+                with other people.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Spiritual health</td>
+            <td>
+                May involve meaning, values, purpose and personal beliefs.
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="health-topic">
+
+    <h2>3. Determinants of Health</h2>
+
+    <p>
+        Determinants of health are the conditions and factors that influence
+        the health of individuals and communities.
+    </p>
+
+    <h3>Major determinants include:</h3>
+
+    <ul>
+        <li>Individual lifestyle and behaviour.</li>
+        <li>Nutrition.</li>
+        <li>Physical environment.</li>
+        <li>Social relationships.</li>
+        <li>Education.</li>
+        <li>Income and employment.</li>
+        <li>Access to healthcare.</li>
+        <li>Housing and sanitation.</li>
+        <li>Genetic and biological factors.</li>
+    </ul>
+
+    <p>
+        This means that health is influenced by much more than medical
+        treatment. Improving living conditions and healthy behaviours can
+        also contribute greatly to better health.
+    </p>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="health-topic">
+
+    <h2>4. Personal Hygiene</h2>
+
+    <p>
+        Personal hygiene refers to practices that help keep the body clean
+        and reduce the spread of infection and disease.
+    </p>
+
+    <h3>Examples of personal hygiene include:</h3>
+
+    <ul>
+        <li>Regular bathing.</li>
+        <li>Washing hands with soap and clean water.</li>
+        <li>Brushing teeth regularly.</li>
+        <li>Keeping fingernails clean and trimmed.</li>
+        <li>Wearing clean clothes.</li>
+        <li>Maintaining clean hair and scalp.</li>
+        <li>Practicing appropriate menstrual hygiene.</li>
+    </ul>
+
+    <p>
+        Good hygiene protects both the individual and other people because
+        many infections can spread through contaminated hands, surfaces,
+        food and bodily fluids.
+    </p>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="health-topic">
+
+    <h2>5. Hand Hygiene</h2>
+
+    <p>
+        Hand hygiene is one of the simplest and most effective ways to
+        reduce the spread of many infections.
+    </p>
+
+    <h3>Important times to wash hands include:</h3>
+
+    <ul>
+        <li>Before preparing or eating food.</li>
+        <li>After using the toilet.</li>
+        <li>After cleaning a child.</li>
+        <li>After coughing or sneezing when hands become contaminated.</li>
+        <li>After handling waste.</li>
+        <li>After caring for someone who is sick.</li>
+    </ul>
+
+    <p>
+        Hands should be washed thoroughly with soap and clean running water
+        where available. When soap and water are not available, an
+        appropriate alcohol-based hand sanitizer can be useful in many
+        situations.
+    </p>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="health-topic">
+
+    <h2>6. Oral Health</h2>
+
+    <p>
+        Oral health involves the health of the teeth, gums, mouth and
+        surrounding structures.
+    </p>
+
+    <p>
+        Poor oral hygiene can contribute to tooth decay, gum disease, bad
+        breath and discomfort. Good oral care includes regular tooth
+        brushing, appropriate use of fluoride toothpaste, limiting excessive
+        sugar intake and obtaining professional dental care when necessary.
+    </p>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="health-topic">
+
+    <h2>7. Nutrition and a Balanced Diet</h2>
+
+    <p>
+        Nutrition is the process by which the body obtains and uses
+        nutrients from food. Good nutrition provides energy and materials
+        needed for growth, repair and normal body functions.
+    </p>
+
+    <p>
+        A balanced diet contains a variety of foods that provide the
+        nutrients required by the body in appropriate amounts.
+    </p>
+
+    <h3>A healthy diet generally includes:</h3>
+
+    <ul>
+        <li>Fruits and vegetables.</li>
+        <li>Whole grains and other healthy sources of carbohydrates.</li>
+        <li>Protein sources.</li>
+        <li>Healthy fats.</li>
+        <li>Appropriate amounts of dairy or suitable alternatives where available.</li>
+        <li>Safe drinking water.</li>
+    </ul>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="health-topic">
+
+    <h2>8. Major Nutrients</h2>
+
+    <p>
+        Nutrients are substances obtained from food that the body needs to
+        function properly. They are commonly grouped into macronutrients and
+        micronutrients.
+    </p>
+
+    <table class="health-table">
+
+        <tr>
+            <th>Nutrient</th>
+            <th>Main Function</th>
+            <th>Examples of Sources</th>
+        </tr>
+
+        <tr>
+            <td>Carbohydrates</td>
+            <td>Important source of energy.</td>
+            <td>Grains, potatoes, fruits and other plant foods.</td>
+        </tr>
+
+        <tr>
+            <td>Proteins</td>
+            <td>Support growth, repair and body structures.</td>
+            <td>Beans, eggs, fish, meat and other protein-rich foods.</td>
+        </tr>
+
+        <tr>
+            <td>Fats</td>
+            <td>Provide energy and support several body functions.</td>
+            <td>Nuts, seeds, oils, fish and other foods.</td>
+        </tr>
+
+        <tr>
+            <td>Vitamins</td>
+            <td>Support many body processes.</td>
+            <td>Fruits, vegetables and other foods.</td>
+        </tr>
+
+        <tr>
+            <td>Minerals</td>
+            <td>Support bones, blood, nerves and other functions.</td>
+            <td>Vegetables, dairy foods, legumes and other foods.</td>
+        </tr>
+
+        <tr>
+            <td>Water</td>
+            <td>Essential for many body processes and fluid balance.</td>
+            <td>Drinking water and water-containing foods.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="health-topic">
+
+    <h2>9. Carbohydrates</h2>
+
+    <p>
+        Carbohydrates are an important source of energy for the body.
+        They are found in many foods, including grains, roots, tubers,
+        fruits and legumes.
+    </p>
+
+    <p>
+        The nutritional quality of carbohydrate sources matters. Foods
+        containing whole grains and naturally occurring fibre can be useful
+        parts of a healthy diet.
+    </p>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="health-topic">
+
+    <h2>10. Proteins</h2>
+
+    <p>
+        Proteins are important for growth, maintenance and repair of body
+        tissues. They are made from smaller substances called amino acids.
+    </p>
+
+    <p>
+        Protein can come from both animal and plant foods. Examples include
+        eggs, fish, meat, milk, beans, peas, lentils, nuts and seeds.
+    </p>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="health-topic">
+
+    <h2>11. Fats</h2>
+
+    <p>
+        Fats are an important source of energy and are involved in several
+        normal body functions. They also help the body absorb certain
+        vitamins.
+    </p>
+
+    <p>
+        A healthy diet should include appropriate sources of fat while
+        avoiding excessive consumption of foods high in unhealthy fats.
+    </p>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="health-topic">
+
+    <h2>12. Vitamins and Minerals</h2>
+
+    <p>
+        Vitamins and minerals are micronutrients because the body generally
+        needs them in smaller quantities than carbohydrates, proteins and
+        fats.
+    </p>
+
+    <p>
+        They support processes such as immunity, blood formation, bone
+        health, nerve function and normal metabolism.
+    </p>
+
+    <div class="health-example">
+        <strong>Important:</strong>
+        Different vitamins and minerals perform different functions. A
+        varied diet is generally the best way to obtain many essential
+        micronutrients.
+    </div>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="health-topic">
+
+    <h2>13. Water and Hydration</h2>
+
+    <p>
+        Water is essential for life. It helps regulate body temperature,
+        transport substances, support digestion and maintain normal body
+        functions.
+    </p>
+
+    <p>
+        Water requirements vary depending on factors such as age, activity,
+        temperature, diet and health conditions. People who sweat heavily
+        may require more fluids.
+    </p>
+
+    <p>
+        Safe drinking water is also important for preventing waterborne
+        diseases.
+    </p>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="health-topic">
+
+    <h2>14. Physical Activity and Exercise</h2>
+
+    <p>
+        Physical activity is movement of the body that uses energy.
+        Exercise is a planned or structured form of physical activity.
+    </p>
+
+    <p>
+        Regular physical activity can improve cardiovascular fitness,
+        muscle strength, physical function and general well-being. It can
+        also support mental health and help reduce the risk of several
+        chronic diseases.
+    </p>
+
+    <h3>Examples include:</h3>
+
+    <ul>
+        <li>Walking.</li>
+        <li>Running.</li>
+        <li>Cycling.</li>
+        <li>Swimming.</li>
+        <li>Sports.</li>
+        <li>Strength exercises.</li>
+        <li>Active household or work activities.</li>
+    </ul>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="health-topic">
+
+    <h2>15. Rest and Sleep</h2>
+
+    <p>
+        Sleep is essential for physical and mental functioning. During
+        sleep, the body and brain carry out important processes related to
+        recovery, learning, memory and regulation.
+    </p>
+
+    <p>
+        Poor sleep can affect concentration, mood, learning, reaction time
+        and general performance.
+    </p>
+
+    <h3>Healthy sleep habits include:</h3>
+
+    <ul>
+        <li>Keeping a consistent sleep schedule.</li>
+        <li>Creating a comfortable sleeping environment.</li>
+        <li>Limiting excessive screen use before bedtime.</li>
+        <li>Avoiding excessive caffeine, especially late in the day.</li>
+        <li>Allowing sufficient time for sleep.</li>
+    </ul>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="health-topic">
+
+    <h2>16. Mental Health</h2>
+
+    <p>
+        Mental health involves emotional, psychological and social
+        well-being. It influences how people think, feel, behave, make
+        decisions and interact with others.
+    </p>
+
+    <p>
+        Everyone experiences changes in mood and stress. Experiencing a
+        difficult period does not mean that a person has failed.
+    </p>
+
+    <p>
+        Mental health can be supported through healthy relationships,
+        adequate rest, physical activity, social support and seeking
+        professional help when necessary.
+    </p>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="health-topic">
+
+    <h2>17. Emotional Health</h2>
+
+    <p>
+        Emotional health refers to the ability to recognize, understand and
+        manage emotions in constructive ways.
+    </p>
+
+    <p>
+        Healthy emotional behaviour does not mean never feeling sadness,
+        anger or fear. Instead, it involves responding to emotions in ways
+        that do not unnecessarily harm oneself or others.
+    </p>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="health-topic">
+
+    <h2>18. Stress</h2>
+
+    <p>
+        Stress is the physical and emotional response that can occur when a
+        person faces demands or challenges.
+    </p>
+
+    <p>
+        Some stress can motivate people to prepare for examinations or meet
+        responsibilities. However, persistent or overwhelming stress can
+        negatively affect well-being.
+    </p>
+
+    <h3>Healthy ways to manage stress include:</h3>
+
+    <ul>
+        <li>Planning and organizing tasks.</li>
+        <li>Getting enough sleep.</li>
+        <li>Physical activity.</li>
+        <li>Talking to trusted people.</li>
+        <li>Taking appropriate breaks.</li>
+        <li>Using relaxation techniques.</li>
+        <li>Seeking professional support when needed.</li>
+    </ul>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="health-topic">
+
+    <h2>19. Communicable Diseases</h2>
+
+    <p>
+        Communicable diseases are diseases that can spread from one person,
+        animal or source to another through specific routes of transmission.
+    </p>
+
+    <p>
+        Different diseases spread in different ways. Transmission may occur
+        through respiratory droplets or aerosols, contaminated food or
+        water, blood, sexual contact, vectors or direct contact.
+    </p>
+
+    <h3>Prevention may include:</h3>
+
+    <ul>
+        <li>Hand hygiene.</li>
+        <li>Safe food and water.</li>
+        <li>Vaccination where recommended.</li>
+        <li>Vector control.</li>
+        <li>Appropriate sanitation.</li>
+        <li>Safe sexual practices.</li>
+        <li>Appropriate infection-control measures.</li>
+    </ul>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="health-topic">
+
+    <h2>20. Non-Communicable Diseases</h2>
+
+    <p>
+        Non-communicable diseases are generally not spread directly from
+        person to person. Many are chronic conditions influenced by
+        multiple factors.
+    </p>
+
+    <h3>Examples include:</h3>
+
+    <ul>
+        <li>Diabetes.</li>
+        <li>Heart disease.</li>
+        <li>Stroke.</li>
+        <li>Some cancers.</li>
+        <li>Chronic respiratory diseases.</li>
+    </ul>
+
+    <p>
+        Risk can be influenced by factors such as tobacco use, unhealthy
+        diet, physical inactivity, harmful alcohol use and some genetic and
+        environmental factors.
+    </p>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="health-topic">
+
+    <h2>21. Malaria</h2>
+
+    <p>
+        Malaria is an infectious disease caused by parasites transmitted
+        through the bites of infected mosquitoes. It is particularly
+        important in many tropical and subtropical regions.
+    </p>
+
+    <p>
+        Prevention strategies can include using appropriate mosquito
+        control measures, reducing mosquito breeding sites and following
+        local public-health recommendations.
+    </p>
+
+    <div class="health-warning">
+        <strong>Important:</strong>
+        Fever or other symptoms that could represent malaria should be
+        assessed by an appropriate healthcare professional, particularly
+        in areas where malaria is common.
+    </div>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="health-topic">
+
+    <h2>22. HIV and AIDS Awareness</h2>
+
+    <p>
+        HIV is a virus that attacks the body's immune system. Without
+        effective treatment, HIV can eventually lead to AIDS, the most
+        advanced stage of HIV infection.
+    </p>
+
+    <p>
+        HIV can be transmitted through certain body fluids, including
+        blood, semen, vaginal fluids and breast milk, when appropriate
+        transmission conditions are present.
+    </p>
+
+    <h3>Prevention and control include:</h3>
+
+    <ul>
+        <li>HIV testing and knowing one's status.</li>
+        <li>Using condoms correctly and consistently where appropriate.</li>
+        <li>Using sterile equipment for injections.</li>
+        <li>Accessing appropriate HIV prevention services.</li>
+        <li>Effective HIV treatment.</li>
+        <li>Prevention of mother-to-child transmission through appropriate care.</li>
+    </ul>
+
+    <p>
+        People living with HIV deserve respect and should not be
+        discriminated against.
+    </p>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="health-topic">
+
+    <h2>23. Sexually Transmitted Infections</h2>
+
+    <p>
+        Sexually transmitted infections, commonly called STIs, are
+        infections that can be transmitted through sexual contact. Some
+        can also have other routes of transmission.
+    </p>
+
+    <p>
+        Some STIs may have few or no symptoms, so testing can be important
+        for people who may have been exposed.
+    </p>
+
+    <h3>Prevention can include:</h3>
+
+    <ul>
+        <li>Using condoms appropriately.</li>
+        <li>Reducing exposure to infection.</li>
+        <li>Testing when indicated.</li>
+        <li>Prompt treatment of diagnosed infections.</li>
+        <li>Following healthcare advice about partners.</li>
+    </ul>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="health-topic">
+
+    <h2>24. Immunity and Vaccination</h2>
+
+    <p>
+        The immune system protects the body against many infectious agents
+        and other threats.
+    </p>
+
+    <p>
+        Vaccines train the immune system to recognize specific infections
+        and can significantly reduce the risk of disease and complications.
+    </p>
+
+    <p>
+        Vaccination schedules vary by age, country and individual
+        circumstances, so people should follow recommendations from
+        qualified health authorities.
+    </p>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="health-topic">
+
+    <h2>25. Environmental Health</h2>
+
+    <p>
+        Environmental health examines how the physical environment affects
+        human health.
+    </p>
+
+    <p>
+        Important environmental factors include clean water, sanitation,
+        air quality, waste management, housing, food safety and exposure
+        to hazardous substances.
+    </p>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="health-topic">
+
+    <h2>26. Sanitation</h2>
+
+    <p>
+        Sanitation involves systems and practices that safely manage human
+        waste and help maintain clean environments.
+    </p>
+
+    <p>
+        Poor sanitation can contribute to the spread of diseases,
+        contamination of water sources and environmental pollution.
+    </p>
+
+    <h3>Good sanitation practices include:</h3>
+
+    <ul>
+        <li>Safe disposal of human waste.</li>
+        <li>Proper waste management.</li>
+        <li>Keeping toilets clean.</li>
+        <li>Protecting water sources.</li>
+        <li>Maintaining clean surroundings.</li>
+    </ul>
+
+</div>
+
+
+<!-- 27 -->
+
+<div class="health-topic">
+
+    <h2>27. Food Safety</h2>
+
+    <p>
+        Food safety refers to practices that help prevent food from becoming
+        contaminated and causing illness.
+    </p>
+
+    <h3>Basic food-safety practices include:</h3>
+
+    <ul>
+        <li>Washing hands before preparing food.</li>
+        <li>Keeping preparation surfaces clean.</li>
+        <li>Separating raw and cooked foods appropriately.</li>
+        <li>Cooking foods adequately.</li>
+        <li>Storing food safely.</li>
+        <li>Using safe water.</li>
+    </ul>
+
+</div>
+
+
+<!-- 28 -->
+
+<div class="health-topic">
+
+    <h2>28. Substance Abuse</h2>
+
+    <p>
+        Substance misuse refers to harmful or inappropriate use of
+        substances such as alcohol, tobacco, prescription medicines or
+        other drugs.
+    </p>
+
+    <p>
+        Substance misuse can affect physical health, mental health,
+        relationships, education, employment and financial stability.
+    </p>
+
+    <p>
+        Prevention includes education, supportive environments, early
+        intervention and access to appropriate treatment and counselling.
+    </p>
+
+</div>
+
+
+<!-- 29 -->
+
+<div class="health-topic">
+
+    <h2>29. Alcohol and Health</h2>
+
+    <p>
+        Alcohol can affect the brain, judgement, coordination and behaviour.
+        Heavy or harmful alcohol use can contribute to accidents, injuries,
+        dependence and several health problems.
+    </p>
+
+    <p>
+        People who drink should understand that alcohol consumption carries
+        health risks, and some people should avoid alcohol completely,
+        including during pregnancy and when taking certain medicines or
+        when advised by a healthcare professional.
+    </p>
+
+</div>
+
+
+<!-- 30 -->
+
+<div class="health-topic">
+
+    <h2>30. Tobacco and Smoking</h2>
+
+    <p>
+        Tobacco use is associated with serious health problems, including
+        cardiovascular disease, respiratory disease and several cancers.
+    </p>
+
+    <p>
+        Second-hand smoke can also expose other people to harmful substances.
+        Avoiding tobacco use and supporting people who want to quit are
+        important public-health measures.
+    </p>
+
+</div>
+
+
+<!-- 31 -->
+
+<div class="health-topic">
+
+    <h2>31. Sexual and Reproductive Health</h2>
+
+    <p>
+        Sexual and reproductive health involves physical, emotional and
+        social well-being related to sexuality and reproductive systems.
+    </p>
+
+    <p>
+        Important areas include accurate health information, prevention of
+        STIs, family planning, pregnancy care, consent, healthy
+        relationships and access to appropriate healthcare.
+    </p>
+
+    <div class="health-warning">
+        <strong>Important:</strong>
+        Sexual-health decisions should be based on accurate information,
+        informed consent, respect and appropriate professional healthcare
+        advice.
+    </div>
+
+</div>
+
+
+<!-- 32 -->
+
+<div class="health-topic">
+
+    <h2>32. First Aid</h2>
+
+    <p>
+        First aid is the immediate assistance provided to a person who is
+        injured or suddenly becomes ill before professional medical care is
+        available.
+    </p>
+
+    <p>
+        The main purpose of first aid is to preserve life, prevent the
+        condition from becoming worse and support recovery.
+    </p>
+
+    <h3>General first-aid principles</h3>
+
+    <ol>
+        <li>Ensure the scene is reasonably safe.</li>
+        <li>Assess the person's condition.</li>
+        <li>Call or arrange for appropriate emergency help.</li>
+        <li>Provide appropriate basic assistance within your training.</li>
+        <li>Continue monitoring the person until help arrives.</li>
+    </ol>
+
+</div>
+
+
+<!-- 33 -->
+
+<div class="health-topic">
+
+    <h2>33. Common First-Aid Situations</h2>
+
+    <h3>Minor cuts</h3>
+
+    <p>
+        Minor cuts should generally be protected from contamination and
+        managed using appropriate basic first aid. Serious bleeding requires
+        urgent medical assistance.
+    </p>
+
+    <h3>Burns</h3>
+
+    <p>
+        For many minor thermal burns, cooling the affected area with cool
+        running water can help. Severe burns require urgent medical
+        assessment.
+    </p>
+
+    <h3>Fainting</h3>
+
+    <p>
+        A person who faints should be protected from injury and monitored.
+        Emergency help should be sought if the person does not recover
+        promptly or if serious symptoms or injury are present.
+    </p>
+
+    <div class="health-warning">
+        <strong>Safety:</strong>
+        First-aid procedures depend on the situation. Serious injuries,
+        breathing problems, unconsciousness, severe bleeding or other
+        emergencies require urgent professional medical assistance.
+    </div>
+
+</div>
+
+
+<!-- 34 -->
+
+<div class="health-topic">
+
+    <h2>34. Maternal Health</h2>
+
+    <p>
+        Maternal health concerns the health of women during pregnancy,
+        childbirth and the period after childbirth.
+    </p>
+
+    <p>
+        Antenatal care helps monitor pregnancy and identify possible
+        complications. Skilled care during childbirth and appropriate
+        postnatal care are important for the health of both mother and
+        newborn.
+    </p>
+
+</div>
+
+
+<!-- 35 -->
+
+<div class="health-topic">
+
+    <h2>35. Child Health</h2>
+
+    <p>
+        Children require adequate nutrition, vaccination, safe environments,
+        hygiene, healthcare and supportive relationships for healthy growth
+        and development.
+    </p>
+
+    <p>
+        Regular health monitoring can help identify developmental or health
+        concerns early.
+    </p>
+
+</div>
+
+
+<!-- 36 -->
+
+<div class="health-topic">
+
+    <h2>36. Health Education</h2>
+
+    <p>
+        Health education provides people with knowledge and skills that can
+        help them make informed health decisions.
+    </p>
+
+    <p>
+        Effective health education should use accurate information and
+        communicate in a way that people can understand and apply to their
+        daily lives.
+    </p>
+
+</div>
+
+
+<!-- 37 -->
+
+<div class="health-topic">
+
+    <h2>37. Disease Prevention</h2>
+
+    <p>
+        Disease prevention involves actions taken to reduce the risk of
+        disease, detect problems early or reduce complications.
+    </p>
+
+    <table class="health-table">
+
+        <tr>
+            <th>Level</th>
+            <th>Meaning</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>Primary prevention</td>
+            <td>Prevents disease before it occurs.</td>
+            <td>Vaccination and healthy lifestyle practices.</td>
+        </tr>
+
+        <tr>
+            <td>Secondary prevention</td>
+            <td>Detects disease early.</td>
+            <td>Appropriate screening and early diagnosis.</td>
+        </tr>
+
+        <tr>
+            <td>Tertiary prevention</td>
+            <td>Reduces complications and supports function after disease occurs.</td>
+            <td>Rehabilitation and disease management.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 38 -->
+
+<div class="health-topic">
+
+    <h2>38. Healthy Lifestyle</h2>
+
+    <p>
+        A healthy lifestyle consists of everyday choices that support
+        physical, mental and social well-being.
+    </p>
+
+    <ul>
+        <li>Eat a varied and balanced diet.</li>
+        <li>Stay physically active.</li>
+        <li>Get adequate sleep.</li>
+        <li>Maintain good hygiene.</li>
+        <li>Avoid tobacco.</li>
+        <li>Avoid harmful substance use.</li>
+        <li>Maintain healthy relationships.</li>
+        <li>Attend appropriate health checks.</li>
+        <li>Seek medical help when necessary.</li>
+    </ul>
+
+</div>
+
+
+<!-- 39 -->
+
+<div class="health-topic">
+
+    <h2>39. Health Services</h2>
+
+    <p>
+        Health services include the organizations, professionals and
+        facilities that provide prevention, diagnosis, treatment,
+        rehabilitation and health education.
+    </p>
+
+    <p>
+        Examples include hospitals, clinics, pharmacies, laboratories,
+        community health services and public-health programs.
+    </p>
+
+    <p>
+        People should seek appropriate professional care rather than relying
+        only on information from unverified sources when they have serious
+        or persistent health concerns.
+    </p>
+
+</div>
+
+
+<!-- 40 -->
+
+<div class="health-topic">
+
+    <h2>40. Health and the Community</h2>
+
+    <p>
+        Individual health and community health are closely connected.
+        Actions taken by one person can sometimes affect others.
+    </p>
+
+    <p>
+        Communities can promote health through clean environments,
+        sanitation, health education, disease-prevention programs,
+        vaccination services and access to healthcare.
+    </p>
+
+</div>
+
+
+<!-- 41 -->
+
+<div class="health-topic">
+
+    <h2>41. Importance of Health Records</h2>
+
+    <p>
+        Health records contain information about a person's health history,
+        examinations, diagnoses, treatments and other relevant information.
+    </p>
+
+    <p>
+        Accurate records help healthcare professionals understand a
+        patient's history and make informed decisions.
+    </p>
+
+    <p>
+        Health information should be handled confidentially and accessed
+        only by authorized people for legitimate purposes.
+    </p>
+
+</div>
+
+
+<!-- 42 -->
+
+<div class="health-topic">
+
+    <h2>42. Common Health Problems Among Students</h2>
+
+    <p>
+        Students may experience health challenges related to academic
+        pressure, poor sleep, inadequate nutrition, physical inactivity,
+        stress or unhealthy habits.
+    </p>
+
+    <h3>Healthy student practices include:</h3>
+
+    <ul>
+        <li>Creating a realistic study timetable.</li>
+        <li>Getting adequate sleep.</li>
+        <li>Eating regular nutritious meals.</li>
+        <li>Drinking safe water.</li>
+        <li>Taking study breaks.</li>
+        <li>Staying physically active.</li>
+        <li>Seeking support when overwhelmed.</li>
+    </ul>
+
+</div>
+
+
+<!-- 43 -->
+
+<div class="health-topic">
+
+    <h2>43. Health and Academic Performance</h2>
+
+    <p>
+        Health can strongly influence learning. Poor sleep, hunger,
+        dehydration, stress and illness can make it difficult to concentrate
+        and remember information.
+    </p>
+
+    <p>
+        Students can therefore improve their learning by treating health as
+        part of their academic success rather than as something separate
+        from education.
+    </p>
+
+</div>
+
+
+<!-- 44 -->
+
+<div class="health-topic">
+
+    <h2>44. Health and Technology</h2>
+
+    <p>
+        Technology can provide useful health benefits such as access to
+        educational information, communication with healthcare services and
+        tools for tracking certain health behaviours.
+    </p>
+
+    <p>
+        However, health information found online should be evaluated
+        carefully. Online information does not replace professional medical
+        assessment when a person is seriously ill.
+    </p>
+
+</div>
+
+
+<!-- 45 -->
+
+<div class="health-topic">
+
+    <h2>45. Importance of Prevention</h2>
+
+    <p>
+        Prevention is often an important part of maintaining health.
+        Preventive actions can reduce exposure to disease and identify
+        certain problems before they become more serious.
+    </p>
+
+    <p>
+        Prevention includes healthy behaviour, vaccination, hygiene,
+        appropriate screening, environmental protection and health
+        education.
+    </p>
+
+</div>
+
+
+<!-- IMPORTANT TERMS -->
+
+<div class="health-topic">
+
+    <h2>46. Important Health Terms</h2>
+
+    <table class="health-table">
+
+        <tr>
+            <th>Term</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Health</td>
+            <td>A state of physical, mental, emotional and social well-being.</td>
+        </tr>
+
+        <tr>
+            <td>Nutrition</td>
+            <td>The process of obtaining and using nutrients from food.</td>
+        </tr>
+
+        <tr>
+            <td>Hygiene</td>
+            <td>Practices that help maintain cleanliness and prevent disease.</td>
+        </tr>
+
+        <tr>
+            <td>Communicable disease</td>
+            <td>A disease that can spread through specific routes of transmission.</td>
+        </tr>
+
+        <tr>
+            <td>Non-communicable disease</td>
+            <td>A disease that generally does not spread directly between people.</td>
+        </tr>
+
+        <tr>
+            <td>Immunity</td>
+            <td>The body's ability to defend against particular infections and other threats.</td>
+        </tr>
+
+        <tr>
+            <td>Sanitation</td>
+            <td>Practices and systems for safe waste management and clean environments.</td>
+        </tr>
+
+        <tr>
+            <td>First aid</td>
+            <td>Immediate assistance provided before professional medical care.</td>
+        </tr>
+
+        <tr>
+            <td>Prevention</td>
+            <td>Actions taken to reduce disease risk or its consequences.</td>
+        </tr>
+
+        <tr>
+            <td>Health education</td>
+            <td>Providing knowledge and skills that support informed health decisions.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- =========================================
+     REVISION QUESTIONS
+     ========================================= -->
+
+<div class="revision-box">
+
+    <h2>Revision Questions</h2>
+
+    <h3>Short Answer Questions</h3>
+
+    <ol>
+        <li>Define health.</li>
+        <li>Explain the major dimensions of health.</li>
+        <li>What are determinants of health?</li>
+        <li>Define personal hygiene.</li>
+        <li>Why is handwashing important?</li>
+        <li>What is a balanced diet?</li>
+        <li>Name the major nutrients.</li>
+        <li>Explain the importance of water.</li>
+        <li>What is physical activity?</li>
+        <li>Why is sleep important?</li>
+        <li>Define mental health.</li>
+        <li>What is stress?</li>
+        <li>What are communicable diseases?</li>
+        <li>Give examples of non-communicable diseases.</li>
+        <li>What is sanitation?</li>
+        <li>What is first aid?</li>
+        <li>Define health education.</li>
+        <li>What is disease prevention?</li>
+        <li>What is substance misuse?</li>
+        <li>Why is vaccination important?</li>
+    </ol>
+
+
+    <h3>Discussion Questions</h3>
+
+    <ol>
+
+        <li>
+            Discuss the different dimensions of health and explain how they
+            are connected.
+        </li>
+
+        <li>
+            Explain the importance of a balanced diet to human health.
+        </li>
+
+        <li>
+            Discuss the importance of personal hygiene in disease prevention.
+        </li>
+
+        <li>
+            Explain the effects of inadequate sleep on students.
+        </li>
+
+        <li>
+            Discuss the importance of physical activity.
+        </li>
+
+        <li>
+            Explain the difference between communicable and
+            non-communicable diseases.
+        </li>
+
+        <li>
+            Discuss the role of sanitation in community health.
+        </li>
+
+        <li>
+            Explain how substance misuse can affect individuals, families
+            and communities.
+        </li>
+
+        <li>
+            Discuss the importance of health education.
+        </li>
+
+        <li>
+            Explain the three levels of disease prevention.
+        </li>
+
+    </ol>
+
+
+    <h3>Practical and Scenario Questions</h3>
+
+    <ol>
+
+        <li>
+            A student regularly sleeps only four hours because of studying.
+            Explain how this could affect the student's health and academic
+            performance.
+        </li>
+
+        <li>
+            A community receives water from an unsafe source. Explain the
+            possible health risks and suggest preventive measures.
+        </li>
+
+        <li>
+            A student frequently skips meals and feels weak during classes.
+            Explain how nutrition may affect the student's performance.
+        </li>
+
+        <li>
+            A person experiences severe bleeding after an accident. What
+            should be done while waiting for emergency medical assistance?
+        </li>
+
+        <li>
+            A community has many mosquito breeding areas. Explain how the
+            community can reduce the risk of mosquito-borne disease.
+        </li>
+
+        <li>
+            A student is experiencing overwhelming stress and difficulty
+            functioning. What healthy sources of support could the student
+            consider?
+        </li>
+
+    </ol>
+
+</div>
+
+
+<!-- =========================================
+     SUMMARY
+     ========================================= -->
+
+<div class="health-introduction">
+
+    <h2>Course Summary</h2>
+
+    <p>
+        Health Principles teaches the knowledge and practices required to
+        maintain and improve individual and community health. Health is
+        broader than the absence of disease and includes physical, mental,
+        emotional, social and other dimensions of well-being.
+    </p>
+
+    <p>
+        Good health is supported by balanced nutrition, physical activity,
+        adequate sleep, personal hygiene, safe water, sanitation, disease
+        prevention, healthy relationships and responsible lifestyle choices.
+    </p>
+
+    <p>
+        Health education helps individuals make informed decisions, while
+        preventive measures can reduce the risk of disease and improve
+        quality of life.
+    </p>
+
+    <p>
+        The main lesson is that maintaining good health is a continuous
+        process involving personal choices, supportive communities,
+        appropriate healthcare and healthy environments.
+    </p>
+
+</div>
+
+
+<!-- =========================================
+     BACK TO NOTES
+     ========================================= -->
+
+<div class="back-notes">
+
+    <a href="notes.html">
+        ← Back to Study Notes
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <h2>Study<span>Hub</span></h2>
+
+        <p>
+            Learn. Grow. Succeed.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="notes.html">Notes</a>
+        <a href="upload.html">Upload</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="socials">
+
+        <a href="https://www.facebook.com/Omekasonalisminessalachingchan"
+           target="_blank"
+           rel="noopener noreferrer">
+            Facebook
+        </a>
+
+        <a href="https://wa.me/211921271049"
+           target="_blank"
+           rel="noopener noreferrer">
+            WhatsApp
+        </a>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <p>
+            © 2026 StudyHub. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

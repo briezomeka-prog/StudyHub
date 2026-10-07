@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GECL 1101 - Introduction to Writing Skills | StudyHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           WRITING SKILLS NOTES
+           ========================================= */
+
+        .course-hero {
+            position: relative;
+            min-height: 450px;
+            overflow: hidden;
+            background: #001f4d;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .writing-hero .course-hero-image {
+            background-image: url("writing.jpg");
+        }
+
+        .course-hero-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                to right,
+                rgba(0, 31, 77, 0) 0%,
+                rgba(0, 31, 77, 0.05) 30%,
+                rgba(0, 31, 77, 0.35) 50%,
+                rgba(0, 31, 77, 0.85) 75%,
+                #001f4d 100%
+            );
+        }
+
+        .course-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 55%;
+            margin-left: 48%;
+            padding: 70px 40px;
+            color: white;
+        }
+
+        .course-hero-content img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content .course-code {
+            display: inline-block;
+            background: #ffc107;
+            color: #001f4d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 10px 0 15px;
+        }
+
+        .course-hero-content p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0;
+        }
+
+        /* =========================================
+           NOTES AREA
+           ========================================= */
+
+        .writing-notes {
+            background: #f5f8fc;
+            padding: 70px 7%;
+        }
+
+        .writing-introduction,
+        .writing-topic {
+            max-width: 1000px;
+            margin: 0 auto 30px;
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .writing-introduction {
+            margin-bottom: 45px;
+        }
+
+        .writing-introduction h2,
+        .writing-topic h2 {
+            color: #001f4d;
+            margin-top: 0;
+        }
+
+        .writing-topic {
+            border-left: 5px solid #ffc107;
+        }
+
+        .writing-topic h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .writing-topic h3 {
+            color: #087fe8;
+            margin-top: 25px;
+        }
+
+        .writing-introduction p,
+        .writing-topic p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .writing-topic ul,
+        .writing-topic ol {
+            color: #444;
+            line-height: 1.8;
+            padding-left: 25px;
+        }
+
+        .writing-topic li {
+            margin-bottom: 8px;
+        }
+
+        .writing-example {
+            background: #f5f8fc;
+            border-left: 4px solid #087fe8;
+            padding: 18px 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            line-height: 1.7;
+        }
+
+        .writing-example strong {
+            color: #001f4d;
+        }
+
+        .writing-warning {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 18px 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            line-height: 1.7;
+        }
+
+        .writing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .writing-table th,
+        .writing-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .writing-table th {
+            background: #001f4d;
+            color: white;
+        }
+
+        .writing-table tr:nth-child(even) {
+            background: #f5f8fc;
+        }
+
+        .writing-code {
+            background: #001f4d;
+            color: white;
+            padding: 18px 20px;
+            border-radius: 7px;
+            margin: 20px 0;
+            line-height: 1.7;
+        }
+
+        .revision-box {
+            max-width: 1000px;
+            margin: 50px auto 30px;
+            background: #001f4d;
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .revision-box h2,
+        .revision-box h3 {
+            color: #ffc107;
+        }
+
+        .revision-box h2 {
+            margin-top: 0;
+        }
+
+        .revision-box li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .back-notes {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        .back-notes a {
+            display: inline-block;
+            background: #087fe8;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-notes a:hover {
+            background: #001f4d;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 700px) {
+
+            .course-hero {
+                min-height: 550px;
+                align-items: flex-end;
+            }
+
+            .course-hero-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .course-hero-image::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 31, 77, 0.05) 0%,
+                    rgba(0, 31, 77, 0.35) 40%,
+                    rgba(0, 31, 77, 0.9) 75%,
+                    #001f4d 100%
+                );
+            }
+
+            .course-hero-content {
+                width: 100%;
+                margin-left: 0;
+                padding: 250px 25px 40px;
+                box-sizing: border-box;
+            }
+
+            .course-hero-content h1 {
+                font-size: 30px;
+            }
+
+            .course-hero-content p {
+                font-size: 15px;
+            }
+
+            .writing-notes {
+                padding: 45px 5%;
+            }
+
+            .writing-topic,
+            .writing-introduction {
+                padding: 23px;
+            }
+
+            .writing-topic h2 {
+                font-size: 21px;
+            }
+
+            .writing-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================
+     NAVIGATION
+     ========================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="logo-text">
+            <h2>Study<span>Hub</span></h2>
+            <small>Learn. Grow. Succeed.</small>
+        </div>
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="notes.html" class="active">Notes</a>
+        <a href="upload.html">Upload</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login">Login</a>
+        <a href="register.html" class="register">Register</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================
+     COURSE HERO
+     ========================================= -->
+
+<section class="course-hero writing-hero">
+
+    <div class="course-hero-image"></div>
+
+    <div class="course-hero-content">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="course-code">
+            GECL 1101
+        </div>
+
+        <h1>
+            Introduction to Writing Skills
+        </h1>
+
+        <p>
+            Expanded study notes covering the writing process,
+            paragraphs, grammar, sentence structure, essays,
+            reports, letters, summaries, paraphrasing, referencing,
+            proofreading and effective academic communication.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     WRITING NOTES
+     ========================================= -->
+
+<section class="writing-notes">
+
+
+<!-- INTRODUCTION -->
+
+<div class="writing-introduction">
+
+    <h2>Introduction to Writing Skills</h2>
+
+    <p>
+        Writing is the process of communicating ideas, information,
+        experiences and opinions through written language. Good writing
+        allows a writer to communicate clearly with different audiences
+        and for different purposes.
+    </p>
+
+    <p>
+        Writing is an important skill in education, employment and everyday
+        life. Students use writing when answering examination questions,
+        preparing assignments, writing reports, taking notes and
+        communicating with teachers and colleagues.
+    </p>
+
+    <p>
+        Effective writing requires more than knowing individual words.
+        A good writer must understand grammar, sentence structure,
+        organization, vocabulary, punctuation, paragraph development and
+        the needs of the intended reader.
+    </p>
+
+</div>
+
+
+<!-- 1 -->
+
+<div class="writing-topic">
+
+    <h2>1. Meaning of Writing</h2>
+
+    <p>
+        Writing is the process of expressing ideas and information using
+        written symbols and language. It allows information to be recorded,
+        communicated and preserved.
+    </p>
+
+    <p>
+        Writing can be used to inform, explain, describe, persuade,
+        entertain, instruct or communicate personal experiences.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        A student writing an assignment about computer security is using
+        writing to inform and explain. A student writing a letter requesting
+        permission is using writing for communication.
+    </div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="writing-topic">
+
+    <h2>2. Importance of Writing Skills</h2>
+
+    <p>
+        Writing skills are important because written communication is used
+        in almost every academic and professional environment.
+    </p>
+
+    <h3>Importance of writing includes:</h3>
+
+    <ul>
+        <li>Communicating ideas clearly.</li>
+        <li>Recording information.</li>
+        <li>Completing academic assignments.</li>
+        <li>Preparing reports.</li>
+        <li>Writing professional emails and letters.</li>
+        <li>Sharing information with others.</li>
+        <li>Expressing opinions and arguments.</li>
+        <li>Supporting academic and professional success.</li>
+    </ul>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="writing-topic">
+
+    <h2>3. Purposes of Writing</h2>
+
+    <p>
+        Writers normally write for a particular purpose. Understanding the
+        purpose helps determine the language, organization and style that
+        should be used.
+    </p>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Purpose</th>
+            <th>Explanation</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>To inform</td>
+            <td>Provides facts or information.</td>
+            <td>A report about climate change.</td>
+        </tr>
+
+        <tr>
+            <td>To explain</td>
+            <td>Shows how or why something happens.</td>
+            <td>Explaining how a computer network works.</td>
+        </tr>
+
+        <tr>
+            <td>To persuade</td>
+            <td>Attempts to influence the reader's opinion or action.</td>
+            <td>An argument supporting environmental protection.</td>
+        </tr>
+
+        <tr>
+            <td>To describe</td>
+            <td>Creates a clear picture of a person, place, object or event.</td>
+            <td>Describing a school campus.</td>
+        </tr>
+
+        <tr>
+            <td>To entertain</td>
+            <td>Provides enjoyment or interest.</td>
+            <td>A short story.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="writing-topic">
+
+    <h2>4. Audience</h2>
+
+    <p>
+        The audience is the person or group of people for whom a piece of
+        writing is intended.
+    </p>
+
+    <p>
+        A writer should consider the audience's age, education, knowledge,
+        expectations and relationship with the writer.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        A technical explanation written for software engineering students
+        may contain technical terms. The same information written for young
+        children should use simpler language.
+    </div>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="writing-topic">
+
+    <h2>5. The Writing Process</h2>
+
+    <p>
+        Good writing normally develops through several stages rather than
+        being produced perfectly in one attempt.
+    </p>
+
+    <ol>
+        <li>Prewriting</li>
+        <li>Planning</li>
+        <li>Drafting</li>
+        <li>Revising</li>
+        <li>Editing</li>
+        <li>Proofreading</li>
+        <li>Publishing or submitting</li>
+    </ol>
+
+    <p>
+        Following these stages helps writers organize their ideas and
+        identify mistakes before the final version is submitted.
+    </p>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="writing-topic">
+
+    <h2>6. Prewriting</h2>
+
+    <p>
+        Prewriting is the preparation stage before the first full draft is
+        written. The writer explores ideas and determines what information
+        should be included.
+    </p>
+
+    <h3>Prewriting techniques include:</h3>
+
+    <ul>
+        <li>Brainstorming.</li>
+        <li>Listing ideas.</li>
+        <li>Mind mapping.</li>
+        <li>Asking questions.</li>
+        <li>Researching the topic.</li>
+        <li>Freewriting.</li>
+    </ul>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="writing-topic">
+
+    <h2>7. Brainstorming</h2>
+
+    <p>
+        Brainstorming is a technique used to generate ideas about a topic.
+        The writer produces as many relevant ideas as possible before
+        deciding which ones should be included.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Topic:</strong> Effects of Social Media on Students
+
+        <br><br>
+
+        Possible ideas:
+
+        <ul>
+            <li>Communication</li>
+            <li>Online learning</li>
+            <li>Entertainment</li>
+            <li>Distraction</li>
+            <li>Cyberbullying</li>
+            <li>Access to information</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="writing-topic">
+
+    <h2>8. Planning and Outlining</h2>
+
+    <p>
+        An outline is a plan that shows the main points and supporting ideas
+        that will appear in a piece of writing.
+    </p>
+
+    <p>
+        Planning prevents ideas from being presented randomly and helps the
+        writer maintain a logical sequence.
+    </p>
+
+    <h3>Simple essay outline:</h3>
+
+    <ol>
+        <li>Introduction</li>
+        <li>Body paragraph one</li>
+        <li>Body paragraph two</li>
+        <li>Body paragraph three</li>
+        <li>Conclusion</li>
+    </ol>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="writing-topic">
+
+    <h2>9. Paragraph</h2>
+
+    <p>
+        A paragraph is a group of related sentences that develops one main
+        idea.
+    </p>
+
+    <p>
+        A well-developed paragraph normally contains a topic sentence,
+        supporting details and a concluding or linking sentence where
+        appropriate.
+    </p>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="writing-topic">
+
+    <h2>10. Topic Sentence</h2>
+
+    <p>
+        The topic sentence introduces the main idea of a paragraph. It
+        tells the reader what the paragraph will mainly discuss.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "Regular exercise provides several important benefits to students."
+
+        <br><br>
+
+        This sentence tells the reader that the paragraph will discuss the
+        benefits of exercise for students.
+    </div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="writing-topic">
+
+    <h2>11. Supporting Details</h2>
+
+    <p>
+        Supporting details explain, prove or develop the main idea presented
+        in the topic sentence.
+    </p>
+
+    <p>
+        Supporting details may include explanations, examples, facts,
+        statistics, reasons or descriptions.
+    </p>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="writing-topic">
+
+    <h2>12. Paragraph Unity</h2>
+
+    <p>
+        Unity means that all sentences in a paragraph contribute to the same
+        main idea.
+    </p>
+
+    <p>
+        A sentence that is unrelated to the topic should normally be removed
+        or moved to another paragraph.
+    </p>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="writing-topic">
+
+    <h2>13. Coherence</h2>
+
+    <p>
+        Coherence means that ideas are connected and arranged logically so
+        that the reader can follow the writer's thinking.
+    </p>
+
+    <p>
+        Transition words and logical ordering help create coherence.
+    </p>
+
+    <h3>Useful transition words</h3>
+
+    <ul>
+        <li>First</li>
+        <li>Next</li>
+        <li>Furthermore</li>
+        <li>However</li>
+        <li>Therefore</li>
+        <li>For example</li>
+        <li>In addition</li>
+        <li>Finally</li>
+        <li>In conclusion</li>
+    </ul>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="writing-topic">
+
+    <h2>14. Sentence</h2>
+
+    <p>
+        A sentence is a group of words that expresses a complete thought.
+        A complete sentence normally contains a subject and a predicate.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "The students completed their assignment."
+
+        <br><br>
+
+        <strong>Subject:</strong> The students
+
+        <br>
+
+        <strong>Predicate:</strong> completed their assignment
+    </div>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="writing-topic">
+
+    <h2>15. Types of Sentences</h2>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Type</th>
+            <th>Function</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>Declarative</td>
+            <td>States information.</td>
+            <td>The class begins at eight o'clock.</td>
+        </tr>
+
+        <tr>
+            <td>Interrogative</td>
+            <td>Asks a question.</td>
+            <td>When does the class begin?</td>
+        </tr>
+
+        <tr>
+            <td>Imperative</td>
+            <td>Gives a command or instruction.</td>
+            <td>Open your book.</td>
+        </tr>
+
+        <tr>
+            <td>Exclamatory</td>
+            <td>Expresses strong emotion.</td>
+            <td>What a beautiful day!</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="writing-topic">
+
+    <h2>16. Simple Sentences</h2>
+
+    <p>
+        A simple sentence contains one independent clause. It can be short
+        or relatively long, but it expresses one main complete idea.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "The students studied."
+
+        <br><br>
+
+        "The students studied computer programming in the library."
+
+    </div>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="writing-topic">
+
+    <h2>17. Compound Sentences</h2>
+
+    <p>
+        A compound sentence contains two or more independent clauses joined
+        appropriately.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "John studied hard, and he passed the examination."
+    </div>
+
+    <p>
+        Common coordinating conjunctions include
+        <strong>for, and, nor, but, or, yet and so</strong>.
+    </p>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="writing-topic">
+
+    <h2>18. Complex Sentences</h2>
+
+    <p>
+        A complex sentence contains one independent clause and at least one
+        dependent clause.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "Although it was raining, the students attended the lecture."
+    </div>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="writing-topic">
+
+    <h2>19. Sentence Fragments</h2>
+
+    <p>
+        A sentence fragment is a group of words that does not form a
+        complete sentence.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Incorrect:</strong>
+
+        <br>
+
+        "Because the students were tired."
+
+        <br><br>
+
+        <strong>Correct:</strong>
+
+        <br>
+
+        "Because the students were tired, they went home early."
+    </div>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="writing-topic">
+
+    <h2>20. Run-on Sentences</h2>
+
+    <p>
+        A run-on sentence occurs when two or more independent clauses are
+        joined incorrectly without appropriate punctuation or conjunction.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Incorrect:</strong>
+
+        <br>
+
+        "The lecture ended the students went home."
+
+        <br><br>
+
+        <strong>Correct:</strong>
+
+        <br>
+
+        "The lecture ended, and the students went home."
+    </div>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="writing-topic">
+
+    <h2>21. Nouns</h2>
+
+    <p>
+        A noun is a word used to name a person, place, thing, animal or
+        idea.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Examples:</strong>
+
+        <br><br>
+
+        Student, university, computer, Uganda, happiness, teacher.
+
+    </div>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="writing-topic">
+
+    <h2>22. Pronouns</h2>
+
+    <p>
+        A pronoun is a word used instead of a noun. Pronouns help prevent
+        unnecessary repetition.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "Mary submitted Mary's assignment."
+
+        <br><br>
+
+        Better:
+
+        <br>
+
+        "Mary submitted her assignment."
+
+    </div>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="writing-topic">
+
+    <h2>23. Verbs</h2>
+
+    <p>
+        A verb expresses an action, occurrence or state of being.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Examples:</strong>
+
+        <br><br>
+
+        run, write, study, think, become, is, are, was, were.
+    </div>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="writing-topic">
+
+    <h2>24. Adjectives</h2>
+
+    <p>
+        An adjective describes or modifies a noun or pronoun.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "The intelligent student completed the difficult assignment."
+
+        <br><br>
+
+        <strong>Intelligent</strong> describes the student.
+
+        <br>
+
+        <strong>Difficult</strong> describes the assignment.
+
+    </div>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="writing-topic">
+
+    <h2>25. Adverbs</h2>
+
+    <p>
+        An adverb can modify a verb, adjective or another adverb. It can
+        provide information about how, when, where or to what degree.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "The student answered the question correctly."
+
+        <br><br>
+
+        "Correctly" explains how the student answered.
+    </div>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="writing-topic">
+
+    <h2>26. Prepositions</h2>
+
+    <p>
+        A preposition shows a relationship between words, often involving
+        location, direction, time or position.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Examples:</strong>
+
+        <br><br>
+
+        in, on, under, beside, between, before, after, during, from, to.
+    </div>
+
+</div>
+
+
+<!-- 27 -->
+
+<div class="writing-topic">
+
+    <h2>27. Conjunctions</h2>
+
+    <p>
+        Conjunctions connect words, phrases or clauses.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Examples:</strong>
+
+        <br><br>
+
+        "John studied <strong>and</strong> Mary prepared the presentation."
+
+        <br><br>
+
+        "I wanted to attend, <strong>but</strong> I was sick."
+    </div>
+
+</div>
+
+
+<!-- 28 -->
+
+<div class="writing-topic">
+
+    <h2>28. Subject-Verb Agreement</h2>
+
+    <p>
+        Subject-verb agreement means that the subject and verb should agree
+        in number and person.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Incorrect:</strong>
+
+        <br>
+
+        "The student study every evening."
+
+        <br><br>
+
+        <strong>Correct:</strong>
+
+        <br>
+
+        "The student studies every evening."
+
+        <br><br>
+
+        <strong>Plural:</strong>
+
+        <br>
+
+        "The students study every evening."
+    </div>
+
+</div>
+
+
+<!-- 29 -->
+
+<div class="writing-topic">
+
+    <h2>29. Verb Tenses</h2>
+
+    <p>
+        Verb tense shows the time of an action or state.
+    </p>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Tense</th>
+            <th>Example</th>
+            <th>Use</th>
+        </tr>
+
+        <tr>
+            <td>Present</td>
+            <td>I study every day.</td>
+            <td>Habits or current situations.</td>
+        </tr>
+
+        <tr>
+            <td>Past</td>
+            <td>I studied yesterday.</td>
+            <td>Completed past actions.</td>
+        </tr>
+
+        <tr>
+            <td>Future</td>
+            <td>I will study tomorrow.</td>
+            <td>Future actions.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 30 -->
+
+<div class="writing-topic">
+
+    <h2>30. Active and Passive Voice</h2>
+
+    <p>
+        In active voice, the subject performs the action. In passive voice,
+        the subject receives the action.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Active:</strong>
+
+        <br>
+
+        "The student wrote the report."
+
+        <br><br>
+
+        <strong>Passive:</strong>
+
+        <br>
+
+        "The report was written by the student."
+    </div>
+
+    <p>
+        Active voice is often clearer and more direct, while passive voice
+        can be useful when the action or result is more important than the
+        person performing it.
+    </p>
+
+</div>
+
+
+<!-- 31 -->
+
+<div class="writing-topic">
+
+    <h2>31. Punctuation</h2>
+
+    <p>
+        Punctuation marks help readers understand how sentences and ideas
+        are organized.
+    </p>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Mark</th>
+            <th>Name</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>.</td>
+            <td>Full stop</td>
+            <td>The lesson is finished.</td>
+        </tr>
+
+        <tr>
+            <td>,</td>
+            <td>Comma</td>
+            <td>John, Mary and Peter attended.</td>
+        </tr>
+
+        <tr>
+            <td>?</td>
+            <td>Question mark</td>
+            <td>Where are you going?</td>
+        </tr>
+
+        <tr>
+            <td>!</td>
+            <td>Exclamation mark</td>
+            <td>What a wonderful idea!</td>
+        </tr>
+
+        <tr>
+            <td>:</td>
+            <td>Colon</td>
+            <td>Bring the following items: books and pens.</td>
+        </tr>
+
+        <tr>
+            <td>;</td>
+            <td>Semicolon</td>
+            <td>The exam was difficult; however, we completed it.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 32 -->
+
+<div class="writing-topic">
+
+    <h2>32. Capitalization</h2>
+
+    <p>
+        Capital letters are used at the beginning of sentences and for
+        certain proper nouns and titles.
+    </p>
+
+    <h3>Examples include:</h3>
+
+    <ul>
+        <li>The first word of a sentence.</li>
+        <li>Names of people.</li>
+        <li>Names of countries and cities.</li>
+        <li>Names of organizations.</li>
+        <li>Days and months.</li>
+        <li>The pronoun "I".</li>
+    </ul>
+
+</div>
+
+
+<!-- 33 -->
+
+<div class="writing-topic">
+
+    <h2>33. Vocabulary and Word Choice</h2>
+
+    <p>
+        Good vocabulary allows a writer to communicate ideas accurately
+        and effectively.
+    </p>
+
+    <p>
+        Writers should choose words based on meaning, audience and context.
+        Difficult words should not be used simply to make writing appear
+        more intelligent.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Better writing:</strong>
+
+        <br><br>
+
+        Choose a precise word that communicates exactly what you mean rather
+        than using a complicated word whose meaning you are unsure about.
+    </div>
+
+</div>
+
+
+<!-- 34 -->
+
+<div class="writing-topic">
+
+    <h2>34. Formal and Informal Writing</h2>
+
+    <p>
+        Formal writing is normally used in academic, professional and
+        official situations. Informal writing is more relaxed and is common
+        in personal communication.
+    </p>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Formal</th>
+            <th>Informal</th>
+        </tr>
+
+        <tr>
+            <td>I would like to request...</td>
+            <td>I want to ask...</td>
+        </tr>
+
+        <tr>
+            <td>Thank you for your assistance.</td>
+            <td>Thanks for helping.</td>
+        </tr>
+
+        <tr>
+            <td>Dear Sir/Madam</td>
+            <td>Hi</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 35 -->
+
+<div class="writing-topic">
+
+    <h2>35. Essay Writing</h2>
+
+    <p>
+        An essay is a structured piece of writing that develops a particular
+        topic or argument.
+    </p>
+
+    <p>
+        Most academic essays contain three major parts:
+        introduction, body and conclusion.
+    </p>
+
+</div>
+
+
+<!-- 36 -->
+
+<div class="writing-topic">
+
+    <h2>36. Introduction of an Essay</h2>
+
+    <p>
+        The introduction prepares the reader for the topic. It provides
+        background information, identifies the subject and may present the
+        main argument or thesis.
+    </p>
+
+    <h3>A good introduction may contain:</h3>
+
+    <ul>
+        <li>Background information.</li>
+        <li>Context.</li>
+        <li>The topic.</li>
+        <li>A thesis statement or central position.</li>
+    </ul>
+
+</div>
+
+
+<!-- 37 -->
+
+<div class="writing-topic">
+
+    <h2>37. Thesis Statement</h2>
+
+    <p>
+        A thesis statement presents the central argument or main position of
+        an essay.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        "Regular physical activity should be encouraged among university
+        students because it supports physical health, mental well-being and
+        academic performance."
+    </div>
+
+    <p>
+        The body paragraphs can then develop the three main areas mentioned
+        in the thesis.
+    </p>
+
+</div>
+
+
+<!-- 38 -->
+
+<div class="writing-topic">
+
+    <h2>38. Body of an Essay</h2>
+
+    <p>
+        The body contains the main discussion. Each paragraph should
+        normally focus on one major point and provide enough explanation
+        and evidence.
+    </p>
+
+    <p>
+        A strong body paragraph usually contains a topic sentence,
+        explanation, supporting evidence or examples and a connection to
+        the overall argument.
+    </p>
+
+</div>
+
+
+<!-- 39 -->
+
+<div class="writing-topic">
+
+    <h2>39. Conclusion</h2>
+
+    <p>
+        The conclusion brings the main discussion to an appropriate end. It
+        should not simply introduce a completely new major argument.
+    </p>
+
+    <h3>A conclusion may:</h3>
+
+    <ul>
+        <li>Restate the main argument.</li>
+        <li>Summarize the major points.</li>
+        <li>Provide a final observation or recommendation.</li>
+    </ul>
+
+</div>
+
+
+<!-- 40 -->
+
+<div class="writing-topic">
+
+    <h2>40. Types of Essays</h2>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Type</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Descriptive</td>
+            <td>Describes a person, place, object or experience.</td>
+        </tr>
+
+        <tr>
+            <td>Narrative</td>
+            <td>Tells a story or sequence of events.</td>
+        </tr>
+
+        <tr>
+            <td>Expository</td>
+            <td>Explains or presents information.</td>
+        </tr>
+
+        <tr>
+            <td>Argumentative</td>
+            <td>Presents and supports a position or argument.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 41 -->
+
+<div class="writing-topic">
+
+    <h2>41. Descriptive Writing</h2>
+
+    <p>
+        Descriptive writing uses details to help the reader form a clear
+        picture of something.
+    </p>
+
+    <p>
+        Effective description can involve appearance, sound, smell, taste,
+        touch, movement and other relevant details.
+    </p>
+
+    <div class="writing-example">
+
+        <strong>Example:</strong>
+
+        <br><br>
+
+        Instead of writing "The market was busy," a writer could explain
+        that traders were calling customers, vehicles were moving through
+        crowded streets and people were carrying bags between the stalls.
+    </div>
+
+</div>
+
+
+<!-- 42 -->
+
+<div class="writing-topic">
+
+    <h2>42. Narrative Writing</h2>
+
+    <p>
+        Narrative writing tells a story or presents a sequence of events.
+        It can be based on real experiences or fictional situations.
+    </p>
+
+    <p>
+        A good narrative normally has a clear sequence and may include
+        characters, setting, events, conflict and resolution.
+    </p>
+
+</div>
+
+
+<!-- 43 -->
+
+<div class="writing-topic">
+
+    <h2>43. Expository Writing</h2>
+
+    <p>
+        Expository writing explains a topic using information, examples and
+        logical organization.
+    </p>
+
+    <p>
+        Many academic assignments are primarily expository because students
+        are expected to explain concepts clearly.
+    </p>
+
+</div>
+
+
+<!-- 44 -->
+
+<div class="writing-topic">
+
+    <h2>44. Argumentative Writing</h2>
+
+    <p>
+        Argumentative writing presents a position and supports it using
+        logical reasoning and relevant evidence.
+    </p>
+
+    <p>
+        A strong argument should acknowledge relevant opposing views when
+        appropriate and explain why the writer's position is supported by
+        the available evidence.
+    </p>
+
+</div>
+
+
+<!-- 45 -->
+
+<div class="writing-topic">
+
+    <h2>45. Summary Writing</h2>
+
+    <p>
+        A summary presents the main ideas of a longer text in a shorter
+        form. A good summary focuses on important information rather than
+        unnecessary details.
+    </p>
+
+    <h3>Steps for writing a summary:</h3>
+
+    <ol>
+        <li>Read the original text carefully.</li>
+        <li>Identify the main idea.</li>
+        <li>Identify the most important supporting points.</li>
+        <li>Remove unnecessary examples and repetition.</li>
+        <li>Write the information in your own words.</li>
+        <li>Check that the summary accurately represents the original.</li>
+    </ol>
+
+</div>
+
+
+<!-- 46 -->
+
+<div class="writing-topic">
+
+    <h2>46. Paraphrasing</h2>
+
+    <p>
+        Paraphrasing means expressing information from a source using your
+        own wording and sentence structure while preserving the original
+        meaning.
+    </p>
+
+    <p>
+        A paraphrase is not simply replacing a few words with synonyms.
+        The sentence structure and wording should genuinely be your own.
+    </p>
+
+    <div class="writing-warning">
+
+        <strong>Important:</strong>
+
+        Even when information is paraphrased, the original source should
+        normally be acknowledged when the idea is not your own.
+
+    </div>
+
+</div>
+
+
+<!-- 47 -->
+
+<div class="writing-topic">
+
+    <h2>47. Quotation</h2>
+
+    <p>
+        A quotation uses the exact words of another source. Quoted material
+        should be clearly identified and appropriately referenced according
+        to the required citation style.
+    </p>
+
+    <p>
+        Quotations should be used when the exact wording is particularly
+        important. Writers should avoid filling an assignment with
+        unnecessary quotations.
+    </p>
+
+</div>
+
+
+<!-- 48 -->
+
+<div class="writing-topic">
+
+    <h2>48. Referencing</h2>
+
+    <p>
+        Referencing is the process of acknowledging the sources used in
+        academic writing.
+    </p>
+
+    <p>
+        Referencing allows readers to identify where information came from
+        and helps distinguish the writer's own ideas from ideas obtained
+        from other sources.
+    </p>
+
+    <h3>Sources may include:</h3>
+
+    <ul>
+        <li>Books.</li>
+        <li>Academic journal articles.</li>
+        <li>Official websites.</li>
+        <li>Reports.</li>
+        <li>Conference papers.</li>
+        <li>Reliable educational resources.</li>
+    </ul>
+
+</div>
+
+
+<!-- 49 -->
+
+<div class="writing-topic">
+
+    <h2>49. Plagiarism</h2>
+
+    <p>
+        Plagiarism is presenting another person's words, ideas or work as
+        your own without appropriate acknowledgment.
+    </p>
+
+    <p>
+        Plagiarism can occur intentionally or accidentally. Students should
+        therefore learn how to take notes, paraphrase, quote and reference
+        sources correctly.
+    </p>
+
+    <h3>How to avoid plagiarism</h3>
+
+    <ul>
+        <li>Write ideas in your own words.</li>
+        <li>Use quotation marks for exact quotations.</li>
+        <li>Reference sources properly.</li>
+        <li>Keep accurate research notes.</li>
+        <li>Do not copy assignments from other students.</li>
+    </ul>
+
+</div>
+
+
+<!-- 50 -->
+
+<div class="writing-topic">
+
+    <h2>50. Note-Taking</h2>
+
+    <p>
+        Note-taking involves recording important information from lectures,
+        books, presentations or other sources.
+    </p>
+
+    <p>
+        Good notes should focus on important ideas rather than attempting to
+        copy every word spoken by a lecturer.
+    </p>
+
+    <h3>Useful note-taking methods</h3>
+
+    <ul>
+        <li>Using headings and subheadings.</li>
+        <li>Writing keywords.</li>
+        <li>Using short phrases.</li>
+        <li>Creating diagrams.</li>
+        <li>Using tables.</li>
+        <li>Summarizing ideas after reading.</li>
+    </ul>
+
+</div>
+
+
+<!-- 51 -->
+
+<div class="writing-topic">
+
+    <h2>51. Report Writing</h2>
+
+    <p>
+        A report is a structured document that presents information about a
+        particular subject, investigation, event or activity.
+    </p>
+
+    <p>
+        Reports are commonly used in schools, universities, businesses,
+        government organizations and research.
+    </p>
+
+    <h3>Common report sections</h3>
+
+    <ol>
+        <li>Title</li>
+        <li>Introduction</li>
+        <li>Objectives</li>
+        <li>Methodology or procedures</li>
+        <li>Findings</li>
+        <li>Discussion</li>
+        <li>Conclusion</li>
+        <li>Recommendations</li>
+        <li>References</li>
+    </ol>
+
+</div>
+
+
+<!-- 52 -->
+
+<div class="writing-topic">
+
+    <h2>52. Letter Writing</h2>
+
+    <p>
+        Letters are written for different purposes, including personal,
+        academic, business and official communication.
+    </p>
+
+    <p>
+        The language and structure should match the purpose and recipient.
+        Official letters generally use formal language and a clear,
+        respectful tone.
+    </p>
+
+</div>
+
+
+<!-- 53 -->
+
+<div class="writing-topic">
+
+    <h2>53. Formal Letter Structure</h2>
+
+    <ol>
+        <li>Sender's address.</li>
+        <li>Date.</li>
+        <li>Recipient's address.</li>
+        <li>Subject or heading.</li>
+        <li>Salutation.</li>
+        <li>Introduction.</li>
+        <li>Main body.</li>
+        <li>Closing paragraph.</li>
+        <li>Complimentary close.</li>
+        <li>Name and signature.</li>
+    </ol>
+
+</div>
+
+
+<!-- 54 -->
+
+<div class="writing-topic">
+
+    <h2>54. Email Writing</h2>
+
+    <p>
+        Email is widely used for academic and professional communication.
+        Effective emails should be clear, concise and appropriately
+        organized.
+    </p>
+
+    <h3>A professional email should normally contain:</h3>
+
+    <ul>
+        <li>A meaningful subject line.</li>
+        <li>An appropriate greeting.</li>
+        <li>A clear purpose.</li>
+        <li>Relevant details.</li>
+        <li>A polite closing.</li>
+        <li>The sender's name.</li>
+    </ul>
+
+</div>
+
+
+<!-- 55 -->
+
+<div class="writing-topic">
+
+    <h2>55. Editing</h2>
+
+    <p>
+        Editing involves improving a piece of writing after the first draft.
+        The writer examines whether ideas are clear, relevant, organized and
+        properly expressed.
+    </p>
+
+    <h3>During editing, check:</h3>
+
+    <ul>
+        <li>Organization.</li>
+        <li>Clarity.</li>
+        <li>Paragraph structure.</li>
+        <li>Word choice.</li>
+        <li>Grammar.</li>
+        <li>Evidence and examples.</li>
+    </ul>
+
+</div>
+
+
+<!-- 56 -->
+
+<div class="writing-topic">
+
+    <h2>56. Proofreading</h2>
+
+    <p>
+        Proofreading is the final checking stage. It focuses mainly on
+        smaller errors that may remain after editing.
+    </p>
+
+    <h3>Proofreading should check:</h3>
+
+    <ul>
+        <li>Spelling.</li>
+        <li>Punctuation.</li>
+        <li>Capitalization.</li>
+        <li>Grammar.</li>
+        <li>Typing errors.</li>
+        <li>Formatting.</li>
+        <li>References.</li>
+    </ul>
+
+</div>
+
+
+<!-- 57 -->
+
+<div class="writing-topic">
+
+    <h2>57. Common Writing Mistakes</h2>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Problem</th>
+            <th>Incorrect</th>
+            <th>Correct</th>
+        </tr>
+
+        <tr>
+            <td>Subject-verb agreement</td>
+            <td>He go to school.</td>
+            <td>He goes to school.</td>
+        </tr>
+
+        <tr>
+            <td>Capitalization</td>
+            <td>uganda is a country.</td>
+            <td>Uganda is a country.</td>
+        </tr>
+
+        <tr>
+            <td>Sentence fragment</td>
+            <td>Because he was tired.</td>
+            <td>He went home because he was tired.</td>
+        </tr>
+
+        <tr>
+            <td>Run-on sentence</td>
+            <td>She studied hard she passed.</td>
+            <td>She studied hard, and she passed.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 58 -->
+
+<div class="writing-topic">
+
+    <h2>58. Unity, Coherence and Cohesion</h2>
+
+    <p>
+        These three concepts help make writing clear and well organized.
+    </p>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Concept</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Unity</td>
+            <td>All ideas support the main topic.</td>
+        </tr>
+
+        <tr>
+            <td>Coherence</td>
+            <td>Ideas are logically organized and easy to follow.</td>
+        </tr>
+
+        <tr>
+            <td>Cohesion</td>
+            <td>Words and sentences are connected through language devices.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 59 -->
+
+<div class="writing-topic">
+
+    <h2>59. Improving Writing Style</h2>
+
+    <p>
+        Writing style refers to the way a writer expresses ideas. Effective
+        academic writing should generally be clear, precise and appropriately
+        formal.
+    </p>
+
+    <h3>Ways to improve writing style:</h3>
+
+    <ul>
+        <li>Use clear sentences.</li>
+        <li>Avoid unnecessary repetition.</li>
+        <li>Choose precise vocabulary.</li>
+        <li>Use appropriate transitions.</li>
+        <li>Vary sentence structure.</li>
+        <li>Support important claims with evidence.</li>
+        <li>Revise before submitting.</li>
+    </ul>
+
+</div>
+
+
+<!-- 60 -->
+
+<div class="writing-topic">
+
+    <h2>60. Effective Academic Writing</h2>
+
+    <p>
+        Academic writing communicates ideas in a clear, logical and
+        evidence-based manner. It normally avoids unsupported claims and
+        overly informal language.
+    </p>
+
+    <p>
+        A strong academic assignment should answer the question directly,
+        remain organized and provide appropriate evidence or examples.
+    </p>
+
+    <div class="writing-warning">
+
+        <strong>Remember:</strong>
+
+        Good academic writing is not about using the most complicated
+        vocabulary. It is about communicating ideas accurately, logically
+        and clearly.
+
+    </div>
+
+</div>
+
+
+<!-- IMPORTANT TERMS -->
+
+<div class="writing-topic">
+
+    <h2>61. Important Writing Terms</h2>
+
+    <table class="writing-table">
+
+        <tr>
+            <th>Term</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Audience</td>
+            <td>The person or group for whom writing is intended.</td>
+        </tr>
+
+        <tr>
+            <td>Paragraph</td>
+            <td>A group of related sentences developing one main idea.</td>
+        </tr>
+
+        <tr>
+            <td>Topic sentence</td>
+            <td>The sentence that introduces the main idea of a paragraph.</td>
+        </tr>
+
+        <tr>
+            <td>Thesis statement</td>
+            <td>The central argument or position of an essay.</td>
+        </tr>
+
+        <tr>
+            <td>Coherence</td>
+            <td>Logical connection and organization of ideas.</td>
+        </tr>
+
+        <tr>
+            <td>Paraphrasing</td>
+            <td>Expressing source information using your own wording and structure.</td>
+        </tr>
+
+        <tr>
+            <td>Plagiarism</td>
+            <td>Using another person's work or ideas without appropriate acknowledgment.</td>
+        </tr>
+
+        <tr>
+            <td>Proofreading</td>
+            <td>Final checking for errors before submission.</td>
+        </tr>
+
+        <tr>
+            <td>Draft</td>
+            <td>An early version of a piece of writing.</td>
+        </tr>
+
+        <tr>
+            <td>Revision</td>
+            <td>Improving content, organization and expression.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- =========================================
+     REVISION QUESTIONS
+     ========================================= -->
+
+<div class="revision-box">
+
+    <h2>Revision Questions</h2>
+
+    <h3>Short Answer Questions</h3>
+
+    <ol>
+        <li>Define writing.</li>
+        <li>State the importance of writing skills.</li>
+        <li>What is the purpose of writing?</li>
+        <li>Who is an audience?</li>
+        <li>What is brainstorming?</li>
+        <li>What is an outline?</li>
+        <li>Define a paragraph.</li>
+        <li>What is a topic sentence?</li>
+        <li>What are supporting details?</li>
+        <li>Explain paragraph unity.</li>
+        <li>Define coherence.</li>
+        <li>What is a sentence?</li>
+        <li>List the four main types of sentences.</li>
+        <li>What is a sentence fragment?</li>
+        <li>What is a run-on sentence?</li>
+        <li>Define subject-verb agreement.</li>
+        <li>What is a thesis statement?</li>
+        <li>What is paraphrasing?</li>
+        <li>Define plagiarism.</li>
+        <li>What is proofreading?</li>
+    </ol>
+
+
+    <h3>Discussion Questions</h3>
+
+    <ol>
+
+        <li>
+            Explain the different stages of the writing process.
+        </li>
+
+        <li>
+            Discuss the importance of knowing your audience before writing.
+        </li>
+
+        <li>
+            Explain the structure of a well-developed paragraph.
+        </li>
+
+        <li>
+            Discuss the importance of unity and coherence in writing.
+        </li>
+
+        <li>
+            Explain the difference between active and passive voice.
+        </li>
+
+        <li>
+            Discuss the structure of a good academic essay.
+        </li>
+
+        <li>
+            Explain the importance of referencing in academic writing.
+        </li>
+
+        <li>
+            Discuss different ways students can avoid plagiarism.
+        </li>
+
+        <li>
+            Explain the difference between editing and proofreading.
+        </li>
+
+        <li>
+            Discuss the characteristics of effective academic writing.
+        </li>
+
+    </ol>
+
+
+    <h3>Practical Writing Exercises</h3>
+
+    <ol>
+
+        <li>
+            Write one well-developed paragraph about the importance of
+            computer literacy.
+        </li>
+
+        <li>
+            Write an essay explaining the advantages and disadvantages of
+            social media among university students.
+        </li>
+
+        <li>
+            Write a formal letter requesting permission to be absent from
+            class for one week.
+        </li>
+
+        <li>
+            Write a professional email to a lecturer requesting clarification
+            about an assignment.
+        </li>
+
+        <li>
+            Write a descriptive paragraph about your school or university.
+        </li>
+
+        <li>
+            Write a narrative composition about an important experience in
+            your life.
+        </li>
+
+        <li>
+            Write an argumentative essay on whether students should be
+            allowed to use artificial intelligence for academic work.
+        </li>
+
+        <li>
+            Read a short article and write a summary containing only its
+            major ideas.
+        </li>
+
+    </ol>
+
+
+    <h3>Grammar Practice</h3>
+
+    <ol>
+
+        <li>
+            Correct the sentence:
+            "The students was studying in the library."
+        </li>
+
+        <li>
+            Correct the sentence:
+            "She go to class every morning."
+        </li>
+
+        <li>
+            Correct the sentence:
+            "Because the teacher was absent."
+        </li>
+
+        <li>
+            Correct the run-on sentence:
+            "The examination was difficult the students remained calm."
+        </li>
+
+        <li>
+            Rewrite the sentence using passive voice:
+            "The students completed the assignment."
+        </li>
+
+    </ol>
+
+</div>
+
+
+<!-- =========================================
+     COURSE SUMMARY
+     ========================================= -->
+
+<div class="writing-introduction">
+
+    <h2>Course Summary</h2>
+
+    <p>
+        Introduction to Writing Skills provides students with the knowledge
+        and practical skills required to communicate effectively through
+        writing.
+    </p>
+
+    <p>
+        Good writing requires planning, organization, clear paragraphs,
+        correct grammar, appropriate vocabulary, accurate punctuation and
+        careful revision.
+    </p>
+
+    <p>
+        Students should understand how to write different forms of
+        communication, including essays, reports, formal letters, emails,
+        summaries and other academic documents.
+    </p>
+
+    <p>
+        Academic writing also requires responsible use of sources.
+        Students should understand paraphrasing, quotation, referencing and
+        plagiarism so that they can use information from other sources
+        honestly and appropriately.
+    </p>
+
+    <p>
+        The most important lesson is that <strong>good writing is a process,
+        not a single attempt.</strong> Planning, drafting, revising,
+        editing and proofreading help transform ideas into clear and
+        effective communication.
+    </p>
+
+</div>
+
+
+<!-- =========================================
+     BACK TO NOTES
+     ========================================= -->
+
+<div class="back-notes">
+
+    <a href="notes.html">
+        ← Back to Study Notes
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <h2>Study<span>Hub</span></h2>
+
+        <p>
+            Learn. Grow. Succeed.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="notes.html">Notes</a>
+        <a href="upload.html">Upload</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="socials">
+
+        <a href="https://www.facebook.com/Omekasonalisminessalachingchan"
+           target="_blank"
+           rel="noopener noreferrer">
+            Facebook
+        </a>
+
+        <a href="https://wa.me/211921271049"
+           target="_blank"
+           rel="noopener noreferrer">
+            WhatsApp
+        </a>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <p>
+            © 2026 StudyHub. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

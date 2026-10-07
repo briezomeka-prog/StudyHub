@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyHub - Upload Notes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <img src="StudyHub Learning Logo.png"
+                 alt="StudyHub Learning Logo">
+
+            <div class="logo-text">
+                <h2>Study<span>Hub</span></h2>
+                <small>Learn. Grow. Succeed.</small>
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="subjects.html">Subjects</a>
+            <a href="notes.html">Notes</a>
+            <a href="upload.html" class="active">Upload</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="nav-buttons">
+
+            <a href="login.html" class="login">Login</a>
+            <a href="register.html" class="register">Register</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= UPLOAD HERO ================= -->
+
+    <section class="upload-hero">
+
+        <div class="upload-hero-content">
+
+            <img src="StudyHub Learning Logo.png"
+                 alt="StudyHub Learning Logo"
+                 class="upload-logo">
+
+            <h1>
+                Share Your Knowledge
+            </h1>
+
+            <p>
+                Upload your notes and study materials
+                to help other students learn and succeed.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= UPLOAD SECTION ================= -->
+
+    <section class="upload-section">
+
+        <div class="upload-container">
+
+            <div class="upload-heading">
+
+                <span class="small-title">
+                    STUDY MATERIALS
+                </span>
+
+                <h2>
+                    Upload Your Notes
+                </h2>
+
+                <p>
+                    Share useful study materials with
+                    other StudyHub students.
+                </p>
+
+            </div>
+
+
+            <form class="upload-form">
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required>
+
+                </div>
+
+
+                <!-- COURSE -->
+
+                <div class="form-group">
+
+                    <label for="course">
+                        Select Course
+                    </label>
+
+                    <select id="course" required>
+
+                        <option value="">
+                            -- Select Your Course --
+                        </option>
+
+                        <option value="database">
+                            BBCT 1101 - Database Systems
+                        </option>
+
+                        <option value="web">
+                            BBCT 1106 - Web Design & Development
+                        </option>
+
+                        <option value="ethics">
+                            BSCT 1111 - Software Engineering Ethics
+                        </option>
+
+                        <option value="c">
+                            BSCT 1112 - Programming Concepts Using C
+                        </option>
+
+                        <option value="computer">
+                            GECC 1101 - Fundamentals of Computers and Office Applications
+                        </option>
+
+                        <option value="health">
+                            GECH 1101 - Health Principles
+                        </option>
+
+                        <option value="writing">
+                            GECL 1101 - Introduction to Writing Skills
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TITLE -->
+
+                <div class="form-group">
+
+                    <label for="title">
+                        Topic / Material Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Example: Introduction to Database Systems"
+                        required>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Briefly describe your study material..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- FILE -->
+
+                <div class="form-group">
+
+                    <label for="file">
+                        Choose Study Material
+                    </label>
+
+                    <input
+                        type="file"
+                        id="file"
+                        accept=".pdf,.doc,.docx,.ppt,.pptx"
+                        required>
+
+                    <small>
+                        Supported files: PDF, DOC, DOCX, PPT and PPTX
+                    </small>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="upload-submit">
+
+                    Upload Study Material
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <img src="StudyHub Learning Logo.png"
+                 alt="StudyHub Learning Logo">
+
+            <h2>
+                Study<span>Hub</span>
+            </h2>
+
+            <p>
+                Learn. Grow. Succeed.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="subjects.html">Subjects</a>
+            <a href="notes.html">Notes</a>
+            <a href="upload.html">Upload</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 StudyHub. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const uploadForm =
+            document.querySelector(".upload-form");
+
+        uploadForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Your study material has been selected successfully!"
+                );
+
+                uploadForm.reset();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

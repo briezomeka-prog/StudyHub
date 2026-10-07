@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GECC 1101 - Fundamentals of Computers | StudyHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ==============================
+           COMPUTER NOTES PAGE
+        ============================== */
+        /* ==============================
+   COURSE HERO WITH IMAGE
+============================== */
+
+.course-hero {
+    position: relative;
+    min-height: 450px;
+    overflow: hidden;
+    background: #001f4d;
+    display: flex;
+    align-items: center;
+}
+
+/* Course image */
+
+.course-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Computer course image */
+
+.computer-hero .course-hero-image {
+    background-image: url("computer.jpg");
+}
+
+/* Fade image into navy background */
+
+.course-hero-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgba(0, 31, 77, 0) 0%,
+        rgba(0, 31, 77, 0.05) 30%,
+        rgba(0, 31, 77, 0.35) 50%,
+        rgba(0, 31, 77, 0.85) 75%,
+        #001f4d 100%
+    );
+}
+
+/* Hero text */
+
+.course-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 55%;
+    margin-left: 48%;
+    padding: 70px 40px;
+
+    color: white;
+}
+
+/* Logo */
+
+.course-hero-content img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Course code */
+
+.course-hero-content .course-code {
+    display: inline-block;
+
+    background: #ffc107;
+    color: #001f4d;
+
+    padding: 8px 18px;
+    border-radius: 20px;
+
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Title */
+
+.course-hero-content h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 10px 0 15px;
+}
+
+/* Description */
+
+.course-hero-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0;
+}
+
+        .computer-notes-hero {
+            background: linear-gradient(135deg, #001f4d, #003b7a);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .computer-notes-hero img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .computer-notes-hero .course-code {
+            display: inline-block;
+            background: #ffc107;
+            color: #001f4d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .computer-notes-hero h1 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+        .computer-notes-hero p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.7;
+            font-size: 17px;
+            opacity: .95;
+        }
+
+        .computer-notes-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .computer-note-section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 31, 77, .08);
+            border-left: 5px solid #087fe8;
+        }
+
+        .computer-note-section h2 {
+            color: #001f4d;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .computer-note-section h3 {
+            color: #003b7a;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .computer-note-section p {
+            color: #444;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .computer-note-section ul,
+        .computer-note-section ol {
+            line-height: 1.9;
+            color: #444;
+            padding-left: 25px;
+        }
+
+        .computer-note-section li {
+            margin-bottom: 7px;
+        }
+
+        .computer-definition {
+            background: #eef6ff;
+            border-left: 4px solid #087fe8;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .computer-important {
+            background: #fff8dc;
+            border-left: 4px solid #ffc107;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .computer-warning {
+            background: #fff0f0;
+            border-left: 4px solid #dc3545;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .computer-table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .computer-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .computer-table th,
+        .computer-table td {
+            border: 1px solid #d8e0ea;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .computer-table th {
+            background: #001f4d;
+            color: white;
+        }
+
+        .computer-table tr:nth-child(even) {
+            background: #f5f8fc;
+        }
+
+        .computer-code {
+            background: #101820;
+            color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .computer-step {
+            background: #f5f8fc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .computer-step strong {
+            color: #001f4d;
+        }
+
+        .computer-term {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .computer-term strong {
+            color: #001f4d;
+        }
+
+        .computer-questions {
+            background: #001f4d;
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-top: 35px;
+        }
+
+        .computer-questions h2 {
+            color: #ffc107;
+        }
+
+        .computer-questions li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .computer-summary {
+            background: linear-gradient(135deg, #087fe8, #003b7a);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-top: 35px;
+        }
+
+        .computer-summary h2 {
+            color: #ffc107;
+        }
+
+        .computer-summary p {
+            line-height: 1.8;
+        }
+
+        .computer-back {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .computer-back a {
+            display: inline-block;
+            background: #ffc107;
+            color: #001f4d;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .computer-back a:hover {
+            background: #e5aa00;
+        }
+
+        .computer-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .computer-card {
+            background: #f5f8fc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .computer-card h3 {
+            margin-top: 0;
+            color: #001f4d;
+        }
+
+        .computer-card p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 850px) {
+            .computer-card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .computer-term {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .computer-notes-hero h1 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .computer-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .computer-note-section {
+                padding: 25px 20px;
+            }
+
+            .computer-notes-hero {
+                padding: 50px 20px;
+            }
+
+            .computer-notes-hero h1 {
+                font-size: 28px;
+            }
+
+            .computer-notes-hero p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ==============================
+     NAVBAR
+============================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="logo-text">
+            <h2>Study<span>Hub</span></h2>
+            <small>Learn. Grow. Succeed.</small>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="notes.html" class="active">Notes</a>
+        <a href="upload.html">Upload</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="login.html" class="login">Login</a>
+        <a href="register.html" class="register">Register</a>
+    </div>
+
+</nav>
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<section class="course-hero computer-hero">
+
+    <div class="course-hero-image"></div>
+
+    <div class="course-hero-content">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="course-code">
+            GECC 1101
+        </div>
+
+        <h1>
+            Fundamentals of Computers and Office Applications
+        </h1>
+
+        <p>
+            Complete study notes covering computer fundamentals,
+            hardware, software, operating systems, internet,
+            computer security and Microsoft Office applications.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     NOTES CONTENT
+============================== -->
+
+<main class="computer-notes-container">
+
+
+<!-- 1 -->
+
+<section class="computer-note-section">
+
+    <h2>1. Introduction to Computers</h2>
+
+    <div class="computer-definition">
+        <strong>Definition:</strong>
+        A computer is an electronic device that accepts data as
+        input, processes the data according to instructions,
+        stores information and produces useful output.
+    </div>
+
+    <p>
+        Computers are used in almost every area of modern life.
+        They are used in education, banking, business, hospitals,
+        communication, transportation, entertainment and
+        scientific research.
+    </p>
+
+    <h3>Basic Computer Process</h3>
+
+    <ol>
+        <li><strong>Input:</strong> Data is entered into the computer.</li>
+        <li><strong>Processing:</strong> The computer manipulates the data.</li>
+        <li><strong>Output:</strong> The processed information is presented.</li>
+        <li><strong>Storage:</strong> Data and information can be saved for future use.</li>
+    </ol>
+
+    <div class="computer-important">
+        <strong>Remember:</strong>
+        The basic computer cycle is
+        <strong>Input → Processing → Output → Storage.</strong>
+    </div>
+
+</section>
+
+
+<!-- 2 -->
+
+<section class="computer-note-section">
+
+    <h2>2. History and Generations of Computers</h2>
+
+    <p>
+        Computers have developed from simple mechanical calculating
+        machines into powerful digital devices used today.
+    </p>
+
+    <div class="computer-table-wrapper">
+
+        <table class="computer-table">
+
+            <tr>
+                <th>Generation</th>
+                <th>Main Technology</th>
+                <th>Characteristics</th>
+            </tr>
+
+            <tr>
+                <td>First</td>
+                <td>Vacuum tubes</td>
+                <td>Very large, expensive and produced much heat.</td>
+            </tr>
+
+            <tr>
+                <td>Second</td>
+                <td>Transistors</td>
+                <td>Smaller, faster and more reliable.</td>
+            </tr>
+
+            <tr>
+                <td>Third</td>
+                <td>Integrated Circuits</td>
+                <td>More powerful and smaller computers.</td>
+            </tr>
+
+            <tr>
+                <td>Fourth</td>
+                <td>Microprocessors</td>
+                <td>Personal computers became common.</td>
+            </tr>
+
+            <tr>
+                <td>Fifth</td>
+                <td>Artificial Intelligence</td>
+                <td>Focuses on intelligent and advanced computing.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- 3 -->
+
+<section class="computer-note-section">
+
+    <h2>3. Characteristics of Computers</h2>
+
+    <p>
+        Computers have several characteristics that make them
+        useful for processing information.
+    </p>
+
+    <div class="computer-card-grid">
+
+        <div class="computer-card">
+            <h3>Speed</h3>
+            <p>Computers can process large amounts of data very quickly.</p>
+        </div>
+
+        <div class="computer-card">
+            <h3>Accuracy</h3>
+            <p>Computers can produce accurate results when given correct instructions.</p>
+        </div>
+
+        <div class="computer-card">
+            <h3>Storage</h3>
+            <p>Computers can store large amounts of information.</p>
+        </div>
+
+        <div class="computer-card">
+            <h3>Automation</h3>
+            <p>Computers can perform tasks automatically after receiving instructions.</p>
+        </div>
+
+        <div class="computer-card">
+            <h3>Reliability</h3>
+            <p>Computers can perform repetitive tasks consistently.</p>
+        </div>
+
+        <div class="computer-card">
+            <h3>Versatility</h3>
+            <p>Computers can perform many different types of tasks.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 4 -->
+
+<section class="computer-note-section">
+
+    <h2>4. Types of Computers</h2>
+
+    <p>Computers can be classified according to size, purpose and processing ability.</p>
+
+    <ul>
+        <li><strong>Supercomputers:</strong> Extremely powerful computers used for complex calculations.</li>
+        <li><strong>Mainframe computers:</strong> Large systems used by organizations to process huge amounts of data.</li>
+        <li><strong>Minicomputers:</strong> Medium-sized computers used by organizations and departments.</li>
+        <li><strong>Microcomputers:</strong> Personal computers such as desktops and laptops.</li>
+        <li><strong>Embedded computers:</strong> Computers built into other devices such as cars and appliances.</li>
+        <li><strong>Mobile computers:</strong> Portable devices such as tablets and smartphones.</li>
+    </ul>
+
+</section>
+
+
+<!-- 5 -->
+
+<section class="computer-note-section">
+
+    <h2>5. Computer Hardware</h2>
+
+    <div class="computer-definition">
+        <strong>Hardware</strong> refers to the physical components of a computer
+        that can be seen and touched.
+    </div>
+
+    <p>Examples include:</p>
+
+    <ul>
+        <li>Keyboard</li>
+        <li>Mouse</li>
+        <li>Monitor</li>
+        <li>System unit</li>
+        <li>Printer</li>
+        <li>Speakers</li>
+        <li>Hard disk</li>
+        <li>RAM</li>
+        <li>Motherboard</li>
+        <li>Processor</li>
+    </ul>
+
+</section>
+
+
+<!-- 6 -->
+
+<section class="computer-note-section">
+
+    <h2>6. Input Devices</h2>
+
+    <p>
+        Input devices are hardware devices used to enter data
+        and instructions into a computer.
+    </p>
+
+    <div class="computer-table-wrapper">
+
+        <table class="computer-table">
+
+            <tr>
+                <th>Device</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>Keyboard</td>
+                <td>Used to enter text, numbers and commands.</td>
+            </tr>
+
+            <tr>
+                <td>Mouse</td>
+                <td>Used to point, select and interact with objects.</td>
+            </tr>
+
+            <tr>
+                <td>Scanner</td>
+                <td>Converts physical documents into digital form.</td>
+            </tr>
+
+            <tr>
+                <td>Microphone</td>
+                <td>Inputs sound into the computer.</td>
+            </tr>
+
+            <tr>
+                <td>Webcam</td>
+                <td>Inputs video and images.</td>
+            </tr>
+
+            <tr>
+                <td>Touchscreen</td>
+                <td>Allows users to interact directly with the screen.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- 7 -->
+
+<section class="computer-note-section">
+
+    <h2>7. Output Devices</h2>
+
+    <p>
+        Output devices present processed information to the user.
+    </p>
+
+    <ul>
+        <li><strong>Monitor:</strong> Displays text, images and videos.</li>
+        <li><strong>Printer:</strong> Produces information on paper.</li>
+        <li><strong>Speakers:</strong> Produce sound.</li>
+        <li><strong>Projector:</strong> Displays computer content on a large screen.</li>
+        <li><strong>Headphones:</strong> Produce private audio output.</li>
+    </ul>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="computer-note-section">
+
+    <h2>8. Storage Devices</h2>
+
+    <p>
+        Storage devices are used to save data and information
+        for future use.
+    </p>
+
+    <div class="computer-table-wrapper">
+
+        <table class="computer-table">
+
+            <tr>
+                <th>Storage Device</th>
+                <th>Description</th>
+            </tr>
+
+            <tr>
+                <td>Hard Disk Drive</td>
+                <td>Stores large amounts of data using magnetic storage.</td>
+            </tr>
+
+            <tr>
+                <td>SSD</td>
+                <td>Fast storage device with no moving mechanical parts.</td>
+            </tr>
+
+            <tr>
+                <td>USB Flash Drive</td>
+                <td>Portable storage device.</td>
+            </tr>
+
+            <tr>
+                <td>Memory Card</td>
+                <td>Small storage device commonly used in mobile devices.</td>
+            </tr>
+
+            <tr>
+                <td>CD/DVD</td>
+                <td>Optical storage media.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="computer-note-section">
+
+    <h2>9. Computer Memory</h2>
+
+    <p>
+        Computer memory stores data and instructions that are
+        currently being used by the computer.
+    </p>
+
+    <h3>Types of Memory</h3>
+
+    <ul>
+        <li><strong>RAM:</strong> Temporary memory used while programs are running.</li>
+        <li><strong>ROM:</strong> Permanent memory containing important instructions.</li>
+        <li><strong>Cache:</strong> Very fast memory that helps the CPU access frequently used data.</li>
+    </ul>
+
+    <div class="computer-important">
+        <strong>Important:</strong>
+        RAM is volatile. This means information stored in RAM
+        is normally lost when power is turned off.
+    </div>
+
+</section>
+
+
+<!-- 10 -->
+
+<section class="computer-note-section">
+
+    <h2>10. CPU and Its Components</h2>
+
+    <div class="computer-definition">
+        The <strong>CPU (Central Processing Unit)</strong> is the
+        main processing component of a computer. It executes
+        instructions and performs calculations.
+    </div>
+
+    <h3>Main Components of the CPU</h3>
+
+    <ul>
+        <li><strong>ALU:</strong> Performs arithmetic and logical operations.</li>
+        <li><strong>Control Unit:</strong> Controls and coordinates computer operations.</li>
+        <li><strong>Registers:</strong> Small, very fast storage locations inside the CPU.</li>
+    </ul>
+
+</section>
+
+
+<!-- 11 -->
+
+<section class="computer-note-section">
+
+    <h2>11. Computer Software</h2>
+
+    <div class="computer-definition">
+        <strong>Software</strong> is a collection of programs and
+        instructions that tell computer hardware what to do.
+    </div>
+
+    <p>Software can generally be divided into:</p>
+
+    <ol>
+        <li>System software</li>
+        <li>Application software</li>
+    </ol>
+
+</section>
+
+
+<!-- 12 -->
+
+<section class="computer-note-section">
+
+    <h2>12. System Software</h2>
+
+    <p>
+        System software controls computer hardware and provides
+        a platform for application programs.
+    </p>
+
+    <h3>Examples</h3>
+
+    <ul>
+        <li>Windows</li>
+        <li>Linux</li>
+        <li>macOS</li>
+        <li>Device drivers</li>
+        <li>Utility programs</li>
+        <li>Firmware</li>
+    </ul>
+
+</section>
+
+
+<!-- 13 -->
+
+<section class="computer-note-section">
+
+    <h2>13. Application Software</h2>
+
+    <p>
+        Application software is designed to help users perform
+        specific tasks.
+    </p>
+
+    <div class="computer-table-wrapper">
+
+        <table class="computer-table">
+
+            <tr>
+                <th>Application</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>Microsoft Word</td>
+                <td>Creating and editing documents.</td>
+            </tr>
+
+            <tr>
+                <td>Microsoft Excel</td>
+                <td>Working with numbers, calculations and data.</td>
+            </tr>
+
+            <tr>
+                <td>Microsoft PowerPoint</td>
+                <td>Creating presentations.</td>
+            </tr>
+
+            <tr>
+                <td>Microsoft Access</td>
+                <td>Managing databases.</td>
+            </tr>
+
+            <tr>
+                <td>Web browsers</td>
+                <td>Accessing websites and online services.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- 14 -->
+
+<section class="computer-note-section">
+
+    <h2>14. Operating Systems</h2>
+
+    <div class="computer-definition">
+        An <strong>Operating System (OS)</strong> is system software
+        that manages computer hardware, software resources and
+        provides an interface for users.
+    </div>
+
+    <h3>Functions of an Operating System</h3>
+
+    <ul>
+        <li>Managing files and folders</li>
+        <li>Managing memory</li>
+        <li>Managing hardware devices</li>
+        <li>Managing running programs</li>
+        <li>Providing a user interface</li>
+        <li>Providing security</li>
+        <li>Managing users</li>
+    </ul>
+
+</section>
+
+
+<!-- 15 -->
+
+<section class="computer-note-section">
+
+    <h2>15. Windows Basics</h2>
+
+    <p>
+        Microsoft Windows is a graphical operating system widely
+        used on personal computers.
+    </p>
+
+    <h3>Important Windows Components</h3>
+
+    <ul>
+        <li>Desktop</li>
+        <li>Taskbar</li>
+        <li>Start Menu</li>
+        <li>File Explorer</li>
+        <li>Recycle Bin</li>
+        <li>Settings</li>
+        <li>Search</li>
+    </ul>
+
+    <h3>Useful Keyboard Shortcuts</h3>
+
+    <div class="computer-table-wrapper">
+
+        <table class="computer-table">
+
+            <tr>
+                <th>Shortcut</th>
+                <th>Function</th>
+            </tr>
+
+            <tr>
+                <td>Ctrl + C</td>
+                <td>Copy</td>
+            </tr>
+
+            <tr>
+                <td>Ctrl + V</td>
+                <td>Paste</td>
+            </tr>
+
+            <tr>
+                <td>Ctrl + X</td>
+                <td>Cut</td>
+            </tr>
+
+            <tr>
+                <td>Ctrl + Z</td>
+                <td>Undo</td>
+            </tr>
+
+            <tr>
+                <td>Ctrl + S</td>
+                <td>Save</td>
+            </tr>
+
+            <tr>
+                <td>Ctrl + P</td>
+                <td>Print</td>
+            </tr>
+
+            <tr>
+                <td>Ctrl + A</td>
+                <td>Select all</td>
+            </tr>
+
+            <tr>
+                <td>Alt + Tab</td>
+                <td>Switch between open applications</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- 16 -->
+
+<section class="computer-note-section">
+
+    <h2>16. Files and Folders</h2>
+
+    <p>
+        A file is a collection of related information stored with
+        a name. A folder is used to organize files and other folders.
+    </p>
+
+    <h3>Common File Operations</h3>
+
+    <ol>
+        <li>Create a file or folder.</li>
+        <li>Rename a file or folder.</li>
+        <li>Copy a file or folder.</li>
+        <li>Move a file or folder.</li>
+        <li>Delete a file or folder.</li>
+        <li>Restore deleted files from the Recycle Bin.</li>
+    </ol>
+
+    <div class="computer-important">
+        <strong>Good practice:</strong>
+        Organize files into clearly named folders and make regular
+        backups of important information.
+    </div>
+
+</section>
+
+
+<!-- 17 -->
+
+<section class="computer-note-section">
+
+    <h2>17. Computer Security</h2>
+
+    <p>
+        Computer security involves protecting computer systems,
+        networks, programs and information from unauthorized access,
+        damage or theft.
+    </p>
+
+    <h3>Basic Security Practices</h3>
+
+    <ul>
+        <li>Use strong passwords.</li>
+        <li>Do not share passwords unnecessarily.</li>
+        <li>Keep software updated.</li>
+        <li>Use trusted security software.</li>
+        <li>Avoid suspicious websites and links.</li>
+        <li>Back up important files.</li>
+        <li>Lock your computer when leaving it unattended.</li>
+    </ul>
+
+</section>
+
+
+<!-- 18 -->
+
+<section class="computer-note-section">
+
+    <h2>18. Computer Viruses and Malware</h2>
+
+    <div class="computer-definition">
+        <strong>Malware</strong> means malicious software designed
+        to damage systems, steal information or perform unauthorized
+        activities.
+    </div>
+
+    <h3>Types of Malware</h3>
+
+    <ul>
+        <li><strong>Virus:</strong> Malicious code that can attach itself to files.</li>
+        <li><strong>Worm:</strong> Malware that can spread across networks.</li>
+        <li><strong>Trojan:</strong> Malicious software disguised as legitimate software.</li>
+        <li><strong>Spyware:</strong> Software that secretly collects information.</li>
+        <li><strong>Ransomware:</strong> Malware that can prevent access to data and demand payment.</li>
+    </ul>
+
+    <div class="computer-warning">
+        <strong>Warning:</strong>
+        Never open suspicious attachments or install unknown
+        software from untrusted sources.
+    </div>
+
+</section>
+
+
+<!-- 19 -->
+
+<section class="computer-note-section">
+
+    <h2>19. Internet and Networking Basics</h2>
+
+    <div class="computer-definition">
+        The <strong>Internet</strong> is a global network of
+        interconnected computer networks that communicate using
+        standard protocols.
+    </div>
+
+    <h3>Common Network Terms</h3>
+
+    <ul>
+        <li><strong>LAN:</strong> Local Area Network.</li>
+        <li><strong>WAN:</strong> Wide Area Network.</li>
+        <li><strong>Wi-Fi:</strong> Wireless networking technology.</li>
+        <li><strong>Router:</strong> Connects networks and directs data traffic.</li>
+        <li><strong>IP Address:</strong> An address used to identify a device on a network.</li>
+        <li><strong>Browser:</strong> Software used to access websites.</li>
+    </ul>
+
+</section>
+
+
+<!-- 20 -->
+
+<section class="computer-note-section">
+
+    <h2>20. Email</h2>
+
+    <p>
+        Email is an electronic method of sending and receiving
+        messages over computer networks and the Internet.
+    </p>
+
+    <h3>Common Parts of an Email</h3>
+
+    <ul>
+        <li>To</li>
+        <li>CC</li>
+        <li>BCC</li>
+        <li>Subject</li>
+        <li>Message body</li>
+        <li>Attachment</li>
+    </ul>
+
+    <div class="computer-important">
+        <strong>Email etiquette:</strong>
+        Use a clear subject, professional language and check
+        attachments before sending an email.
+    </div>
+
+</section>
+
+
+<!-- 21 -->
+
+<section class="computer-note-section">
+
+    <h2>21. Microsoft Word</h2>
+
+    <div class="computer-definition">
+        <strong>Microsoft Word</strong> is a word-processing
+        application used to create, edit, format, save and print
+        documents.
+    </div>
+
+    <h3>Uses of Microsoft Word</h3>
+
+    <ul>
+        <li>Writing assignments</li>
+        <li>Creating reports</li>
+        <li>Creating letters</li>
+        <li>Creating resumes</li>
+        <li>Creating tables</li>
+        <li>Designing simple documents</li>
+        <li>Printing documents</li>
+    </ul>
+
+</section>
+
+
+<!-- 22 -->
+
+<section class="computer-note-section">
+
+    <h2>22. Creating and Formatting Documents in Word</h2>
+
+    <h3>Basic Steps</h3>
+
+    <ol>
+        <li>Open Microsoft Word.</li>
+        <li>Select a blank document.</li>
+        <li>Type your content.</li>
+        <li>Select the text you want to format.</li>
+        <li>Apply font type and size.</li>
+        <li>Use bold, italic or underline where appropriate.</li>
+        <li>Adjust alignment and spacing.</li>
+        <li>Save the document.</li>
+    </ol>
+
+    <h3>Common Formatting Options</h3>
+
+    <ul>
+        <li>Bold</li>
+        <li>Italic</li>
+        <li>Underline</li>
+        <li>Font size</li>
+        <li>Font colour</li>
+        <li>Text alignment</li>
+        <li>Line spacing</li>
+        <li>Bullets and numbering</li>
+    </ul>
+
+</section>
+
+
+<!-- 23 -->
+
+<section class="computer-note-section">
+
+    <h2>23. Tables in Microsoft Word</h2>
+
+    <p>
+        Tables organize information into rows and columns.
+    </p>
+
+    <h3>Steps to Insert a Table</h3>
+
+    <ol>
+        <li>Open the <strong>Insert</strong> tab.</li>
+        <li>Select <strong>Table</strong>.</li>
+        <li>Choose the required number of rows and columns.</li>
+        <li>Enter information into the cells.</li>
+        <li>Format the table if necessary.</li>
+    </ol>
+
+    <div class="computer-important">
+        Tables are useful for timetables, marks, lists,
+        comparisons and structured information.
+    </div>
+
+</section>
+
+
+<!-- 24 -->
+
+<section class="computer-note-section">
+
+    <h2>24. Page Layout and Printing</h2>
+
+    <p>
+        Page layout controls how a document appears on the page.
+    </p>
+
+    <h3>Important Page Layout Options</h3>
+
+    <ul>
+        <li>Margins</li>
+        <li>Orientation</li>
+        <li>Paper size</li>
+        <li>Columns</li>
+        <li>Page breaks</li>
+        <li>Headers and footers</li>
+        <li>Page numbers</li>
+    </ul>
+
+    <h3>Printing Steps</h3>
+
+    <ol>
+        <li>Save the document.</li>
+        <li>Click File.</li>
+        <li>Select Print.</li>
+        <li>Select the printer.</li>
+        <li>Choose pages and number of copies.</li>
+        <li>Preview the document.</li>
+        <li>Click Print.</li>
+    </ol>
+
+</section>
+
+
+<!-- 25 -->
+
+<section class="computer-note-section">
+
+    <h2>25. Microsoft Excel</h2>
+
+    <div class="computer-definition">
+        <strong>Microsoft Excel</strong> is a spreadsheet application
+        used for organizing data, performing calculations,
+        analyzing information and creating charts.
+    </div>
+
+    <h3>Uses of Excel</h3>
+
+    <ul>
+        <li>Calculating marks</li>
+        <li>Preparing budgets</li>
+        <li>Creating lists</li>
+        <li>Analyzing data</li>
+        <li>Preparing financial records</li>
+        <li>Creating charts and graphs</li>
+    </ul>
+
+</section>
+
+
+<!-- 26 -->
+
+<section class="computer-note-section">
+
+    <h2>26. Worksheets, Rows and Columns</h2>
+
+    <p>
+        Excel organizes information using rows and columns.
+    </p>
+
+    <ul>
+        <li><strong>Workbook:</strong> An Excel file containing one or more worksheets.</li>
+        <li><strong>Worksheet:</strong> A spreadsheet page containing rows and columns.</li>
+        <li><strong>Row:</strong> A horizontal arrangement of cells.</li>
+        <li><strong>Column:</strong> A vertical arrangement of cells.</li>
+        <li><strong>Cell:</strong> The intersection of a row and column.</li>
+        <li><strong>Cell reference:</strong> The address of a cell, such as A1.</li>
+    </ul>
+
+</section>
+
+
+<!-- 27 -->
+
+<section class="computer-note-section">
+
+    <h2>27. Excel Formulas and Functions</h2>
+
+    <p>
+        A formula is an expression used to perform a calculation
+        in Excel. Formulas normally begin with an equals sign.
+    </p>
+
+    <h3>Examples</h3>
+
+    <div class="computer-code">
+= A1 + B1
+
+= A1 - B1
+
+= A1 * B1
+
+= A1 / B1
+
+= SUM(A1:A10)
+
+= AVERAGE(A1:A10)
+
+= MAX(A1:A10)
+
+= MIN(A1:A10)
+    </div>
+
+    <h3>Common Functions</h3>
+
+    <div class="computer-table-wrapper">
+
+        <table class="computer-table">
+
+            <tr>
+                <th>Function</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>SUM</td>
+                <td>Adds values.</td>
+            </tr>
+
+            <tr>
+                <td>AVERAGE</td>
+                <td>Calculates the average.</td>
+            </tr>
+
+            <tr>
+                <td>MAX</td>
+                <td>Finds the highest value.</td>
+            </tr>
+
+            <tr>
+                <td>MIN</td>
+                <td>Finds the lowest value.</td>
+            </tr>
+
+            <tr>
+                <td>COUNT</td>
+                <td>Counts cells containing numbers.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- 28 -->
+
+<section class="computer-note-section">
+
+    <h2>28. Charts and Graphs in Excel</h2>
+
+    <p>
+        Charts present numerical information visually, making
+        patterns and comparisons easier to understand.
+    </p>
+
+    <h3>Common Chart Types</h3>
+
+    <ul>
+        <li>Column chart</li>
+        <li>Bar chart</li>
+        <li>Line chart</li>
+        <li>Pie chart</li>
+        <li>Area chart</li>
+    </ul>
+
+    <h3>Basic Steps to Create a Chart</h3>
+
+    <ol>
+        <li>Enter your data.</li>
+        <li>Select the data.</li>
+        <li>Click the Insert tab.</li>
+        <li>Select a chart type.</li>
+        <li>Choose the appropriate chart.</li>
+        <li>Add a title and labels where necessary.</li>
+    </ol>
+
+</section>
+
+
+<!-- 29 -->
+
+<section class="computer-note-section">
+
+    <h2>29. Microsoft PowerPoint</h2>
+
+    <div class="computer-definition">
+        <strong>Microsoft PowerPoint</strong> is presentation
+        software used to create and display information using slides.
+    </div>
+
+    <h3>Uses of PowerPoint</h3>
+
+    <ul>
+        <li>Class presentations</li>
+        <li>Business presentations</li>
+        <li>Training materials</li>
+        <li>Seminars</li>
+        <li>Project presentations</li>
+        <li>Educational lessons</li>
+    </ul>
+
+</section>
+
+
+<!-- 30 -->
+
+<section class="computer-note-section">
+
+    <h2>30. Creating Presentations</h2>
+
+    <h3>Basic Steps</h3>
+
+    <ol>
+        <li>Open PowerPoint.</li>
+        <li>Select a presentation template or blank presentation.</li>
+        <li>Create a title slide.</li>
+        <li>Add additional slides.</li>
+        <li>Enter text and information.</li>
+        <li>Add suitable images or diagrams.</li>
+        <li>Apply an appropriate design.</li>
+        <li>Review the presentation.</li>
+        <li>Save the presentation.</li>
+    </ol>
+
+    <div class="computer-important">
+        <strong>Presentation tip:</strong>
+        Avoid filling slides with too much text. Use short points
+        and explain the details verbally.
+    </div>
+
+</section>
+
+
+<!-- 31 -->
+
+<section class="computer-note-section">
+
+    <h2>31. Slide Design and Transitions</h2>
+
+    <p>
+        PowerPoint allows users to improve presentations using
+        themes, animations and slide transitions.
+    </p>
+
+    <h3>Important Design Principles</h3>
+
+    <ul>
+        <li>Use readable fonts.</li>
+        <li>Maintain good contrast.</li>
+        <li>Do not overcrowd slides.</li>
+        <li>Use images that support the topic.</li>
+        <li>Maintain consistent formatting.</li>
+        <li>Use animations carefully.</li>
+        <li>Keep transitions professional.</li>
+    </ul>
+
+</section>
+
+
+<!-- 32 -->
+
+<section class="computer-note-section">
+
+    <h2>32. Microsoft Access and Database Basics</h2>
+
+    <div class="computer-definition">
+        A <strong>database</strong> is an organized collection of
+        related data that can be stored, managed and retrieved.
+    </div>
+
+    <h3>Important Database Terms</h3>
+
+    <ul>
+        <li><strong>Table:</strong> Stores related data in rows and columns.</li>
+        <li><strong>Record:</strong> A complete set of information about one item.</li>
+        <li><strong>Field:</strong> A specific type of information.</li>
+        <li><strong>Primary Key:</strong> A field used to uniquely identify records.</li>
+        <li><strong>Query:</strong> Used to retrieve specific information.</li>
+        <li><strong>Form:</strong> Provides a user-friendly way of entering data.</li>
+        <li><strong>Report:</strong> Presents database information in a structured format.</li>
+    </ul>
+
+</section>
+
+
+<!-- 33 -->
+
+<section class="computer-note-section">
+
+    <h2>33. Computer Ethics</h2>
+
+    <p>
+        Computer ethics refers to principles that guide responsible
+        and acceptable use of computers and information technology.
+    </p>
+
+    <h3>Examples of Ethical Computer Use</h3>
+
+    <ul>
+        <li>Respect other people's privacy.</li>
+        <li>Do not access systems without permission.</li>
+        <li>Do not steal digital information.</li>
+        <li>Do not spread harmful software.</li>
+        <li>Respect copyright.</li>
+        <li>Do not use technology to harass others.</li>
+        <li>Use information responsibly.</li>
+    </ul>
+
+</section>
+
+
+<!-- 34 -->
+
+<section class="computer-note-section">
+
+    <h2>34. Advantages and Limitations of Computers</h2>
+
+    <h3>Advantages</h3>
+
+    <ul>
+        <li>High processing speed.</li>
+        <li>Large storage capacity.</li>
+        <li>Accurate calculations.</li>
+        <li>Improved communication.</li>
+        <li>Automation of repetitive tasks.</li>
+        <li>Easy access to information.</li>
+        <li>Improved productivity.</li>
+    </ul>
+
+    <h3>Limitations</h3>
+
+    <ul>
+        <li>Computers require electricity.</li>
+        <li>They can be affected by malware.</li>
+        <li>Hardware can fail.</li>
+        <li>Incorrect input can produce incorrect results.</li>
+        <li>Users require appropriate skills.</li>
+        <li>Technology can create privacy and security risks.</li>
+    </ul>
+
+</section>
+
+
+<!-- 35 -->
+
+<section class="computer-note-section">
+
+    <h2>35. Common Computer Problems and Solutions</h2>
+
+    <div class="computer-table-wrapper">
+
+        <table class="computer-table">
+
+            <tr>
+                <th>Problem</th>
+                <th>Possible Solution</th>
+            </tr>
+
+            <tr>
+                <td>Computer is slow</td>
+                <td>Close unnecessary programs, restart the computer and check storage.</td>
+            </tr>
+
+            <tr>
+                <td>No Internet</td>
+                <td>Check Wi-Fi, cables, router and network settings.</td>
+            </tr>
+
+            <tr>
+                <td>Printer not working</td>
+                <td>Check power, paper, connection and printer settings.</td>
+            </tr>
+
+            <tr>
+                <td>Application not responding</td>
+                <td>Wait, close the application or restart it.</td>
+            </tr>
+
+            <tr>
+                <td>File cannot be found</td>
+                <td>Search the computer and check the correct folder.</td>
+            </tr>
+
+            <tr>
+                <td>Computer overheats</td>
+                <td>Ensure proper ventilation and keep air vents clear.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- 36 -->
+
+<section class="computer-note-section">
+
+    <h2>36. Practical Microsoft Word Task</h2>
+
+    <div class="computer-step">
+        <strong>Task:</strong>
+        Create a one-page student report.
+    </div>
+
+    <ol>
+        <li>Open Microsoft Word.</li>
+        <li>Type the title of the report.</li>
+        <li>Center and bold the title.</li>
+        <li>Type your name and registration number.</li>
+        <li>Add three paragraphs.</li>
+        <li>Apply appropriate spacing.</li>
+        <li>Add a page number.</li>
+        <li>Save the document as a Word file.</li>
+        <li>Export or save a PDF copy if required.</li>
+    </ol>
+
+</section>
+
+
+<!-- 37 -->
+
+<section class="computer-note-section">
+
+    <h2>37. Practical Microsoft Excel Task</h2>
+
+    <div class="computer-step">
+        <strong>Task:</strong>
+        Create a student marks spreadsheet.
+    </div>
+
+    <p>Use the following columns:</p>
+
+    <ul>
+        <li>Student Name</li>
+        <li>Mathematics</li>
+        <li>English</li>
+        <li>Computer</li>
+        <li>Total</li>
+        <li>Average</li>
+    </ul>
+
+    <h3>Example Formulas</h3>
+
+    <div class="computer-code">
+Total:
+=SUM(B2:D2)
+
+Average:
+=AVERAGE(B2:D2)
+    </div>
+
+    <p>
+        Copy the formulas down to calculate the results for the
+        other students.
+    </p>
+
+</section>
+
+
+<!-- 38 -->
+
+<section class="computer-note-section">
+
+    <h2>38. Practical Microsoft PowerPoint Task</h2>
+
+    <div class="computer-step">
+        <strong>Task:</strong>
+        Create a five-slide presentation titled
+        <strong>"The Importance of Computers in Education."</strong>
+    </div>
+
+    <h3>Suggested Slides</h3>
+
+    <ol>
+        <li>Title Slide</li>
+        <li>Introduction to Computers</li>
+        <li>Uses of Computers in Education</li>
+        <li>Advantages and Challenges</li>
+        <li>Conclusion</li>
+    </ol>
+
+</section>
+
+
+<!-- 39 -->
+
+<section class="computer-note-section">
+
+    <h2>39. Important Computer Terms</h2>
+
+    <div class="computer-term">
+        <strong>Data</strong>
+        <span>Raw facts and figures that have not yet been processed.</span>
+    </div>
+
+    <div class="computer-term">
+        <strong>Information</strong>
+        <span>Processed data that has meaning and usefulness.</span>
+    </div>
+
+    <div class="computer-term">
+        <strong>Hardware</strong>
+        <span>Physical components of a computer.</span>
+    </div>
+
+    <div class="computer-term">
+        <strong>Software</strong>
+        <span>Programs and instructions used by a computer.</span>
+    </div>
+
+    <div class="computer-term">
+        <strong>CPU</strong>
+        <span>Central Processing Unit responsible for executing instructions.</span>
+    </div>
+
+    <div class="computer-term">
+        <strong>RAM</strong>
+        <span>Temporary memory used by active programs.</span>
+    </div>
+
+    <div class="computer-term">
+        <strong>Internet</strong>
+        <span>A global network of interconnected computer networks.</span>
+    </div>
+
+    <div class="computer-term">
+        <strong>Database</strong>
+        <span>An organized collection of related data.</span>
+    </div>
+
+    <div class="computer-term">
+        <strong>Application</strong>
+        <span>A program designed to perform a particular task.</span>
+    </div>
+
+</section>
+
+
+<!-- 40 -->
+
+<section class="computer-note-section">
+
+    <h2>40. Practical Examination Tasks</h2>
+
+    <p>
+        Students should be able to perform the following practical
+        tasks during an examination or computer laboratory session.
+    </p>
+
+    <ol>
+        <li>Create and organize folders.</li>
+        <li>Create and format a Word document.</li>
+        <li>Insert a table into Word.</li>
+        <li>Insert page numbers.</li>
+        <li>Save and print a document.</li>
+        <li>Create an Excel worksheet.</li>
+        <li>Enter and format data in Excel.</li>
+        <li>Use basic Excel formulas.</li>
+        <li>Create an Excel chart.</li>
+        <li>Create a PowerPoint presentation.</li>
+        <li>Apply slide transitions.</li>
+        <li>Insert images into slides.</li>
+        <li>Send an email with an attachment.</li>
+        <li>Perform basic file management.</li>
+        <li>Apply basic computer security practices.</li>
+    </ol>
+
+</section>
+
+
+<!-- 41 -->
+
+<section class="computer-questions">
+
+    <h2>41. Revision Questions</h2>
+
+    <ol>
+
+        <li>Define a computer.</li>
+
+        <li>Explain the four basic stages of computer processing.</li>
+
+        <li>Describe the five generations of computers.</li>
+
+        <li>State six characteristics of computers.</li>
+
+        <li>Differentiate between hardware and software.</li>
+
+        <li>Give five examples of input devices.</li>
+
+        <li>Give five examples of output devices.</li>
+
+        <li>Explain the difference between RAM and ROM.</li>
+
+        <li>What is the function of the CPU?</li>
+
+        <li>Explain the functions of an operating system.</li>
+
+        <li>What is application software?</li>
+
+        <li>Give five examples of application software.</li>
+
+        <li>What is computer security?</li>
+
+        <li>Explain four types of malware.</li>
+
+        <li>State five ways of protecting a computer from malware.</li>
+
+        <li>Define the Internet.</li>
+
+        <li>Differentiate between LAN and WAN.</li>
+
+        <li>What is email?</li>
+
+        <li>Explain the purpose of Microsoft Word.</li>
+
+        <li>State five uses of Microsoft Excel.</li>
+
+        <li>What is a spreadsheet?</li>
+
+        <li>Define a cell in Excel.</li>
+
+        <li>Explain the SUM and AVERAGE functions.</li>
+
+        <li>What is a chart?</li>
+
+        <li>State four types of charts used in Excel.</li>
+
+        <li>What is Microsoft PowerPoint used for?</li>
+
+        <li>State five principles of good presentation design.</li>
+
+        <li>Define a database.</li>
+
+        <li>Differentiate between a record and a field.</li>
+
+        <li>Explain five computer ethics principles.</li>
+
+        <li>State five advantages of computers.</li>
+
+        <li>State five limitations of computers.</li>
+
+        <li>Explain five common computer problems and their solutions.</li>
+
+    </ol>
+
+</section>
+
+
+<!-- 42 -->
+
+<section class="computer-summary">
+
+    <h2>42. Course Summary</h2>
+
+    <p>
+        Fundamentals of Computers and Office Applications introduces
+        students to the basic concepts of computer technology and
+        practical computer usage.
+    </p>
+
+    <p>
+        The course covers computer hardware, software, memory,
+        storage, input and output devices, CPU operations,
+        operating systems, file management, computer security,
+        Internet and email.
+    </p>
+
+    <p>
+        It also develops practical skills in Microsoft Word,
+        Microsoft Excel, Microsoft PowerPoint and basic database
+        applications.
+    </p>
+
+    <p>
+        By the end of the course, students should be able to use
+        computers confidently, create and manage documents,
+        perform spreadsheet calculations, prepare presentations,
+        organize information and apply responsible computer-use
+        practices.
+    </p>
+
+</section>
+
+
+<!-- BACK BUTTON -->
+
+<div class="computer-back">
+
+    <a href="notes.html">
+        ← Back to Course Notes
+    </a>
+
+</div>
+
+</main>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <h2>
+            Study<span>Hub</span>
+        </h2>
+
+        <p>
+            Learn. Grow. Succeed.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="notes.html">Notes</a>
+        <a href="upload.html">Upload</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h3>Account</h3>
+
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+
+    </div>
+
+
+    <div class="socials">
+
+        <h3>Connect With Us</h3>
+
+        <a href="https://www.facebook.com/Omekasonalisminessalachingchan"
+           target="_blank">
+            Facebook
+        </a>
+
+        <a href="https://wa.me/211921271049"
+           target="_blank">
+            WhatsApp
+        </a>
+
+        <a href="mailto:nueratem0@gmail.com">
+            Email
+        </a>
+
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <p>
+        © 2026 StudyHub. All Rights Reserved.
+    </p>
+
+</div>
+
+
+</body>
+</html>

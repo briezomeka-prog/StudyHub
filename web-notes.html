@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Design & Development Notes | StudyHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ================================
+           WEB NOTES HERO
+        ================================= */
+
+        .course-hero {
+            position: relative;
+            min-height: 450px;
+            overflow: hidden;
+            background: #001f4d;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .web-hero .course-hero-image {
+            background-image: url("web-design.jpg");
+        }
+
+        .course-hero-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                to right,
+                rgba(0, 31, 77, 0) 0%,
+                rgba(0, 31, 77, 0.05) 30%,
+                rgba(0, 31, 77, 0.35) 50%,
+                rgba(0, 31, 77, 0.85) 75%,
+                #001f4d 100%
+            );
+        }
+
+        .course-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 55%;
+            margin-left: 48%;
+            padding: 70px 40px;
+            color: white;
+        }
+
+        .course-hero-content img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content .course-code {
+            display: inline-block;
+            background: #ffc107;
+            color: #001f4d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 10px 0 15px;
+        }
+
+        .course-hero-content p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0;
+        }
+
+
+        /* ================================
+           NOTES CONTENT
+        ================================= */
+
+        .web-notes-section {
+            padding: 60px 8%;
+            background: #f5f8fc;
+        }
+
+        .web-notes-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .web-note {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #087fe8;
+        }
+
+        .web-note h2 {
+            color: #001f4d;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .web-note h3 {
+            color: #087fe8;
+            margin-top: 20px;
+        }
+
+        .web-note p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .web-note ul,
+        .web-note ol {
+            line-height: 1.9;
+            color: #444;
+            padding-left: 25px;
+        }
+
+        .web-note li {
+            margin-bottom: 7px;
+        }
+
+        .web-note strong {
+            color: #001f4d;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .code-box pre {
+            margin: 0;
+            font-family: Consolas, monospace;
+            line-height: 1.7;
+        }
+
+        .important-box {
+            background: #fff8df;
+            border-left: 5px solid #ffc107;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .important-box strong {
+            color: #8a6500;
+        }
+
+        .example-box {
+            background: #eef7ff;
+            border-left: 5px solid #087fe8;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .example-box strong {
+            color: #087fe8;
+        }
+
+        .definition {
+            background: #f5f8fc;
+            padding: 15px;
+            border-radius: 7px;
+            margin: 15px 0;
+        }
+
+        .revision-section {
+            background: #001f4d;
+            color: white;
+            padding: 50px 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .revision-section h2 {
+            color: #ffc107;
+            margin-top: 0;
+        }
+
+        .revision-section ol {
+            line-height: 2;
+        }
+
+        .back-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #087fe8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #001f4d;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 700px) {
+
+            .course-hero {
+                min-height: 550px;
+                align-items: flex-end;
+            }
+
+            .course-hero-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .course-hero-image::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 31, 77, 0.05) 0%,
+                    rgba(0, 31, 77, 0.35) 40%,
+                    rgba(0, 31, 77, 0.9) 75%,
+                    #001f4d 100%
+                );
+            }
+
+            .course-hero-content {
+                width: 100%;
+                margin-left: 0;
+                padding: 250px 25px 40px;
+                box-sizing: border-box;
+            }
+
+            .course-hero-content h1 {
+                font-size: 30px;
+            }
+
+            .course-hero-content p {
+                font-size: 15px;
+            }
+
+            .web-notes-section {
+                padding: 40px 5%;
+            }
+
+            .web-note {
+                padding: 22px;
+            }
+
+            .web-note h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- ================================
+     NAVIGATION BAR
+================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="logo-text">
+            <h2>Study<span>Hub</span></h2>
+            <small>Learn. Grow. Succeed.</small>
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="subjects.html">Subjects</a>
+
+        <a href="notes.html" class="active">Notes</a>
+
+        <a href="upload.html">Upload</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login">
+            Login
+        </a>
+
+        <a href="register.html" class="register">
+            Register
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================================
+     COURSE HERO
+================================= -->
+
+<section class="course-hero web-hero">
+
+    <div class="course-hero-image"></div>
+
+
+    <div class="course-hero-content">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+
+        <div class="course-code">
+            BBCT 1106
+        </div>
+
+
+        <h1>
+            Web Design & Development
+        </h1>
+
+
+        <p>
+            Complete study notes covering web technologies,
+            HTML, CSS, JavaScript, responsive design,
+            web development tools, accessibility,
+            security and modern web development concepts.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     NOTES
+================================= -->
+
+<section class="web-notes-section">
+
+<div class="web-notes-container">
+
+
+<!-- 1 -->
+
+<div class="web-note">
+
+<h2>1. Introduction to Web Design and Development</h2>
+
+<p>
+Web design and development is the process of creating websites
+and web applications that can be accessed through the Internet
+or an internal network.
+</p>
+
+<p>
+Web design mainly focuses on the appearance, layout and
+user experience of a website, while web development focuses
+on the technical implementation and functionality.
+</p>
+
+<div class="definition">
+<strong>Web Design:</strong>
+The process of planning and creating the visual appearance,
+layout and user experience of a website.
+</div>
+
+<div class="definition">
+<strong>Web Development:</strong>
+The process of building the functional parts of a website
+using programming and web technologies.
+</div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="web-note">
+
+<h2>2. The World Wide Web</h2>
+
+<p>
+The World Wide Web, commonly called the Web, is a system of
+interconnected documents and resources accessed through the
+Internet using web browsers.
+</p>
+
+<p>
+Users can access websites by entering addresses called
+Uniform Resource Locators (URLs).
+</p>
+
+<h3>Examples of Web Browsers</h3>
+
+<ul>
+<li>Google Chrome</li>
+<li>Mozilla Firefox</li>
+<li>Microsoft Edge</li>
+<li>Safari</li>
+<li>Opera</li>
+</ul>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="web-note">
+
+<h2>3. Internet and World Wide Web</h2>
+
+<p>
+The Internet is the global network of interconnected computers
+and devices.
+</p>
+
+<p>
+The World Wide Web is one of the services that operates on
+the Internet.
+</p>
+
+<div class="important-box">
+
+<strong>Remember:</strong>
+
+The Internet and the World Wide Web are not exactly the same.
+The Internet is the network, while the Web is a service that
+uses that network.
+
+</div>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="web-note">
+
+<h2>4. Client and Server</h2>
+
+<p>
+A client is a device or software application that requests
+services or information from another computer.
+</p>
+
+<p>
+A server is a computer or system that provides services,
+resources or information to clients.
+</p>
+
+<h3>Example</h3>
+
+<p>
+When you open a website, your browser acts as the client.
+The web server receives the request and sends the required
+web files back to the browser.
+</p>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="web-note">
+
+<h2>5. Front-End and Back-End Development</h2>
+
+<h3>Front-End Development</h3>
+
+<p>
+Front-end development deals with the part of a website that
+users can see and interact with.
+</p>
+
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+
+<h3>Back-End Development</h3>
+
+<p>
+Back-end development deals with server-side operations,
+databases, authentication and application logic.
+</p>
+
+<p>
+Common back-end technologies include PHP, Python, Java,
+Node.js and C#.
+</p>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="web-note">
+
+<h2>6. HTML</h2>
+
+<p>
+HTML stands for <strong>HyperText Markup Language</strong>.
+It is the standard markup language used to structure
+content on web pages.
+</p>
+
+<h3>Common HTML Elements</h3>
+
+<ul>
+<li>Headings</li>
+<li>Paragraphs</li>
+<li>Links</li>
+<li>Images</li>
+<li>Lists</li>
+<li>Tables</li>
+<li>Forms</li>
+</ul>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="web-note">
+
+<h2>7. Basic HTML Structure</h2>
+
+<p>
+A basic HTML document contains the document type declaration,
+HTML element, head section and body section.
+</p>
+
+<div class="code-box">
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+
+    &lt;p&gt;This is my website.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="web-note">
+
+<h2>8. HTML Headings and Paragraphs</h2>
+
+<p>
+HTML provides six heading levels from h1 to h6.
+The h1 element represents the most important heading.
+</p>
+
+<div class="code-box">
+
+<pre>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+
+&lt;h2&gt;Sub Heading&lt;/h2&gt;
+
+&lt;h3&gt;Another Heading&lt;/h3&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="web-note">
+
+<h2>9. HTML Attributes</h2>
+
+<p>
+Attributes provide additional information about HTML elements.
+They are normally written inside the opening tag.
+</p>
+
+<h3>Example</h3>
+
+<div class="code-box">
+
+<pre>
+&lt;a href="about.html"&gt;
+    About Us
+&lt;/a&gt;
+</pre>
+
+</div>
+
+<p>
+Here, <strong>href</strong> is an attribute that specifies
+where the link should go.
+</p>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="web-note">
+
+<h2>10. HTML Links</h2>
+
+<p>
+Links allow users to move from one page or resource to another.
+</p>
+
+<div class="code-box">
+
+<pre>
+&lt;a href="index.html"&gt;
+    Home
+&lt;/a&gt;
+</pre>
+
+</div>
+
+<h3>External Link</h3>
+
+<div class="code-box">
+
+<pre>
+&lt;a href="https://www.google.com"&gt;
+    Visit Google
+&lt;/a&gt;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="web-note">
+
+<h2>11. Images in HTML</h2>
+
+<p>
+Images make websites more attractive and can communicate
+information visually.
+</p>
+
+<div class="code-box">
+
+<pre>
+&lt;img src="photo.jpg"
+     alt="Student studying"&gt;
+</pre>
+
+</div>
+
+<p>
+The <strong>src</strong> attribute specifies the image location,
+while <strong>alt</strong> provides alternative text.
+</p>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="web-note">
+
+<h2>12. HTML Lists</h2>
+
+<p>
+HTML supports ordered and unordered lists.
+</p>
+
+<h3>Unordered List</h3>
+
+<div class="code-box">
+
+<pre>
+&lt;ul&gt;
+
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+
+&lt;/ul&gt;
+</pre>
+
+</div>
+
+<h3>Ordered List</h3>
+
+<div class="code-box">
+
+<pre>
+&lt;ol&gt;
+
+    &lt;li&gt;Plan&lt;/li&gt;
+    &lt;li&gt;Design&lt;/li&gt;
+    &lt;li&gt;Develop&lt;/li&gt;
+
+&lt;/ol&gt;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="web-note">
+
+<h2>13. HTML Tables</h2>
+
+<p>
+Tables are used to display information in rows and columns.
+</p>
+
+<div class="code-box">
+
+<pre>
+&lt;table&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Course&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;Computing&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="web-note">
+
+<h2>14. HTML Forms</h2>
+
+<p>
+Forms allow users to enter and submit information.
+</p>
+
+<h3>Common Form Controls</h3>
+
+<ul>
+<li>Text fields</li>
+<li>Password fields</li>
+<li>Email fields</li>
+<li>Radio buttons</li>
+<li>Checkboxes</li>
+<li>Dropdown lists</li>
+<li>Submit buttons</li>
+</ul>
+
+<div class="code-box">
+
+<pre>
+&lt;form&gt;
+
+    &lt;label&gt;Name:&lt;/label&gt;
+
+    &lt;input type="text"
+           name="name"&gt;
+
+    &lt;button type="submit"&gt;
+        Submit
+    &lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="web-note">
+
+<h2>15. CSS</h2>
+
+<p>
+CSS stands for <strong>Cascading Style Sheets</strong>.
+It is used to control the appearance and presentation
+of web pages.
+</p>
+
+<h3>CSS Can Control</h3>
+
+<ul>
+<li>Colors</li>
+<li>Fonts</li>
+<li>Spacing</li>
+<li>Backgrounds</li>
+<li>Layouts</li>
+<li>Borders</li>
+<li>Animations</li>
+<li>Responsive design</li>
+</ul>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="web-note">
+
+<h2>16. Types of CSS</h2>
+
+<h3>Inline CSS</h3>
+
+<div class="code-box">
+
+<pre>
+&lt;p style="color: blue;"&gt;
+    Hello
+&lt;/p&gt;
+</pre>
+
+</div>
+
+<h3>Internal CSS</h3>
+
+<div class="code-box">
+
+<pre>
+&lt;style&gt;
+
+p {
+    color: blue;
+}
+
+&lt;/style&gt;
+</pre>
+
+</div>
+
+<h3>External CSS</h3>
+
+<div class="code-box">
+
+<pre>
+&lt;link rel="stylesheet"
+      href="style.css"&gt;
+</pre>
+
+</div>
+
+<p>
+External CSS is generally preferred for larger websites
+because it allows multiple pages to share the same styles.
+</p>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="web-note">
+
+<h2>17. CSS Selectors</h2>
+
+<p>
+Selectors identify the HTML elements that CSS rules should style.
+</p>
+
+<h3>Element Selector</h3>
+
+<div class="code-box">
+
+<pre>
+p {
+    color: blue;
+}
+</pre>
+
+</div>
+
+<h3>Class Selector</h3>
+
+<div class="code-box">
+
+<pre>
+.card {
+    padding: 20px;
+}
+</pre>
+
+</div>
+
+<h3>ID Selector</h3>
+
+<div class="code-box">
+
+<pre>
+#header {
+    background: navy;
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="web-note">
+
+<h2>18. CSS Box Model</h2>
+
+<p>
+The CSS box model describes how space is calculated around
+HTML elements.
+</p>
+
+<ul>
+<li><strong>Content</strong> – the actual information.</li>
+<li><strong>Padding</strong> – space inside the element.</li>
+<li><strong>Border</strong> – line surrounding the padding.</li>
+<li><strong>Margin</strong> – space outside the element.</li>
+</ul>
+
+<div class="important-box">
+
+<strong>Exam Tip:</strong>
+
+Remember the order:
+
+Content → Padding → Border → Margin.
+
+</div>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="web-note">
+
+<h2>19. CSS Flexbox</h2>
+
+<p>
+Flexbox is a CSS layout system used to arrange elements
+in rows or columns.
+</p>
+
+<div class="code-box">
+
+<pre>
+.container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+</pre>
+
+</div>
+
+<h3>Advantages of Flexbox</h3>
+
+<ul>
+<li>Easy alignment</li>
+<li>Flexible layouts</li>
+<li>Responsive arrangement</li>
+<li>Useful for navigation bars and cards</li>
+</ul>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="web-note">
+
+<h2>20. CSS Grid</h2>
+
+<p>
+CSS Grid is a layout system designed for arranging content
+in rows and columns.
+</p>
+
+<div class="code-box">
+
+<pre>
+.container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="web-note">
+
+<h2>21. Responsive Web Design</h2>
+
+<p>
+Responsive web design means creating websites that adapt
+to different screen sizes and devices.
+</p>
+
+<p>
+A responsive website should work properly on computers,
+tablets and mobile phones.
+</p>
+
+<h3>Important Techniques</h3>
+
+<ul>
+<li>Flexible layouts</li>
+<li>Responsive images</li>
+<li>CSS media queries</li>
+<li>Flexible grids</li>
+<li>Relative units</li>
+</ul>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="web-note">
+
+<h2>22. JavaScript</h2>
+
+<p>
+JavaScript is a programming language commonly used to add
+interactivity and dynamic behavior to web pages.
+</p>
+
+<h3>Examples</h3>
+
+<ul>
+<li>Interactive buttons</li>
+<li>Form validation</li>
+<li>Menus</li>
+<li>Animations</li>
+<li>Calculations</li>
+<li>Dynamic content</li>
+</ul>
+
+<div class="code-box">
+
+<pre>
+&lt;script&gt;
+
+alert("Welcome to StudyHub");
+
+&lt;/script&gt;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="web-note">
+
+<h2>23. JavaScript Variables</h2>
+
+<p>
+Variables store information that can be used by a program.
+</p>
+
+<div class="code-box">
+
+<pre>
+let name = "John";
+
+let age = 20;
+
+const country = "Uganda";
+</pre>
+
+</div>
+
+<p>
+JavaScript commonly uses <strong>let</strong>,
+<strong>const</strong> and historically <strong>var</strong>
+for declaring variables.
+</p>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="web-note">
+
+<h2>24. Document Object Model (DOM)</h2>
+
+<p>
+The Document Object Model represents an HTML document as
+objects that JavaScript can access and modify.
+</p>
+
+<p>
+Using the DOM, JavaScript can change text, styles, attributes
+and page content.
+</p>
+
+<div class="code-box">
+
+<pre>
+document.getElementById("title")
+    .textContent = "StudyHub";
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="web-note">
+
+<h2>25. Web Development Tools</h2>
+
+<p>
+Web developers use different tools to design, develop,
+test and maintain websites.
+</p>
+
+<ul>
+<li>Visual Studio Code</li>
+<li>Google Chrome</li>
+<li>Firefox Developer Tools</li>
+<li>Git</li>
+<li>GitHub</li>
+<li>Image editing tools</li>
+</ul>
+
+<div class="example-box">
+
+<strong>Example:</strong>
+
+Visual Studio Code can be used to write HTML, CSS and
+JavaScript files.
+
+</div>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="web-note">
+
+<h2>26. Website File Structure</h2>
+
+<p>
+A simple website may contain several HTML pages, a CSS file,
+JavaScript files and image files.
+</p>
+
+<div class="code-box">
+
+<pre>
+StudyHub/
+
+    index.html
+    subjects.html
+    notes.html
+    style.css
+    script.js
+
+    database.jpg
+    web-design.jpg
+    computer.jpg
+</pre>
+
+</div>
+
+<p>
+Keeping files organized makes websites easier to develop
+and maintain.
+</p>
+
+</div>
+
+
+<!-- 27 -->
+
+<div class="web-note">
+
+<h2>27. Domain Names</h2>
+
+<p>
+A domain name is the human-readable address used to access
+a website.
+</p>
+
+<h3>Examples</h3>
+
+<ul>
+<li>google.com</li>
+<li>wikipedia.org</li>
+<li>example.edu</li>
+</ul>
+
+<p>
+A domain name is easier for people to remember than a numerical
+IP address.
+</p>
+
+</div>
+
+
+<!-- 28 -->
+
+<div class="web-note">
+
+<h2>28. Web Hosting</h2>
+
+<p>
+Web hosting is a service that provides storage and resources
+for website files so that they can be accessed online.
+</p>
+
+<h3>Examples of Hosting Platforms</h3>
+
+<ul>
+<li>GitHub Pages</li>
+<li>Netlify</li>
+<li>Vercel</li>
+<li>Traditional web hosting services</li>
+</ul>
+
+</div>
+
+
+<!-- 29 -->
+
+<div class="web-note">
+
+<h2>29. Website Accessibility</h2>
+
+<p>
+Web accessibility means designing websites that can be used
+by people with different abilities and disabilities.
+</p>
+
+<h3>Important Practices</h3>
+
+<ul>
+<li>Use meaningful alternative text for images.</li>
+<li>Use clear headings.</li>
+<li>Provide keyboard navigation.</li>
+<li>Use readable text.</li>
+<li>Maintain good color contrast.</li>
+<li>Label form controls properly.</li>
+</ul>
+
+</div>
+
+
+<!-- 30 -->
+
+<div class="web-note">
+
+<h2>30. Web Security</h2>
+
+<p>
+Web security involves protecting websites, users and data
+from unauthorized access and attacks.
+</p>
+
+<h3>Common Threats</h3>
+
+<ul>
+<li>Cross-Site Scripting (XSS)</li>
+<li>SQL Injection</li>
+<li>Phishing</li>
+<li>Weak passwords</li>
+<li>Session attacks</li>
+<li>Malware</li>
+</ul>
+
+<h3>Basic Security Practices</h3>
+
+<ul>
+<li>Use strong passwords.</li>
+<li>Validate user input.</li>
+<li>Keep software updated.</li>
+<li>Use HTTPS.</li>
+<li>Protect sensitive information.</li>
+</ul>
+
+</div>
+
+
+<!-- 31 -->
+
+<div class="web-note">
+
+<h2>31. Website Testing</h2>
+
+<p>
+Testing ensures that a website works correctly and meets
+its requirements.
+</p>
+
+<h3>Things to Test</h3>
+
+<ul>
+<li>Links</li>
+<li>Forms</li>
+<li>Images</li>
+<li>Buttons</li>
+<li>Navigation</li>
+<li>Mobile responsiveness</li>
+<li>Browser compatibility</li>
+<li>Page loading</li>
+</ul>
+
+</div>
+
+
+<!-- 32 -->
+
+<div class="web-note">
+
+<h2>32. Principles of Good Web Design</h2>
+
+<p>
+A good website should be easy to understand, attractive
+and simple to use.
+</p>
+
+<ul>
+<li><strong>Consistency:</strong> Keep similar design elements consistent.</li>
+<li><strong>Simplicity:</strong> Avoid unnecessary complexity.</li>
+<li><strong>Navigation:</strong> Make important pages easy to find.</li>
+<li><strong>Readability:</strong> Use clear fonts and spacing.</li>
+<li><strong>Responsiveness:</strong> Support different devices.</li>
+<li><strong>Accessibility:</strong> Make the site usable by many people.</li>
+<li><strong>Performance:</strong> Make pages load efficiently.</li>
+</ul>
+
+</div>
+
+
+<!-- 33 -->
+
+<div class="web-note">
+
+<h2>33. Web Applications</h2>
+
+<p>
+A web application is software that runs through a web browser
+and usually provides interactive functionality.
+</p>
+
+<h3>Examples</h3>
+
+<ul>
+<li>Online banking systems</li>
+<li>Learning management systems</li>
+<li>Email services</li>
+<li>Online shopping systems</li>
+<li>Social media platforms</li>
+</ul>
+
+</div>
+
+
+<!-- 34 -->
+
+<div class="web-note">
+
+<h2>34. Static and Dynamic Websites</h2>
+
+<h3>Static Website</h3>
+
+<p>
+A static website mainly displays fixed content and does not
+usually change based on user interaction or database data.
+</p>
+
+<h3>Dynamic Website</h3>
+
+<p>
+A dynamic website can generate or modify content based on
+users, databases, server-side logic or other information.
+</p>
+
+<div class="important-box">
+
+<strong>Example:</strong>
+
+A simple personal portfolio can be static, while an online
+banking system is dynamic.
+
+</div>
+
+</div>
+
+
+<!-- 35 -->
+
+<div class="web-note">
+
+<h2>35. Full-Stack Development</h2>
+
+<p>
+Full-stack development involves working with both front-end
+and back-end parts of a web application.
+</p>
+
+<h3>Typical Full-Stack Areas</h3>
+
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Server-side programming</li>
+<li>Databases</li>
+<li>APIs</li>
+<li>Security</li>
+<li>Deployment</li>
+</ul>
+
+</div>
+
+
+<!-- 36 -->
+
+<div class="web-note">
+
+<h2>36. Advantages of Web Development</h2>
+
+<ul>
+<li>Websites can reach users worldwide.</li>
+<li>Users can access services from different devices.</li>
+<li>Web applications can be updated centrally.</li>
+<li>Businesses can provide services online.</li>
+<li>Educational resources can be shared easily.</li>
+<li>Web applications can automate many processes.</li>
+</ul>
+
+</div>
+
+
+<!-- 37 -->
+
+<div class="web-note">
+
+<h2>37. Common Web Development Terms</h2>
+
+<ul>
+<li><strong>HTML:</strong> Structures web content.</li>
+<li><strong>CSS:</strong> Styles web pages.</li>
+<li><strong>JavaScript:</strong> Adds behavior and interactivity.</li>
+<li><strong>URL:</strong> Address of a web resource.</li>
+<li><strong>HTTP:</strong> Protocol used for web communication.</li>
+<li><strong>HTTPS:</strong> Secure version of HTTP.</li>
+<li><strong>Browser:</strong> Software used to access websites.</li>
+<li><strong>Server:</strong> Provides resources or services.</li>
+<li><strong>Domain:</strong> Human-readable website address.</li>
+<li><strong>Hosting:</strong> Service that stores website files.</li>
+</ul>
+
+</div>
+
+
+<!-- 38 -->
+
+<div class="web-note">
+
+<h2>38. Steps in Developing a Website</h2>
+
+<ol>
+
+<li>Identify the purpose of the website.</li>
+
+<li>Identify the target users.</li>
+
+<li>Gather requirements.</li>
+
+<li>Plan the website structure.</li>
+
+<li>Create the design.</li>
+
+<li>Develop the HTML structure.</li>
+
+<li>Add CSS styling.</li>
+
+<li>Add JavaScript functionality.</li>
+
+<li>Test the website.</li>
+
+<li>Fix errors.</li>
+
+<li>Publish the website.</li>
+
+<li>Maintain and update the website.</li>
+
+</ol>
+
+</div>
+
+
+<!-- 39 -->
+
+<div class="web-note">
+
+<h2>39. HTML, CSS and JavaScript Working Together</h2>
+
+<p>
+HTML, CSS and JavaScript have different but complementary roles.
+</p>
+
+<ul>
+
+<li>
+<strong>HTML</strong> provides the structure.
+</li>
+
+<li>
+<strong>CSS</strong> controls the appearance.
+</li>
+
+<li>
+<strong>JavaScript</strong> provides interaction and behavior.
+</li>
+
+</ul>
+
+<div class="example-box">
+
+<strong>Simple Example:</strong>
+
+A button can be created using HTML, styled using CSS,
+and programmed to perform an action using JavaScript.
+
+</div>
+
+</div>
+
+
+<!-- 40 -->
+
+<div class="web-note">
+
+<h2>40. Practical Web Development Task</h2>
+
+<p>
+A beginner can create a simple student profile website
+containing the following:
+</p>
+
+<ul>
+<li>Student name</li>
+<li>Profile picture</li>
+<li>Course</li>
+<li>About section</li>
+<li>Skills</li>
+<li>Contact information</li>
+</ul>
+
+<h3>Suggested Files</h3>
+
+<div class="code-box">
+
+<pre>
+student-profile/
+
+    index.html
+    style.css
+    script.js
+    student.jpg
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 41 -->
+
+<div class="web-note">
+
+<h2>41. Practical Examination Questions</h2>
+
+<ol>
+
+<li>Create a basic HTML webpage.</li>
+
+<li>Add headings and paragraphs.</li>
+
+<li>Insert an image.</li>
+
+<li>Create an ordered and unordered list.</li>
+
+<li>Create a table.</li>
+
+<li>Create a registration form.</li>
+
+<li>Connect an external CSS file.</li>
+
+<li>Create a navigation bar.</li>
+
+<li>Design a responsive page.</li>
+
+<li>Add a JavaScript interaction.</li>
+
+</ol>
+
+</div>
+
+
+<!-- 42 -->
+
+<div class="web-note">
+
+<h2>42. Summary</h2>
+
+<p>
+Web design and development involves planning, designing,
+building, testing and maintaining websites and web applications.
+</p>
+
+<p>
+HTML provides structure, CSS provides presentation and
+JavaScript provides interactivity.
+</p>
+
+<p>
+A good website should be attractive, responsive, accessible,
+secure, easy to navigate and useful to its intended users.
+</p>
+
+<div class="important-box">
+
+<strong>Key Point:</strong>
+
+To become a good web developer, learn HTML first, then CSS,
+then JavaScript, while continuously practicing by building
+real projects.
+
+</div>
+
+</div>
+
+
+
+<!-- ================================
+     REVISION QUESTIONS
+================================= -->
+
+<div class="revision-section">
+
+<h2>Web Design & Development Revision Questions</h2>
+
+<ol>
+
+<li>Define web design and web development.</li>
+
+<li>What is the World Wide Web?</li>
+
+<li>Differentiate between the Internet and the World Wide Web.</li>
+
+<li>What is a web browser?</li>
+
+<li>Explain the difference between a client and a server.</li>
+
+<li>What is HTML?</li>
+
+<li>What is CSS?</li>
+
+<li>What is JavaScript?</li>
+
+<li>Explain three types of CSS.</li>
+
+<li>What is an HTML attribute?</li>
+
+<li>Explain the CSS box model.</li>
+
+<li>What is responsive web design?</li>
+
+<li>What is the DOM?</li>
+
+<li>Differentiate between static and dynamic websites.</li>
+
+<li>What is web hosting?</li>
+
+<li>What is a domain name?</li>
+
+<li>State five web security threats.</li>
+
+<li>Explain five principles of good web design.</li>
+
+<li>What is web accessibility?</li>
+
+<li>List the major steps involved in developing a website.</li>
+
+<li>Differentiate between front-end and back-end development.</li>
+
+<li>What is full-stack development?</li>
+
+<li>State five advantages of web development.</li>
+
+<li>Explain the importance of testing a website.</li>
+
+<li>Write a simple HTML program that displays your name.</li>
+
+</ol>
+
+</div>
+
+
+
+<!-- BACK TO NOTES -->
+
+<div class="back-button-container">
+
+<a href="notes.html" class="back-button">
+    ← Back to Course Notes
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================================
+     FOOTER
+================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <h2>
+            Study<span>Hub</span>
+        </h2>
+
+        <p>
+            Learn. Grow. Succeed.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+
+        <a href="subjects.html">Subjects</a>
+
+        <a href="notes.html">Notes</a>
+
+        <a href="upload.html">Upload</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h3>Courses</h3>
+
+        <a href="database-notes.html">
+            Database Systems
+        </a>
+
+        <a href="web-notes.html">
+            Web Design & Development
+        </a>
+
+        <a href="software-ethics-notes.html">
+            Software Engineering Ethics
+        </a>
+
+        <a href="c-notes.html">
+            Programming Using C
+        </a>
+
+        <a href="computer-notes.html">
+            Fundamentals of Computers
+        </a>
+
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <p>
+        © 2026 StudyHub. All Rights Reserved.
+    </p>
+
+</div>
+
+
+</body>
+</html>

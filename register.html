@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyHub - Register</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <img src="StudyHub Learning Logo.png" alt="StudyHub Logo">
+
+            <div class="logo-text">
+                <h2>Study<span>Hub</span></h2>
+                <small>Learn. Grow. Succeed.</small>
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="subjects.html">Subjects</a>
+            <a href="notes.html">Notes</a>
+            <a href="upload.html">Upload</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="nav-buttons">
+
+            <a href="login.html" class="login">
+                Login
+            </a>
+
+            <a href="register.html" class="register">
+                Register
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= REGISTER SECTION ================= -->
+
+    <section class="auth-section">
+
+        <div class="auth-container">
+
+            <div class="auth-header">
+
+                <img
+                    src="StudyHub Learning Logo.png"
+                    alt="StudyHub Logo">
+
+                <h1>
+                    Create Your Account
+                </h1>
+
+                <p>
+                    Join StudyHub and start learning today
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER FORM -->
+
+            <form class="auth-form">
+
+
+                <!-- FULL NAME -->
+
+                <div class="form-group">
+
+                    <label for="fullname">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullname"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="register-email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="register-email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="register-password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="register-password"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="confirm-password">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        placeholder="Confirm your password"
+                        minlength="6"
+                        required>
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <div class="remember-row">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required>
+
+                        I agree to the StudyHub terms and conditions.
+
+                    </label>
+
+                </div>
+
+
+                <!-- REGISTER BUTTON -->
+
+                <button
+                    type="submit"
+                    class="start-button">
+
+                    Create Account
+
+                </button>
+
+
+                <!-- LOGIN LINK -->
+
+                <p class="auth-switch">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Login here
+                    </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <h2>
+                Study<span>Hub</span>
+            </h2>
+
+            <p>
+                Learn. Grow. Succeed.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="subjects.html">
+                Subjects
+            </a>
+
+            <a href="notes.html">
+                Notes
+            </a>
+
+            <a href="upload.html">
+                Upload
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 StudyHub. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const registerForm =
+            document.querySelector(".auth-form");
+
+
+        registerForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const password =
+                    document.querySelector("#register-password").value;
+
+                const confirmPassword =
+                    document.querySelector("#confirm-password").value;
+
+
+                if (password !== confirmPassword) {
+
+                    alert("Passwords do not match.");
+
+                    return;
+
+                }
+
+
+                alert(
+                    "Registration successful! The account database will be connected later."
+                );
+
+
+                registerForm.reset();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

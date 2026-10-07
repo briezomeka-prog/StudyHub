@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Programming Concepts Using C | StudyHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================
+           C PROGRAMMING COURSE HERO
+        ====================================== */
+
+        .course-hero {
+            position: relative;
+            min-height: 450px;
+            overflow: hidden;
+            background: #001f4d;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .c-hero .course-hero-image {
+            background-image: url("programming.jpg");
+        }
+
+        .course-hero-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                to right,
+                rgba(0, 31, 77, 0) 0%,
+                rgba(0, 31, 77, 0.05) 30%,
+                rgba(0, 31, 77, 0.35) 50%,
+                rgba(0, 31, 77, 0.85) 75%,
+                #001f4d 100%
+            );
+        }
+
+        .course-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 55%;
+            margin-left: 48%;
+            padding: 70px 40px;
+            color: white;
+        }
+
+        .course-hero-content img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content .course-code {
+            display: inline-block;
+            background: #ffc107;
+            color: #001f4d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 10px 0 15px;
+        }
+
+        .course-hero-content p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0;
+        }
+
+
+        /* =====================================
+           NOTES SECTION
+        ====================================== */
+
+        .c-notes-section {
+            padding: 60px 8%;
+            background: #f5f8fc;
+        }
+
+        .c-notes-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .c-note {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #087fe8;
+        }
+
+        .c-note h2 {
+            color: #001f4d;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .c-note h3 {
+            color: #087fe8;
+            margin-top: 20px;
+        }
+
+        .c-note p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .c-note ul,
+        .c-note ol {
+            line-height: 1.9;
+            color: #444;
+            padding-left: 25px;
+        }
+
+        .c-note li {
+            margin-bottom: 7px;
+        }
+
+        .c-note strong {
+            color: #001f4d;
+        }
+
+
+        /* CODE BOX */
+
+        .code-box {
+            background: #111827;
+            color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .code-box pre {
+            margin: 0;
+            font-family: Consolas, "Courier New", monospace;
+            line-height: 1.7;
+        }
+
+
+        /* IMPORTANT BOX */
+
+        .important-box {
+            background: #fff8df;
+            border-left: 5px solid #ffc107;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .important-box strong {
+            color: #8a6500;
+        }
+
+
+        /* EXAMPLE BOX */
+
+        .example-box {
+            background: #eef7ff;
+            border-left: 5px solid #087fe8;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .example-box strong {
+            color: #087fe8;
+        }
+
+
+        /* DEFINITION */
+
+        .definition {
+            background: #f5f8fc;
+            padding: 15px;
+            border-radius: 7px;
+            margin: 15px 0;
+        }
+
+
+        /* REVISION */
+
+        .revision-section {
+            background: #001f4d;
+            color: white;
+            padding: 50px 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .revision-section h2 {
+            color: #ffc107;
+            margin-top: 0;
+        }
+
+        .revision-section ol {
+            line-height: 2;
+        }
+
+
+        /* BACK BUTTON */
+
+        .back-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #087fe8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #001f4d;
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 700px) {
+
+            .course-hero {
+                min-height: 550px;
+                align-items: flex-end;
+            }
+
+            .course-hero-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .course-hero-image::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 31, 77, 0.05) 0%,
+                    rgba(0, 31, 77, 0.35) 40%,
+                    rgba(0, 31, 77, 0.9) 75%,
+                    #001f4d 100%
+                );
+            }
+
+            .course-hero-content {
+                width: 100%;
+                margin-left: 0;
+                padding: 250px 25px 40px;
+                box-sizing: border-box;
+            }
+
+            .course-hero-content h1 {
+                font-size: 30px;
+            }
+
+            .course-hero-content p {
+                font-size: 15px;
+            }
+
+            .c-notes-section {
+                padding: 40px 5%;
+            }
+
+            .c-note {
+                padding: 22px;
+            }
+
+            .c-note h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================
+     NAVIGATION
+====================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="logo-text">
+
+            <h2>
+                Study<span>Hub</span>
+            </h2>
+
+            <small>
+                Learn. Grow. Succeed.
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="subjects.html">
+            Subjects
+        </a>
+
+        <a href="notes.html" class="active">
+            Notes
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login">
+            Login
+        </a>
+
+        <a href="register.html" class="register">
+            Register
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================
+     COURSE HERO
+====================================== -->
+
+<section class="course-hero c-hero">
+
+    <div class="course-hero-image"></div>
+
+
+    <div class="course-hero-content">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+
+        <div class="course-code">
+            BSCT 1112
+        </div>
+
+
+        <h1>
+            Programming Concepts Using C
+        </h1>
+
+
+        <p>
+            Complete study notes covering C programming
+            fundamentals, variables, data types, operators,
+            control structures, arrays, functions, pointers,
+            structures, file handling and problem-solving.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     C PROGRAMMING NOTES
+====================================== -->
+
+<section class="c-notes-section">
+
+<div class="c-notes-container">
+
+
+<!-- 1 -->
+
+<div class="c-note">
+
+<h2>1. Introduction to Programming</h2>
+
+<p>
+Programming is the process of writing instructions that tell
+a computer how to perform a particular task.
+</p>
+
+<p>
+A programming language provides a way for humans to communicate
+instructions to computers.
+</p>
+
+<div class="definition">
+
+<strong>Program:</strong>
+
+A set of instructions written to solve a particular problem
+or perform a specific task.
+
+</div>
+
+<h3>Examples of Programming Languages</h3>
+
+<ul>
+<li>C</li>
+<li>C++</li>
+<li>Python</li>
+<li>Java</li>
+<li>JavaScript</li>
+<li>C#</li>
+</ul>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="c-note">
+
+<h2>2. History of Programming</h2>
+
+<p>
+The history of programming began with early mechanical
+computing machines and developed into modern high-level
+programming languages.
+</p>
+
+<p>
+Early programmers had to work with machine instructions.
+As computing developed, assembly languages and high-level
+languages were created to make programming easier.
+</p>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="c-note">
+
+<h2>3. History of the C Programming Language</h2>
+
+<p>
+The C programming language was developed by
+<strong>Dennis Ritchie</strong> at Bell Laboratories in the
+early 1970s.
+</p>
+
+<p>
+C was developed from earlier programming languages and became
+widely used for system programming and software development.
+</p>
+
+<h3>Importance of C</h3>
+
+<ul>
+<li>It is fast and efficient.</li>
+<li>It provides low-level memory access.</li>
+<li>It influenced many later programming languages.</li>
+<li>It is widely used in system programming.</li>
+<li>It helps students understand programming fundamentals.</li>
+</ul>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="c-note">
+
+<h2>4. Features of C</h2>
+
+<ul>
+
+<li>Simple and relatively easy to learn.</li>
+
+<li>Structured programming language.</li>
+
+<li>Portable between different systems.</li>
+
+<li>Efficient and fast.</li>
+
+<li>Supports functions.</li>
+
+<li>Supports pointers.</li>
+
+<li>Provides direct memory manipulation.</li>
+
+<li>Supports modular programming.</li>
+
+</ul>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="c-note">
+
+<h2>5. Advantages and Disadvantages of C</h2>
+
+<h3>Advantages</h3>
+
+<ul>
+<li>Fast execution.</li>
+<li>Portable.</li>
+<li>Efficient use of memory.</li>
+<li>Large amount of learning material.</li>
+<li>Useful for system programming.</li>
+</ul>
+
+<h3>Disadvantages</h3>
+
+<ul>
+<li>Does not provide automatic memory management.</li>
+<li>Pointers can be difficult for beginners.</li>
+<li>Programming errors can cause serious problems.</li>
+<li>It has fewer built-in high-level features than some modern languages.</li>
+</ul>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="c-note">
+
+<h2>6. C Character Set</h2>
+
+<p>
+The C character set consists of the characters that can be
+used in C programs.
+</p>
+
+<h3>Main Categories</h3>
+
+<ul>
+<li>Letters</li>
+<li>Digits</li>
+<li>Special characters</li>
+<li>White spaces</li>
+<li>Escape characters</li>
+</ul>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="c-note">
+
+<h2>7. Tokens in C</h2>
+
+<p>
+Tokens are the smallest meaningful units of a C program.
+</p>
+
+<h3>Main Types</h3>
+
+<ul>
+<li>Keywords</li>
+<li>Identifiers</li>
+<li>Constants</li>
+<li>Strings</li>
+<li>Operators</li>
+<li>Special symbols</li>
+</ul>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="c-note">
+
+<h2>8. Keywords and Identifiers</h2>
+
+<h3>Keywords</h3>
+
+<p>
+Keywords are reserved words that have special meanings in C.
+</p>
+
+<p>
+Examples include:
+<strong>int, float, char, if, else, while, for, return</strong>.
+</p>
+
+<h3>Identifiers</h3>
+
+<p>
+Identifiers are names given to variables, functions and other
+program elements.
+</p>
+
+<div class="important-box">
+
+<strong>Rules for identifiers:</strong>
+
+<ul>
+<li>They should not begin with a number.</li>
+<li>They may contain letters, digits and underscores.</li>
+<li>They cannot be C keywords.</li>
+<li>C is case-sensitive.</li>
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="c-note">
+
+<h2>9. Constants</h2>
+
+<p>
+A constant is a value that does not change during program
+execution.
+</p>
+
+<h3>Examples</h3>
+
+<ul>
+<li>10</li>
+<li>25.5</li>
+<li>'A'</li>
+<li>"StudyHub"</li>
+</ul>
+
+<div class="code-box">
+
+<pre>
+const int age = 20;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="c-note">
+
+<h2>10. Variables</h2>
+
+<p>
+A variable is a named memory location used to store a value
+that may change while a program is running.
+</p>
+
+<div class="code-box">
+
+<pre>
+int age = 20;
+
+float price = 25.5;
+
+char grade = 'A';
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="c-note">
+
+<h2>11. Data Types in C</h2>
+
+<p>
+Data types specify the type of value that a variable can store.
+</p>
+
+<h3>Common Data Types</h3>
+
+<ul>
+
+<li>
+<strong>int:</strong> stores whole numbers.
+</li>
+
+<li>
+<strong>float:</strong> stores decimal numbers.
+</li>
+
+<li>
+<strong>double:</strong> stores more precise decimal numbers.
+</li>
+
+<li>
+<strong>char:</strong> stores a single character.
+</li>
+
+<li>
+<strong>void:</strong> represents the absence of a value.
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="c-note">
+
+<h2>12. Format Specifiers</h2>
+
+<p>
+Format specifiers tell functions such as printf and scanf
+what type of data is being processed.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+
+<tr>
+<th style="border:1px solid #ddd; padding:10px;">Specifier</th>
+<th style="border:1px solid #ddd; padding:10px;">Use</th>
+</tr>
+
+<tr>
+<td style="border:1px solid #ddd; padding:10px;">%d</td>
+<td style="border:1px solid #ddd; padding:10px;">Integer</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #ddd; padding:10px;">%f</td>
+<td style="border:1px solid #ddd; padding:10px;">Floating-point value</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #ddd; padding:10px;">%c</td>
+<td style="border:1px solid #ddd; padding:10px;">Character</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #ddd; padding:10px;">%s</td>
+<td style="border:1px solid #ddd; padding:10px;">String</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="c-note">
+
+<h2>13. Operators in C</h2>
+
+<p>
+Operators are symbols used to perform operations on values
+and variables.
+</p>
+
+<h3>Arithmetic Operators</h3>
+
+<ul>
+<li>+</li>
+<li>-</li>
+<li>*</li>
+<li>/</li>
+<li>%</li>
+</ul>
+
+<h3>Relational Operators</h3>
+
+<ul>
+<li>==</li>
+<li>!=</li>
+<li>&gt;</li>
+<li>&lt;</li>
+<li>&gt;=</li>
+<li>&lt;=</li>
+</ul>
+
+<h3>Logical Operators</h3>
+
+<ul>
+<li>&amp;&amp;</li>
+<li>||</li>
+<li>!</li>
+</ul>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="c-note">
+
+<h2>14. Expressions</h2>
+
+<p>
+An expression is a combination of values, variables and
+operators that produces a result.
+</p>
+
+<div class="code-box">
+
+<pre>
+sum = a + b;
+
+average = total / 5;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="c-note">
+
+<h2>15. A Simple C Program</h2>
+
+<div class="code-box">
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Hello, StudyHub!");
+
+    return 0;
+}
+</pre>
+
+</div>
+
+<h3>Explanation</h3>
+
+<ul>
+
+<li>
+<strong>#include &lt;stdio.h&gt;</strong>
+includes the standard input/output library.
+</li>
+
+<li>
+<strong>main()</strong>
+is the main function where program execution begins.
+</li>
+
+<li>
+<strong>printf()</strong>
+displays information on the screen.
+</li>
+
+<li>
+<strong>return 0;</strong>
+indicates successful program completion.
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="c-note">
+
+<h2>16. Input and Output</h2>
+
+<h3>Output Using printf()</h3>
+
+<div class="code-box">
+
+<pre>
+printf("Welcome to C");
+</pre>
+
+</div>
+
+<h3>Input Using scanf()</h3>
+
+<div class="code-box">
+
+<pre>
+int age;
+
+scanf("%d", &amp;age);
+</pre>
+
+</div>
+
+<p>
+The ampersand is used with scanf for most ordinary variables
+because scanf needs the variable's memory address.
+</p>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="c-note">
+
+<h2>17. Statements in C</h2>
+
+<p>
+A statement is an instruction that tells the computer to
+perform an action.
+</p>
+
+<h3>Examples</h3>
+
+<div class="code-box">
+
+<pre>
+x = 10;
+
+printf("%d", x);
+
+return 0;
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="c-note">
+
+<h2>18. The if Statement</h2>
+
+<p>
+The if statement executes a block of code when a condition
+is true.
+</p>
+
+<div class="code-box">
+
+<pre>
+if (age &gt;= 18)
+{
+    printf("Adult");
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="c-note">
+
+<h2>19. The if-else Statement</h2>
+
+<div class="code-box">
+
+<pre>
+if (marks &gt;= 50)
+{
+    printf("Pass");
+}
+else
+{
+    printf("Fail");
+}
+</pre>
+
+</div>
+
+<p>
+The first block executes when the condition is true.
+The else block executes when the condition is false.
+</p>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="c-note">
+
+<h2>20. Nested if Statements</h2>
+
+<p>
+A nested if statement is an if statement placed inside
+another if or else block.
+</p>
+
+<div class="code-box">
+
+<pre>
+if (marks &gt;= 50)
+{
+    if (marks &gt;= 80)
+    {
+        printf("Excellent");
+    }
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="c-note">
+
+<h2>21. switch Statement</h2>
+
+<p>
+The switch statement is useful when one expression needs
+to be compared with several possible values.
+</p>
+
+<div class="code-box">
+
+<pre>
+switch(choice)
+{
+    case 1:
+        printf("Add");
+        break;
+
+    case 2:
+        printf("Subtract");
+        break;
+
+    default:
+        printf("Invalid choice");
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="c-note">
+
+<h2>22. Loops</h2>
+
+<p>
+Loops are used to repeat a block of code.
+</p>
+
+<h3>Main Types of Loops</h3>
+
+<ul>
+<li>for loop</li>
+<li>while loop</li>
+<li>do-while loop</li>
+</ul>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="c-note">
+
+<h2>23. for Loop</h2>
+
+<div class="code-box">
+
+<pre>
+for(int i = 1; i &lt;= 5; i++)
+{
+    printf("%d\n", i);
+}
+</pre>
+
+</div>
+
+<p>
+The loop initializes a variable, checks a condition and
+updates the variable repeatedly.
+</p>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="c-note">
+
+<h2>24. while Loop</h2>
+
+<div class="code-box">
+
+<pre>
+int i = 1;
+
+while(i &lt;= 5)
+{
+    printf("%d\n", i);
+
+    i++;
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="c-note">
+
+<h2>25. do-while Loop</h2>
+
+<div class="code-box">
+
+<pre>
+int i = 1;
+
+do
+{
+    printf("%d\n", i);
+
+    i++;
+
+}
+while(i &lt;= 5);
+</pre>
+
+</div>
+
+<p>
+A do-while loop executes its body at least once before
+checking the condition.
+</p>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="c-note">
+
+<h2>26. break and continue</h2>
+
+<h3>break</h3>
+
+<p>
+The break statement immediately terminates a loop or switch.
+</p>
+
+<h3>continue</h3>
+
+<p>
+The continue statement skips the current iteration and moves
+to the next iteration.
+</p>
+
+</div>
+
+
+<!-- 27 -->
+
+<div class="c-note">
+
+<h2>27. Arrays</h2>
+
+<p>
+An array is a collection of elements of the same data type
+stored under one variable name.
+</p>
+
+<div class="code-box">
+
+<pre>
+int marks[5] =
+{
+    70, 65, 80, 55, 90
+};
+</pre>
+
+</div>
+
+<p>
+Array indexing starts from zero.
+Therefore, the first element is at index 0.
+</p>
+
+</div>
+
+
+<!-- 28 -->
+
+<div class="c-note">
+
+<h2>28. Accessing Array Elements</h2>
+
+<div class="code-box">
+
+<pre>
+int numbers[3] =
+{
+    10, 20, 30
+};
+
+printf("%d", numbers[0]);
+</pre>
+
+</div>
+
+<p>
+The program prints the first element, which is 10.
+</p>
+
+</div>
+
+
+<!-- 29 -->
+
+<div class="c-note">
+
+<h2>29. Finding the Sum of Array Elements</h2>
+
+<div class="code-box">
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int numbers[5] =
+    {10, 20, 30, 40, 50};
+
+    int sum = 0;
+
+    for(int i = 0; i &lt; 5; i++)
+    {
+        sum = sum + numbers[i];
+    }
+
+    printf("Sum = %d", sum);
+
+    return 0;
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 30 -->
+
+<div class="c-note">
+
+<h2>30. Strings</h2>
+
+<p>
+A string is a sequence of characters terminated by a special
+null character.
+</p>
+
+<div class="code-box">
+
+<pre>
+char name[] = "John";
+
+printf("%s", name);
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 31 -->
+
+<div class="c-note">
+
+<h2>31. String Functions</h2>
+
+<p>
+The C library provides functions for working with strings.
+</p>
+
+<h3>Common Functions</h3>
+
+<ul>
+<li>strlen()</li>
+<li>strcpy()</li>
+<li>strcat()</li>
+<li>strcmp()</li>
+</ul>
+
+<p>
+These functions are commonly available through the
+<strong>string.h</strong> header file.
+</p>
+
+</div>
+
+
+<!-- 32 -->
+
+<div class="c-note">
+
+<h2>32. Functions</h2>
+
+<p>
+A function is a block of code designed to perform a particular
+task.
+</p>
+
+<h3>Advantages</h3>
+
+<ul>
+<li>Reduces repetition.</li>
+<li>Improves program organization.</li>
+<li>Makes programs easier to test.</li>
+<li>Improves code reuse.</li>
+</ul>
+
+<div class="code-box">
+
+<pre>
+void greet()
+{
+    printf("Welcome");
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 33 -->
+
+<div class="c-note">
+
+<h2>33. Function Parameters and Return Values</h2>
+
+<div class="code-box">
+
+<pre>
+int add(int a, int b)
+{
+    return a + b;
+}
+</pre>
+
+</div>
+
+<p>
+Here, <strong>a</strong> and <strong>b</strong> are parameters,
+while the function returns an integer result.
+</p>
+
+</div>
+
+
+<!-- 34 -->
+
+<div class="c-note">
+
+<h2>34. Recursion</h2>
+
+<p>
+Recursion occurs when a function calls itself.
+</p>
+
+<div class="code-box">
+
+<pre>
+int factorial(int n)
+{
+    if(n == 0)
+        return 1;
+
+    return n * factorial(n - 1);
+}
+</pre>
+
+</div>
+
+<div class="important-box">
+
+<strong>Important:</strong>
+
+A recursive function must have a stopping condition,
+otherwise it can continue indefinitely.
+
+</div>
+
+</div>
+
+
+<!-- 35 -->
+
+<div class="c-note">
+
+<h2>35. Pointers</h2>
+
+<p>
+A pointer is a variable that stores the memory address of
+another variable.
+</p>
+
+<div class="code-box">
+
+<pre>
+int age = 20;
+
+int *ptr = &amp;age;
+
+printf("%d", *ptr);
+</pre>
+
+</div>
+
+<p>
+The <strong>&amp;</strong> operator obtains an address, while
+<strong>*</strong> can be used to access the value stored
+at that address.
+</p>
+
+</div>
+
+
+<!-- 36 -->
+
+<div class="c-note">
+
+<h2>36. Structures</h2>
+
+<p>
+A structure allows related variables of different data types
+to be grouped together.
+</p>
+
+<div class="code-box">
+
+<pre>
+struct Student
+{
+    char name[50];
+
+    int age;
+
+    float marks;
+};
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 37 -->
+
+<div class="c-note">
+
+<h2>37. File Handling</h2>
+
+<p>
+File handling allows programs to store and retrieve information
+from files.
+</p>
+
+<h3>Common File Operations</h3>
+
+<ul>
+<li>Opening a file</li>
+<li>Reading from a file</li>
+<li>Writing to a file</li>
+<li>Appending data</li>
+<li>Closing a file</li>
+</ul>
+
+</div>
+
+
+<!-- 38 -->
+
+<div class="c-note">
+
+<h2>38. Writing to a File</h2>
+
+<div class="code-box">
+
+<pre>
+FILE *file;
+
+file = fopen("data.txt", "w");
+
+fprintf(file, "StudyHub");
+
+fclose(file);
+</pre>
+
+</div>
+
+<p>
+The file should be closed after completing the required
+operations.
+</p>
+
+</div>
+
+
+<!-- 39 -->
+
+<div class="c-note">
+
+<h2>39. Common Programming Errors</h2>
+
+<h3>Syntax Errors</h3>
+
+<p>
+Errors that occur when the rules of the programming language
+are violated.
+</p>
+
+<h3>Runtime Errors</h3>
+
+<p>
+Errors that occur while the program is running.
+</p>
+
+<h3>Logical Errors</h3>
+
+<p>
+The program runs but produces an incorrect result.
+</p>
+
+</div>
+
+
+<!-- 40 -->
+
+<div class="c-note">
+
+<h2>40. Debugging</h2>
+
+<p>
+Debugging is the process of finding and correcting errors
+in a program.
+</p>
+
+<h3>Basic Debugging Steps</h3>
+
+<ol>
+<li>Identify the error.</li>
+<li>Locate the source of the problem.</li>
+<li>Understand why it happened.</li>
+<li>Correct the code.</li>
+<li>Test the program again.</li>
+</ol>
+
+</div>
+
+
+<!-- 41 -->
+
+<div class="c-note">
+
+<h2>41. Characteristics of a Good Program</h2>
+
+<ul>
+
+<li><strong>Correctness:</strong> Produces the expected result.</li>
+
+<li><strong>Readability:</strong> Easy for humans to understand.</li>
+
+<li><strong>Efficiency:</strong> Uses resources effectively.</li>
+
+<li><strong>Maintainability:</strong> Easy to modify.</li>
+
+<li><strong>Reliability:</strong> Performs consistently.</li>
+
+<li><strong>Portability:</strong> Can work on different systems.</li>
+
+</ul>
+
+</div>
+
+
+<!-- 42 -->
+
+<div class="c-note">
+
+<h2>42. Algorithms</h2>
+
+<p>
+An algorithm is a step-by-step procedure for solving a problem.
+</p>
+
+<h3>Example: Adding Two Numbers</h3>
+
+<ol>
+
+<li>Start.</li>
+
+<li>Enter the first number.</li>
+
+<li>Enter the second number.</li>
+
+<li>Add the two numbers.</li>
+
+<li>Display the result.</li>
+
+<li>Stop.</li>
+
+</ol>
+
+</div>
+
+
+<!-- 43 -->
+
+<div class="c-note">
+
+<h2>43. Flowcharts</h2>
+
+<p>
+A flowchart is a graphical representation of an algorithm.
+</p>
+
+<h3>Common Flowchart Symbols</h3>
+
+<ul>
+<li>Oval – Start/End</li>
+<li>Rectangle – Process</li>
+<li>Parallelogram – Input/Output</li>
+<li>Diamond – Decision</li>
+<li>Arrow – Direction of flow</li>
+</ul>
+
+</div>
+
+
+<!-- 44 -->
+
+<div class="c-note">
+
+<h2>44. Preprocessor Directives</h2>
+
+<p>
+Preprocessor directives are instructions processed before
+the main compilation of a C program.
+</p>
+
+<h3>Example</h3>
+
+<div class="code-box">
+
+<pre>
+#include &lt;stdio.h&gt;
+</pre>
+
+</div>
+
+<p>
+The <strong>#include</strong> directive is commonly used to
+include header files.
+</p>
+
+</div>
+
+
+<!-- 45 -->
+
+<div class="c-note">
+
+<h2>45. Comments in C</h2>
+
+<p>
+Comments are notes written in source code to explain what
+the program does. They are ignored by the compiler.
+</p>
+
+<h3>Single-Line Comment</h3>
+
+<div class="code-box">
+
+<pre>
+// This is a comment
+</pre>
+
+</div>
+
+<h3>Multi-Line Comment</h3>
+
+<div class="code-box">
+
+<pre>
+/*
+   This is a
+   multi-line comment
+*/
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- 46 -->
+
+<div class="c-note">
+
+<h2>46. Steps in Developing a C Program</h2>
+
+<ol>
+
+<li>Understand the problem.</li>
+
+<li>Analyze the requirements.</li>
+
+<li>Design an algorithm.</li>
+
+<li>Create a flowchart if necessary.</li>
+
+<li>Write the C program.</li>
+
+<li>Compile the program.</li>
+
+<li>Identify and fix errors.</li>
+
+<li>Test the program.</li>
+
+<li>Document the program.</li>
+
+<li>Maintain the program.</li>
+
+</ol>
+
+</div>
+
+
+<!-- 47 -->
+
+<div class="c-note">
+
+<h2>47. Practice Programs</h2>
+
+<h3>Program 1: Add Two Numbers</h3>
+
+<div class="code-box">
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b, sum;
+
+    printf("Enter first number: ");
+    scanf("%d", &amp;a);
+
+    printf("Enter second number: ");
+    scanf("%d", &amp;b);
+
+    sum = a + b;
+
+    printf("Sum = %d", sum);
+
+    return 0;
+}
+</pre>
+
+</div>
+
+
+<h3>Program 2: Check Even or Odd</h3>
+
+<div class="code-box">
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &amp;number);
+
+    if(number % 2 == 0)
+    {
+        printf("Even");
+    }
+    else
+    {
+        printf("Odd");
+    }
+
+    return 0;
+}
+</pre>
+
+</div>
+
+
+<h3>Program 3: Find the Largest Number</h3>
+
+<div class="code-box">
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b;
+
+    printf("Enter two numbers: ");
+
+    scanf("%d", &amp;a);
+    scanf("%d", &amp;b);
+
+    if(a &gt; b)
+    {
+        printf("%d is larger", a);
+    }
+    else
+    {
+        printf("%d is larger", b);
+    }
+
+    return 0;
+}
+</pre>
+
+</div>
+
+</div>
+
+
+<!-- =====================================
+     REVISION QUESTIONS
+====================================== -->
+
+<div class="revision-section">
+
+<h2>C Programming Revision Questions</h2>
+
+<ol>
+
+<li>What is programming?</li>
+
+<li>What is a programming language?</li>
+
+<li>Who developed the C programming language?</li>
+
+<li>State five features of C.</li>
+
+<li>State three advantages of C.</li>
+
+<li>What are tokens in C?</li>
+
+<li>Differentiate between keywords and identifiers.</li>
+
+<li>What is a variable?</li>
+
+<li>What is a constant?</li>
+
+<li>Explain five common C data types.</li>
+
+<li>What are operators?</li>
+
+<li>Differentiate between arithmetic and relational operators.</li>
+
+<li>What is an expression?</li>
+
+<li>What is the purpose of the main() function?</li>
+
+<li>What is the purpose of printf()?</li>
+
+<li>What is the purpose of scanf()?</li>
+
+<li>Explain the if statement.</li>
+
+<li>Differentiate between if and if-else.</li>
+
+<li>What is a switch statement?</li>
+
+<li>What are loops?</li>
+
+<li>Differentiate between for, while and do-while loops.</li>
+
+<li>What is an array?</li>
+
+<li>What is a string?</li>
+
+<li>What is a function?</li>
+
+<li>What is recursion?</li>
+
+<li>What is a pointer?</li>
+
+<li>What is a structure?</li>
+
+<li>What is file handling?</li>
+
+<li>Explain syntax, runtime and logical errors.</li>
+
+<li>What is debugging?</li>
+
+<li>State five characteristics of a good program.</li>
+
+<li>What is an algorithm?</li>
+
+<li>What is a flowchart?</li>
+
+<li>Explain common flowchart symbols.</li>
+
+<li>Write a C program to calculate the average of three numbers.</li>
+
+<li>Write a C program to determine whether a number is positive or negative.</li>
+
+<li>Write a C program to calculate the factorial of a number.</li>
+
+<li>Write a C program to find the largest number in an array.</li>
+
+</ol>
+
+</div>
+
+
+<!-- BACK -->
+
+<div class="back-button-container">
+
+<a href="notes.html" class="back-button">
+    ← Back to Course Notes
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+====================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <h2>
+            Study<span>Hub</span>
+        </h2>
+
+        <p>
+            Learn. Grow. Succeed.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+
+        <a href="subjects.html">Subjects</a>
+
+        <a href="notes.html">Notes</a>
+
+        <a href="upload.html">Upload</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h3>Courses</h3>
+
+        <a href="database-notes.html">
+            Database Systems
+        </a>
+
+        <a href="web-notes.html">
+            Web Design &amp; Development
+        </a>
+
+        <a href="software-ethics-notes.html">
+            Software Engineering Ethics
+        </a>
+
+        <a href="c-notes.html">
+            Programming Using C
+        </a>
+
+        <a href="computer-notes.html">
+            Fundamentals of Computers
+        </a>
+
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <p>
+        © 2026 StudyHub. All Rights Reserved.
+    </p>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BSCT 1111 - Software Engineering Ethics | StudyHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           SOFTWARE ENGINEERING ETHICS NOTES
+           ========================================= */
+
+        .course-hero {
+            position: relative;
+            min-height: 450px;
+            overflow: hidden;
+            background: #001f4d;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .ethics-hero .course-hero-image {
+            background-image: url("software.jpg");
+        }
+
+        .course-hero-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                to right,
+                rgba(0, 31, 77, 0) 0%,
+                rgba(0, 31, 77, 0.05) 30%,
+                rgba(0, 31, 77, 0.35) 50%,
+                rgba(0, 31, 77, 0.85) 75%,
+                #001f4d 100%
+            );
+        }
+
+        .course-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 55%;
+            margin-left: 48%;
+            padding: 70px 40px;
+            color: white;
+        }
+
+        .course-hero-content img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content .course-code {
+            display: inline-block;
+            background: #ffc107;
+            color: #001f4d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-hero-content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 10px 0 15px;
+        }
+
+        .course-hero-content p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0;
+        }
+
+        /* NOTES AREA */
+
+        .ethics-notes {
+            background: #f5f8fc;
+            padding: 70px 7%;
+        }
+
+        .ethics-introduction {
+            max-width: 1000px;
+            margin: 0 auto 45px;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .ethics-introduction h2 {
+            color: #001f4d;
+            margin-top: 0;
+        }
+
+        .ethics-introduction p {
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .ethics-topic {
+            max-width: 1000px;
+            margin: 0 auto 30px;
+            background: white;
+            padding: 32px;
+            border-left: 5px solid #ffc107;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .ethics-topic h2 {
+            color: #001f4d;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .ethics-topic h3 {
+            color: #087fe8;
+            margin-top: 25px;
+        }
+
+        .ethics-topic p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .ethics-topic ul,
+        .ethics-topic ol {
+            line-height: 1.8;
+            color: #444;
+            padding-left: 25px;
+        }
+
+        .ethics-topic li {
+            margin-bottom: 8px;
+        }
+
+        .ethics-example {
+            background: #f5f8fc;
+            border-left: 4px solid #087fe8;
+            padding: 18px 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .ethics-example strong {
+            color: #001f4d;
+        }
+
+        .ethics-warning {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 18px 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .ethics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .ethics-table th,
+        .ethics-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .ethics-table th {
+            background: #001f4d;
+            color: white;
+        }
+
+        .ethics-table tr:nth-child(even) {
+            background: #f5f8fc;
+        }
+
+        .revision-box {
+            max-width: 1000px;
+            margin: 50px auto 30px;
+            background: #001f4d;
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .revision-box h2 {
+            color: #ffc107;
+            margin-top: 0;
+        }
+
+        .revision-box h3 {
+            color: #ffc107;
+            margin-top: 28px;
+        }
+
+        .revision-box li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .back-notes {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        .back-notes a {
+            display: inline-block;
+            background: #087fe8;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-notes a:hover {
+            background: #001f4d;
+        }
+
+        @media (max-width: 700px) {
+
+            .course-hero {
+                min-height: 550px;
+                align-items: flex-end;
+            }
+
+            .course-hero-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .course-hero-image::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 31, 77, 0.05) 0%,
+                    rgba(0, 31, 77, 0.35) 40%,
+                    rgba(0, 31, 77, 0.9) 75%,
+                    #001f4d 100%
+                );
+            }
+
+            .course-hero-content {
+                width: 100%;
+                margin-left: 0;
+                padding: 250px 25px 40px;
+                box-sizing: border-box;
+            }
+
+            .course-hero-content h1 {
+                font-size: 30px;
+            }
+
+            .course-hero-content p {
+                font-size: 15px;
+            }
+
+            .ethics-notes {
+                padding: 45px 5%;
+            }
+
+            .ethics-topic,
+            .ethics-introduction {
+                padding: 23px;
+            }
+
+            .ethics-topic h2 {
+                font-size: 21px;
+            }
+
+            .ethics-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================
+     NAVIGATION
+     ========================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="logo-text">
+            <h2>Study<span>Hub</span></h2>
+            <small>Learn. Grow. Succeed.</small>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="notes.html" class="active">Notes</a>
+        <a href="upload.html">Upload</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="login.html" class="login">Login</a>
+        <a href="register.html" class="register">Register</a>
+    </div>
+
+</nav>
+
+
+<!-- =========================================
+     COURSE HERO
+     ========================================= -->
+
+<section class="course-hero ethics-hero">
+
+    <div class="course-hero-image"></div>
+
+    <div class="course-hero-content">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <div class="course-code">
+            BSCT 1111
+        </div>
+
+        <h1>
+            Software Engineering Ethics
+        </h1>
+
+        <p>
+            Expanded study notes covering professional ethics,
+            software engineering responsibilities, privacy,
+            security, intellectual property, artificial intelligence,
+            ethical decision-making and professional conduct.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     NOTES
+     ========================================= -->
+
+<section class="ethics-notes">
+
+
+<!-- INTRODUCTION -->
+
+<div class="ethics-introduction">
+
+    <h2>Introduction to Software Engineering Ethics</h2>
+
+    <p>
+        Software engineering is not only about writing computer programs,
+        designing systems and solving technical problems. Software systems
+        affect people's lives, businesses, governments, education, health,
+        communication and many other areas of society.
+    </p>
+
+    <p>
+        Because software can have a major effect on people, software
+        engineers must consider the ethical consequences of their decisions.
+        A technically successful system may still be harmful if it violates
+        privacy, discriminates against users, exposes sensitive information
+        or is deliberately designed to deceive people.
+    </p>
+
+    <p>
+        Software engineering ethics therefore deals with the principles,
+        values and professional responsibilities that guide software
+        engineers when making decisions. It helps engineers determine not
+        only what they <strong>can</strong> build, but also what they
+        <strong>should</strong> build and how they should build it
+        responsibly.
+    </p>
+
+</div>
+
+
+<!-- 1 -->
+
+<div class="ethics-topic">
+
+    <h2>1. Meaning of Ethics</h2>
+
+    <p>
+        Ethics refers to the principles and values that help people
+        distinguish between right and wrong behaviour. Ethics provides
+        guidance for making responsible decisions, especially when a person
+        faces a difficult situation where several choices are possible.
+    </p>
+
+    <p>
+        In software engineering, ethics helps professionals decide how they
+        should behave toward users, employers, clients, colleagues and
+        society.
+    </p>
+
+    <div class="ethics-example">
+        <strong>Example:</strong>
+        If a software engineer discovers that a company's application has
+        a serious security weakness, the engineer should not simply ignore
+        the problem. Ethical responsibility requires the problem to be
+        reported and addressed appropriately.
+    </div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="ethics-topic">
+
+    <h2>2. Morality, Ethics and Law</h2>
+
+    <p>
+        Morality refers to personal or social beliefs about what is right
+        and wrong. Ethics refers to organized principles used to guide
+        behaviour. Law consists of rules established and enforced by
+        governments.
+    </p>
+
+    <table class="ethics-table">
+
+        <tr>
+            <th>Concept</th>
+            <th>Meaning</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>Morality</td>
+            <td>Personal or social beliefs about right and wrong.</td>
+            <td>Believing that stealing is wrong.</td>
+        </tr>
+
+        <tr>
+            <td>Ethics</td>
+            <td>Principles used to guide responsible behaviour.</td>
+            <td>Protecting confidential client information.</td>
+        </tr>
+
+        <tr>
+            <td>Law</td>
+            <td>Official rules established by authorities.</td>
+            <td>Following copyright and data-protection laws.</td>
+        </tr>
+
+    </table>
+
+    <p>
+        Something can be legal but still raise ethical concerns. Therefore,
+        software engineers should not assume that everything permitted by
+        law is automatically ethically appropriate.
+    </p>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="ethics-topic">
+
+    <h2>3. Professional Ethics</h2>
+
+    <p>
+        Professional ethics refers to the standards of behaviour expected
+        from people working in a particular profession. It establishes
+        responsibilities that professionals should follow while performing
+        their duties.
+    </p>
+
+    <p>
+        Software engineers are expected to demonstrate honesty,
+        responsibility, competence, respect and integrity. They should
+        provide accurate information and avoid deliberately misleading
+        clients or users.
+    </p>
+
+    <h3>Important professional values</h3>
+
+    <ul>
+        <li>Honesty</li>
+        <li>Integrity</li>
+        <li>Competence</li>
+        <li>Responsibility</li>
+        <li>Confidentiality</li>
+        <li>Respect for others</li>
+        <li>Accountability</li>
+    </ul>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="ethics-topic">
+
+    <h2>4. Software Engineering as a Profession</h2>
+
+    <p>
+        Software engineering is a professional discipline concerned with
+        the systematic development, operation, maintenance and improvement
+        of software systems.
+    </p>
+
+    <p>
+        A software engineer has responsibilities beyond producing code.
+        The engineer must understand requirements, consider risks, protect
+        users, test software properly and communicate honestly with
+        stakeholders.
+    </p>
+
+    <p>
+        Professional software engineering therefore combines technical
+        knowledge with professional judgement and ethical responsibility.
+    </p>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="ethics-topic">
+
+    <h2>5. Why Ethics Matters in Software Engineering</h2>
+
+    <p>
+        Ethics is important because software systems can affect thousands
+        or even millions of people. Poor ethical decisions can result in
+        financial loss, privacy violations, discrimination, security
+        breaches or physical harm.
+    </p>
+
+    <h3>Reasons ethics is important</h3>
+
+    <ul>
+        <li>Protects users from harm.</li>
+        <li>Protects personal and confidential information.</li>
+        <li>Builds trust between developers and users.</li>
+        <li>Encourages responsible innovation.</li>
+        <li>Reduces misuse of technology.</li>
+        <li>Improves professional reputation.</li>
+        <li>Supports compliance with laws and regulations.</li>
+    </ul>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="ethics-topic">
+
+    <h2>6. ACM and IEEE Code of Ethics</h2>
+
+    <p>
+        Professional organizations such as the Association for Computing
+        Machinery (ACM) and the IEEE Computer Society have developed
+        professional codes of ethics to guide computing professionals.
+    </p>
+
+    <p>
+        These codes encourage professionals to act in the public interest,
+        avoid harm, maintain competence, respect privacy and confidentiality,
+        and behave honestly.
+    </p>
+
+    <p>
+        A code of ethics does not remove the need for personal judgement.
+        Instead, it provides a framework that professionals can use when
+        dealing with difficult situations.
+    </p>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="ethics-topic">
+
+    <h2>7. Public Interest</h2>
+
+    <p>
+        One of the most important responsibilities of a software engineer
+        is to consider the welfare of the public. Software should be
+        developed with reasonable attention to safety, security, reliability
+        and potential harm.
+    </p>
+
+    <div class="ethics-example">
+        <strong>Example:</strong>
+        Imagine engineers developing software that controls medical
+        equipment. They must consider patient safety rather than focusing
+        only on completing the project quickly.
+    </div>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="ethics-topic">
+
+    <h2>8. Responsibility to Clients and Employers</h2>
+
+    <p>
+        Software engineers have responsibilities toward the organizations
+        and clients who employ them. Engineers should perform their work
+        competently, communicate important risks and protect confidential
+        business information.
+    </p>
+
+    <p>
+        However, loyalty to a client or employer does not mean blindly
+        following every instruction. If an instruction could seriously harm
+        users or violate professional responsibilities, the engineer should
+        raise the concern through appropriate channels.
+    </p>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="ethics-topic">
+
+    <h2>9. Product Quality</h2>
+
+    <p>
+        Software engineers should aim to produce systems that are reliable,
+        secure, maintainable and suitable for their intended purpose.
+    </p>
+
+    <p>
+        Quality does not simply mean that software looks attractive. A
+        high-quality system should perform correctly, handle expected
+        situations and provide reasonable protection against errors and
+        security threats.
+    </p>
+
+    <h3>Characteristics of quality software</h3>
+
+    <ul>
+        <li>Correctness</li>
+        <li>Reliability</li>
+        <li>Security</li>
+        <li>Usability</li>
+        <li>Maintainability</li>
+        <li>Performance</li>
+        <li>Accessibility</li>
+    </ul>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="ethics-topic">
+
+    <h2>10. Professional Judgment and Integrity</h2>
+
+    <p>
+        Professional judgement means using knowledge, experience and
+        careful reasoning to make responsible decisions.
+    </p>
+
+    <p>
+        Integrity means being honest and consistent in professional conduct.
+        A software engineer with integrity should not deliberately hide
+        serious defects, falsify test results or claim credit for another
+        person's work.
+    </p>
+
+    <div class="ethics-example">
+        <strong>Example:</strong>
+        If testing reveals that an application frequently crashes, an
+        engineer should report the results honestly instead of changing the
+        testing report to make the software appear successful.
+    </div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="ethics-topic">
+
+    <h2>11. Management and Leadership Ethics</h2>
+
+    <p>
+        Software managers and team leaders also have ethical
+        responsibilities. They should create an environment where employees
+        can report problems without unreasonable fear.
+    </p>
+
+    <p>
+        Managers should avoid unrealistic demands that encourage employees
+        to ignore testing, security or quality simply to meet deadlines.
+    </p>
+
+    <h3>Ethical leadership involves:</h3>
+
+    <ul>
+        <li>Fair treatment of employees.</li>
+        <li>Clear communication.</li>
+        <li>Respect for professional opinions.</li>
+        <li>Responsible project planning.</li>
+        <li>Supporting quality and security.</li>
+        <li>Taking responsibility for important decisions.</li>
+    </ul>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="ethics-topic">
+
+    <h2>12. Privacy</h2>
+
+    <p>
+        Privacy is the right of individuals to have appropriate control over
+        information about themselves. Software systems frequently collect
+        personal information such as names, addresses, contact details,
+        location information and online activity.
+    </p>
+
+    <p>
+        Engineers should consider why information is being collected, how
+        it will be used, who can access it and how long it should be kept.
+    </p>
+
+    <div class="ethics-warning">
+        <strong>Important:</strong>
+        Collecting large amounts of personal information simply because
+        technology makes it possible does not automatically make the
+        collection ethically acceptable.
+    </div>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="ethics-topic">
+
+    <h2>13. Confidentiality</h2>
+
+    <p>
+        Confidentiality means protecting information that should not be
+        disclosed to unauthorized people.
+    </p>
+
+    <p>
+        Software engineers may have access to company source code, passwords,
+        customer information, financial records or business strategies.
+        Such information should be handled responsibly.
+    </p>
+
+    <h3>Ways of protecting confidentiality</h3>
+
+    <ul>
+        <li>Use strong authentication.</li>
+        <li>Limit access to authorized people.</li>
+        <li>Use appropriate encryption.</li>
+        <li>Avoid sharing passwords.</li>
+        <li>Follow organizational security policies.</li>
+        <li>Secure stored and transmitted information.</li>
+    </ul>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="ethics-topic">
+
+    <h2>14. Intellectual Property</h2>
+
+    <p>
+        Intellectual property refers to creations of the human mind that
+        may receive legal protection. In computing, intellectual property
+        can include software, source code, documentation, designs, logos,
+        algorithms and other creative works.
+    </p>
+
+    <p>
+        Software engineers must respect the ownership rights of creators
+        and organizations. Copying or distributing protected software
+        without permission can create both legal and ethical problems.
+    </p>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="ethics-topic">
+
+    <h2>15. Copyright</h2>
+
+    <p>
+        Copyright protects original creative works. Software code,
+        documentation, graphics and other digital materials may be
+        protected by copyright depending on the applicable law.
+    </p>
+
+    <p>
+        Developers should understand the licenses associated with code and
+        resources they use. They should not assume that anything available
+        online is automatically free to copy.
+    </p>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="ethics-topic">
+
+    <h2>16. Patents</h2>
+
+    <p>
+        A patent is a legal protection that can grant rights over certain
+        inventions or technical innovations for a specified period, subject
+        to applicable law.
+    </p>
+
+    <p>
+        Software-related patent rules vary between jurisdictions. Software
+        engineers should therefore understand the relevant laws and
+        organizational policies when working with potentially patented
+        technologies.
+    </p>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="ethics-topic">
+
+    <h2>17. Software Licensing</h2>
+
+    <p>
+        A software license describes the conditions under which software
+        may be used, copied, modified or distributed.
+    </p>
+
+    <p>
+        Developers should read and understand licenses before using
+        third-party libraries or software components.
+    </p>
+
+    <table class="ethics-table">
+
+        <tr>
+            <th>License Type</th>
+            <th>General Idea</th>
+        </tr>
+
+        <tr>
+            <td>Proprietary</td>
+            <td>Controlled by an owner with specific usage restrictions.</td>
+        </tr>
+
+        <tr>
+            <td>Open Source</td>
+            <td>Source code is made available under specified license terms.</td>
+        </tr>
+
+        <tr>
+            <td>Freeware</td>
+            <td>Software may be available without a purchase price, but terms still apply.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="ethics-topic">
+
+    <h2>18. Open Source Ethics</h2>
+
+    <p>
+        Open-source software allows people to inspect, use, modify and
+        distribute source code according to the particular license.
+    </p>
+
+    <p>
+        Ethical use of open-source software requires respecting the license.
+        Developers should provide required notices, preserve required
+        copyright information and follow redistribution conditions.
+    </p>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="ethics-topic">
+
+    <h2>19. Security and Responsible Development</h2>
+
+    <p>
+        Software security is an ethical responsibility because insecure
+        systems can expose users to serious harm.
+    </p>
+
+    <p>
+        Security should be considered throughout the software development
+        lifecycle rather than added only after the system has been completed.
+    </p>
+
+    <h3>Important security practices</h3>
+
+    <ul>
+        <li>Secure authentication.</li>
+        <li>Authorization and access control.</li>
+        <li>Input validation.</li>
+        <li>Secure storage of sensitive information.</li>
+        <li>Regular security testing.</li>
+        <li>Software updates and patching.</li>
+        <li>Secure error handling.</li>
+    </ul>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="ethics-topic">
+
+    <h2>20. Artificial Intelligence Ethics</h2>
+
+    <p>
+        Artificial intelligence can provide significant benefits, but it
+        can also create ethical challenges. AI systems may influence
+        employment, education, finance, healthcare, security and many other
+        areas.
+    </p>
+
+    <p>
+        Engineers developing AI systems should consider whether the system
+        can cause unfair discrimination, produce harmful decisions, misuse
+        personal information or create misleading results.
+    </p>
+
+    <h3>Important AI ethical concerns</h3>
+
+    <ul>
+        <li>Bias and discrimination</li>
+        <li>Privacy</li>
+        <li>Transparency</li>
+        <li>Accountability</li>
+        <li>Safety</li>
+        <li>Human oversight</li>
+        <li>Misuse</li>
+    </ul>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="ethics-topic">
+
+    <h2>21. Bias and Fairness</h2>
+
+    <p>
+        Bias occurs when a system produces systematically unfair outcomes
+        for certain individuals or groups. Bias can enter a system through
+        data, design decisions, assumptions or the way an algorithm is
+        developed and evaluated.
+    </p>
+
+    <p>
+        Engineers should test systems carefully and consider whether their
+        designs could disadvantage particular groups.
+    </p>
+
+    <div class="ethics-example">
+        <strong>Example:</strong>
+        If an automated application system consistently rejects qualified
+        applicants from a particular group because of biased historical
+        training data, engineers should investigate and address the problem.
+    </div>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="ethics-topic">
+
+    <h2>22. Transparency and Explainability</h2>
+
+    <p>
+        Transparency means providing appropriate information about how a
+        system works, what information it uses and what its limitations are.
+    </p>
+
+    <p>
+        Explainability is especially important when automated systems make
+        decisions that significantly affect people.
+    </p>
+
+    <p>
+        Users should not always be expected to accept an automated decision
+        simply because a computer produced it.
+    </p>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="ethics-topic">
+
+    <h2>23. Accountability</h2>
+
+    <p>
+        Accountability means accepting responsibility for decisions and
+        actions. In software engineering, responsibility can involve
+        developers, managers, organizations and other stakeholders.
+    </p>
+
+    <p>
+        When a system causes a problem, organizations should investigate
+        what happened, correct the problem and take reasonable measures to
+        prevent similar incidents.
+    </p>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="ethics-topic">
+
+    <h2>24. Data Ethics and Big Data</h2>
+
+    <p>
+        Big data refers to very large and complex collections of data that
+        can be analyzed to identify patterns and support decisions.
+    </p>
+
+    <p>
+        Data ethics considers whether data is collected, stored, analyzed
+        and shared responsibly.
+    </p>
+
+    <h3>Data ethics questions</h3>
+
+    <ul>
+        <li>Was the data collected appropriately?</li>
+        <li>Do people understand how their data will be used?</li>
+        <li>Is unnecessary personal information being collected?</li>
+        <li>Who can access the information?</li>
+        <li>How securely is the information stored?</li>
+        <li>Could analysis produce unfair outcomes?</li>
+    </ul>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="ethics-topic">
+
+    <h2>25. Cybercrime and Misuse of Technology</h2>
+
+    <p>
+        Technology can be misused for activities such as unauthorized access,
+        fraud, identity theft, malware distribution and other harmful
+        activities.
+    </p>
+
+    <p>
+        Software professionals should use their technical skills
+        responsibly. Having the ability to access or manipulate a system
+        does not give a person ethical permission to do so.
+    </p>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="ethics-topic">
+
+    <h2>26. Whistleblowing</h2>
+
+    <p>
+        Whistleblowing occurs when an individual reports serious wrongdoing
+        within an organization to an appropriate authority or, in some
+        circumstances, externally.
+    </p>
+
+    <p>
+        A software engineer may face a difficult situation if an employer
+        ignores a serious safety, security or legal problem.
+    </p>
+
+    <p>
+        Ethical whistleblowing should involve careful consideration,
+        documentation and use of appropriate reporting channels whenever
+        possible.
+    </p>
+
+</div>
+
+
+<!-- 27 -->
+
+<div class="ethics-topic">
+
+    <h2>27. Workplace Ethics</h2>
+
+    <p>
+        Ethical behaviour in the workplace involves treating colleagues
+        fairly and respectfully.
+    </p>
+
+    <h3>Examples of good workplace ethics</h3>
+
+    <ul>
+        <li>Respecting colleagues.</li>
+        <li>Giving proper credit for work.</li>
+        <li>Avoiding harassment and discrimination.</li>
+        <li>Communicating honestly.</li>
+        <li>Keeping professional commitments.</li>
+        <li>Protecting confidential information.</li>
+        <li>Accepting constructive criticism.</li>
+    </ul>
+
+</div>
+
+
+<!-- 28 -->
+
+<div class="ethics-topic">
+
+    <h2>28. Conflict of Interest</h2>
+
+    <p>
+        A conflict of interest occurs when personal interests could influence
+        professional judgement or create the appearance of inappropriate
+        influence.
+    </p>
+
+    <div class="ethics-example">
+        <strong>Example:</strong>
+        A software engineer responsible for selecting a supplier may have a
+        conflict of interest if the supplier is owned by a close relative.
+    </div>
+
+    <p>
+        Conflicts should be disclosed and managed appropriately.
+    </p>
+
+</div>
+
+
+<!-- 29 -->
+
+<div class="ethics-topic">
+
+    <h2>29. Ethical Decision-Making</h2>
+
+    <p>
+        Software engineers may face situations where there is no simple
+        answer. An ethical decision-making process can help them analyze
+        the situation carefully.
+    </p>
+
+    <h3>Steps in ethical decision-making</h3>
+
+    <ol>
+        <li>Identify the ethical problem.</li>
+        <li>Collect relevant facts.</li>
+        <li>Identify affected stakeholders.</li>
+        <li>Identify possible choices.</li>
+        <li>Consider the benefits and harms of each choice.</li>
+        <li>Check professional codes and applicable laws.</li>
+        <li>Choose the most responsible option.</li>
+        <li>Document and communicate the decision where appropriate.</li>
+        <li>Review the outcome.</li>
+    </ol>
+
+</div>
+
+
+<!-- 30 -->
+
+<div class="ethics-topic">
+
+    <h2>30. Stakeholders in Software Engineering</h2>
+
+    <p>
+        Stakeholders are people or organizations affected by a software
+        project or who have an interest in its outcome.
+    </p>
+
+    <table class="ethics-table">
+
+        <tr>
+            <th>Stakeholder</th>
+            <th>Possible Interest</th>
+        </tr>
+
+        <tr>
+            <td>Users</td>
+            <td>Safety, privacy, usability and reliability.</td>
+        </tr>
+
+        <tr>
+            <td>Client</td>
+            <td>Meeting requirements and achieving business objectives.</td>
+        </tr>
+
+        <tr>
+            <td>Developers</td>
+            <td>Professional standards, working conditions and technical quality.</td>
+        </tr>
+
+        <tr>
+            <td>Managers</td>
+            <td>Budget, schedule, quality and organizational goals.</td>
+        </tr>
+
+        <tr>
+            <td>Government</td>
+            <td>Compliance with applicable laws and public welfare.</td>
+        </tr>
+
+        <tr>
+            <td>Society</td>
+            <td>Safety, fairness and responsible technological development.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 31 -->
+
+<div class="ethics-topic">
+
+    <h2>31. Ethical Case Study: Privacy</h2>
+
+    <p>
+        Suppose a company develops a mobile application that collects
+        users' location information. The developers discover that the
+        application collects location data even when the feature is not
+        necessary for the service.
+    </p>
+
+    <h3>Ethical questions</h3>
+
+    <ul>
+        <li>Do users know that their location is being collected?</li>
+        <li>Is the collection necessary?</li>
+        <li>Who can access the data?</li>
+        <li>How long is the data stored?</li>
+        <li>Could the data be misused?</li>
+    </ul>
+
+    <p>
+        The ethical approach is to minimize unnecessary collection, provide
+        appropriate information to users and protect collected information.
+    </p>
+
+</div>
+
+
+<!-- 32 -->
+
+<div class="ethics-topic">
+
+    <h2>32. Ethical Case Study: Software Quality</h2>
+
+    <p>
+        Imagine a development team discovers a serious software defect one
+        week before a product launch. Management wants the software released
+        immediately because delaying the launch would be expensive.
+    </p>
+
+    <p>
+        The engineers must consider the possible consequences. If the defect
+        could cause serious harm, hiding it simply to meet a deadline would
+        be ethically irresponsible.
+    </p>
+
+    <p>
+        The team should communicate the risk clearly and recommend an
+        appropriate solution based on the seriousness of the defect.
+    </p>
+
+</div>
+
+
+<!-- 33 -->
+
+<div class="ethics-topic">
+
+    <h2>33. Ethical Case Study: Artificial Intelligence</h2>
+
+    <p>
+        Consider an organization using an AI system to help select job
+        applicants. After deployment, analysis shows that qualified
+        applicants from a particular group are being rejected at a much
+        higher rate.
+    </p>
+
+    <p>
+        Engineers should investigate the data, model and decision process.
+        They should determine whether the system contains a significant
+        source of unfair bias and recommend appropriate corrective measures.
+    </p>
+
+    <p>
+        The key lesson is that automation does not automatically make a
+        decision fair or objective.
+    </p>
+
+</div>
+
+
+<!-- 34 -->
+
+<div class="ethics-topic">
+
+    <h2>34. Common Ethical Challenges in Software Engineering</h2>
+
+    <p>
+        Software engineers can encounter ethical challenges throughout the
+        development process.
+    </p>
+
+    <ul>
+        <li>Pressure to meet unrealistic deadlines.</li>
+        <li>Hiding software defects.</li>
+        <li>Unauthorized use of software.</li>
+        <li>Misuse of customer information.</li>
+        <li>Security vulnerabilities.</li>
+        <li>Discrimination in automated systems.</li>
+        <li>Conflicts of interest.</li>
+        <li>Plagiarism and intellectual-property violations.</li>
+        <li>Misleading advertising about software capabilities.</li>
+        <li>Failure to report serious risks.</li>
+    </ul>
+
+</div>
+
+
+<!-- 35 -->
+
+<div class="ethics-topic">
+
+    <h2>35. Professional Responsibilities of Software Engineers</h2>
+
+    <p>
+        A professional software engineer should understand that technical
+        ability creates responsibility. The engineer should use knowledge
+        carefully and consider the effect of software on users and society.
+    </p>
+
+    <h3>Major responsibilities include:</h3>
+
+    <ul>
+        <li>Developing reliable software.</li>
+        <li>Protecting user information.</li>
+        <li>Maintaining professional competence.</li>
+        <li>Being honest about limitations.</li>
+        <li>Respecting intellectual property.</li>
+        <li>Reporting serious risks.</li>
+        <li>Following applicable laws and professional standards.</li>
+        <li>Considering the public interest.</li>
+    </ul>
+
+</div>
+
+
+<!-- 36 -->
+
+<div class="ethics-topic">
+
+    <h2>36. Maintaining Professional Competence</h2>
+
+    <p>
+        Technology changes rapidly. A software engineer who stops learning
+        may eventually lack the knowledge required to develop safe and
+        reliable systems.
+    </p>
+
+    <p>
+        Professional competence therefore requires continuous learning,
+        training, research and practical experience.
+    </p>
+
+    <h3>Ways to maintain competence</h3>
+
+    <ul>
+        <li>Reading technical documentation.</li>
+        <li>Attending training and workshops.</li>
+        <li>Practicing programming.</li>
+        <li>Studying new technologies.</li>
+        <li>Learning from professional communities.</li>
+        <li>Reviewing previous mistakes and projects.</li>
+    </ul>
+
+</div>
+
+
+<!-- 37 -->
+
+<div class="ethics-topic">
+
+    <h2>37. Ethics Throughout the Software Development Life Cycle</h2>
+
+    <p>
+        Ethics should be considered during every stage of software
+        development.
+    </p>
+
+    <table class="ethics-table">
+
+        <tr>
+            <th>SDLC Stage</th>
+            <th>Ethical Consideration</th>
+        </tr>
+
+        <tr>
+            <td>Requirements</td>
+            <td>Understand user needs and identify potential harm.</td>
+        </tr>
+
+        <tr>
+            <td>Design</td>
+            <td>Consider privacy, security, accessibility and fairness.</td>
+        </tr>
+
+        <tr>
+            <td>Development</td>
+            <td>Write responsible and maintainable code.</td>
+        </tr>
+
+        <tr>
+            <td>Testing</td>
+            <td>Report results honestly and investigate serious defects.</td>
+        </tr>
+
+        <tr>
+            <td>Deployment</td>
+            <td>Ensure appropriate security and user communication.</td>
+        </tr>
+
+        <tr>
+            <td>Maintenance</td>
+            <td>Fix vulnerabilities and respond responsibly to incidents.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- 38 -->
+
+<div class="ethics-topic">
+
+    <h2>38. Ethics and Accessibility</h2>
+
+    <p>
+        Accessibility means designing technology so that people with
+        different abilities can use it effectively.
+    </p>
+
+    <p>
+        Ethical software design should consider users who may have visual,
+        hearing, physical or cognitive limitations.
+    </p>
+
+    <h3>Examples of accessibility features</h3>
+
+    <ul>
+        <li>Alternative text for meaningful images.</li>
+        <li>Keyboard navigation.</li>
+        <li>Readable text.</li>
+        <li>Clear interface design.</li>
+        <li>Captions for appropriate multimedia.</li>
+        <li>Good colour contrast.</li>
+    </ul>
+
+</div>
+
+
+<!-- 39 -->
+
+<div class="ethics-topic">
+
+    <h2>39. Ethics and Environmental Responsibility</h2>
+
+    <p>
+        Software may indirectly affect the environment through energy
+        consumption, hardware requirements and data-centre operations.
+    </p>
+
+    <p>
+        Engineers can contribute to responsible technology by considering
+        efficient software design, resource usage and the useful lifetime
+        of systems.
+    </p>
+
+</div>
+
+
+<!-- 40 -->
+
+<div class="ethics-topic">
+
+    <h2>40. Ethics and Social Media Software</h2>
+
+    <p>
+        Social media systems can influence communication, information
+        sharing and public opinion. Engineers working on such systems need
+        to consider issues such as privacy, misinformation, harassment,
+        recommendation systems and user safety.
+    </p>
+
+    <p>
+        Ethical design does not necessarily mean preventing all harmful
+        content through technology alone. It involves identifying risks and
+        building reasonable safeguards while respecting legitimate use.
+    </p>
+
+</div>
+
+
+<!-- 41 -->
+
+<div class="ethics-topic">
+
+    <h2>41. Ethics and Misinformation</h2>
+
+    <p>
+        Software platforms can contribute to the rapid spread of false or
+        misleading information. Engineers should consider how platform
+        design, recommendation algorithms and automated systems may amplify
+        harmful content.
+    </p>
+
+    <p>
+        Responsible engineering involves evaluating foreseeable risks,
+        improving system transparency and supporting appropriate mechanisms
+        for reporting and addressing harmful information.
+    </p>
+
+</div>
+
+
+<!-- 42 -->
+
+<div class="ethics-topic">
+
+    <h2>42. Four Important Ethical Principles</h2>
+
+    <p>
+        Several broad principles can help guide responsible software
+        engineering decisions.
+    </p>
+
+    <ol>
+        <li>
+            <strong>Respect for people:</strong>
+            Users and colleagues should be treated with dignity and fairness.
+        </li>
+
+        <li>
+            <strong>Do no unnecessary harm:</strong>
+            Engineers should identify and reduce foreseeable risks.
+        </li>
+
+        <li>
+            <strong>Honesty:</strong>
+            Professionals should provide truthful information about systems,
+            risks and capabilities.
+        </li>
+
+        <li>
+            <strong>Responsibility:</strong>
+            Engineers should accept responsibility for their professional
+            decisions and take reasonable action when problems are
+            identified.
+        </li>
+    </ol>
+
+</div>
+
+
+<!-- 43 -->
+
+<div class="ethics-topic">
+
+    <h2>43. How to Handle an Ethical Problem</h2>
+
+    <p>
+        When a software engineer encounters an ethical problem, reacting
+        emotionally or ignoring the issue may make the situation worse.
+        A structured approach is more useful.
+    </p>
+
+    <h3>Recommended approach</h3>
+
+    <ol>
+        <li>Clearly describe the problem.</li>
+        <li>Identify everyone affected.</li>
+        <li>Gather reliable facts.</li>
+        <li>Identify professional and legal requirements.</li>
+        <li>List possible actions.</li>
+        <li>Consider benefits, risks and consequences.</li>
+        <li>Seek appropriate professional advice.</li>
+        <li>Select the most responsible option.</li>
+        <li>Document important decisions.</li>
+        <li>Review the result.</li>
+    </ol>
+
+</div>
+
+
+<!-- 44 -->
+
+<div class="ethics-topic">
+
+    <h2>44. Benefits of Ethical Software Engineering</h2>
+
+    <ul>
+        <li>Improves public trust.</li>
+        <li>Protects users.</li>
+        <li>Improves software quality.</li>
+        <li>Reduces security and privacy risks.</li>
+        <li>Protects professional reputation.</li>
+        <li>Encourages responsible innovation.</li>
+        <li>Supports long-term organizational success.</li>
+        <li>Reduces the likelihood of harmful consequences.</li>
+    </ul>
+
+</div>
+
+
+<!-- 45 -->
+
+<div class="ethics-topic">
+
+    <h2>45. Consequences of Unethical Software Engineering</h2>
+
+    <p>
+        Unethical software engineering can produce serious consequences.
+        These consequences may affect individuals, organizations and
+        society.
+    </p>
+
+    <ul>
+        <li>Loss of user trust.</li>
+        <li>Financial losses.</li>
+        <li>Privacy violations.</li>
+        <li>Security breaches.</li>
+        <li>Legal consequences.</li>
+        <li>Damage to professional reputation.</li>
+        <li>Discrimination.</li>
+        <li>Physical or social harm in high-risk systems.</li>
+    </ul>
+
+</div>
+
+
+<!-- 46 -->
+
+<div class="ethics-topic">
+
+    <h2>46. Important Terms</h2>
+
+    <table class="ethics-table">
+
+        <tr>
+            <th>Term</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Ethics</td>
+            <td>Principles used to guide right and responsible behaviour.</td>
+        </tr>
+
+        <tr>
+            <td>Morality</td>
+            <td>Beliefs about right and wrong behaviour.</td>
+        </tr>
+
+        <tr>
+            <td>Privacy</td>
+            <td>Appropriate control and protection of personal information.</td>
+        </tr>
+
+        <tr>
+            <td>Confidentiality</td>
+            <td>Protection of information from unauthorized disclosure.</td>
+        </tr>
+
+        <tr>
+            <td>Integrity</td>
+            <td>Honesty and consistency in professional conduct.</td>
+        </tr>
+
+        <tr>
+            <td>Accountability</td>
+            <td>Accepting responsibility for decisions and actions.</td>
+        </tr>
+
+        <tr>
+            <td>Bias</td>
+            <td>A systematic tendency that can produce unfair outcomes.</td>
+        </tr>
+
+        <tr>
+            <td>Intellectual Property</td>
+            <td>Legal rights relating to creations and innovations.</td>
+        </tr>
+
+        <tr>
+            <td>Whistleblowing</td>
+            <td>Reporting serious wrongdoing through appropriate channels.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- REVISION -->
+
+<div class="revision-box">
+
+    <h2>Revision Questions</h2>
+
+    <h3>Short Answer Questions</h3>
+
+    <ol>
+        <li>Define ethics.</li>
+        <li>What is professional ethics?</li>
+        <li>Differentiate ethics, morality and law.</li>
+        <li>Why is ethics important in software engineering?</li>
+        <li>What is professional integrity?</li>
+        <li>Define confidentiality.</li>
+        <li>What is privacy?</li>
+        <li>What is intellectual property?</li>
+        <li>Explain software licensing.</li>
+        <li>What is whistleblowing?</li>
+        <li>Define conflict of interest.</li>
+        <li>What is accountability?</li>
+        <li>Explain bias in artificial intelligence.</li>
+        <li>What is transparency?</li>
+        <li>What is software security?</li>
+    </ol>
+
+    <h3>Discussion Questions</h3>
+
+    <ol>
+        <li>
+            Discuss the importance of professional ethics in software
+            engineering.
+        </li>
+
+        <li>
+            Explain the responsibilities of a software engineer toward
+            users and society.
+        </li>
+
+        <li>
+            Discuss the ethical issues associated with collecting personal
+            information.
+        </li>
+
+        <li>
+            Explain the relationship between software security and ethics.
+        </li>
+
+        <li>
+            Discuss ethical challenges associated with artificial
+            intelligence.
+        </li>
+
+        <li>
+            Explain the importance of intellectual property in software
+            development.
+        </li>
+
+        <li>
+            Discuss the role of honesty and integrity in software
+            engineering.
+        </li>
+
+        <li>
+            Explain how ethical considerations can be included throughout
+            the software development life cycle.
+        </li>
+    </ol>
+
+    <h3>Scenario Questions</h3>
+
+    <ol>
+        <li>
+            A developer discovers a serious security vulnerability shortly
+            before a software launch. Management tells the developer not to
+            mention it. What should the developer do and why?
+        </li>
+
+        <li>
+            A company wants to collect users' personal information without
+            clearly explaining why it is needed. Identify the ethical
+            concerns.
+        </li>
+
+        <li>
+            An AI recruitment system appears to disadvantage a particular
+            group of applicants. What ethical steps should the development
+            team take?
+        </li>
+
+        <li>
+            A programmer copies a large amount of code from another project
+            without checking its license. Discuss the ethical and legal
+            concerns.
+        </li>
+
+        <li>
+            A software engineer discovers that a colleague has deliberately
+            falsified testing results. What professional responsibilities
+            arise?
+        </li>
+    </ol>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="ethics-introduction">
+
+    <h2>Course Summary</h2>
+
+    <p>
+        Software Engineering Ethics provides principles that guide
+        responsible professional behaviour in software development.
+        Software engineers are responsible not only for producing working
+        software but also for considering how their systems affect users,
+        organizations and society.
+    </p>
+
+    <p>
+        Major ethical areas include privacy, confidentiality, security,
+        intellectual property, professional integrity, accountability,
+        fairness, artificial intelligence and responsible decision-making.
+    </p>
+
+    <p>
+        Ethical software engineering requires professionals to identify
+        potential harm, communicate honestly, respect the rights of others,
+        maintain professional competence and make decisions that consider
+        both technical requirements and human consequences.
+    </p>
+
+    <p>
+        The central lesson is that <strong>being able to build something
+        does not automatically mean that it is responsible to build or use
+        it in every possible way.</strong>
+    </p>
+
+</div>
+
+
+<!-- BACK BUTTON -->
+
+<div class="back-notes">
+
+    <a href="notes.html">
+        ← Back to Study Notes
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="StudyHub Learning Logo.png"
+             alt="StudyHub Learning Logo">
+
+        <h2>Study<span>Hub</span></h2>
+
+        <p>
+            Learn. Grow. Succeed.
+        </p>
+
+    </div>
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="notes.html">Notes</a>
+        <a href="upload.html">Upload</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="socials">
+
+        <a href="https://www.facebook.com/Omekasonalisminessalachingchan"
+           target="_blank"
+           rel="noopener noreferrer">
+            Facebook
+        </a>
+
+        <a href="https://wa.me/211921271049"
+           target="_blank"
+           rel="noopener noreferrer">
+            WhatsApp
+        </a>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 StudyHub. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
